@@ -1,0 +1,70 @@
+@import "var-mix.less";
+
+html, body {
+    background-color: @IWU_OFF-WHITE;
+    font-family: @LATO;
+    color: @IWU_GREY;
+    width: @DEVICE_WIDTH;
+    min-height: (@DEVICE_HEIGHT - @DEVICE_TITLE_HEIGHT);
+}
+
+.header {
+
+    width: @DEVICE_WIDTH;
+    height: @DEVICE_TITLE_HEIGHT;
+    background-color: @IWU_RED;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    .raised-content;
+
+    .header-icon {
+        color: f5F5F5;
+        text-decoration: none;
+    }
+
+    .header-menu {
+        float: left;
+        padding: ((@DEVICE_TITLE_HEIGHT - @IMG_HAMBURGER) / 2);
+    }
+
+    .header-logo {
+        padding: 0;
+        margin: (@BASE_SIZE * 1.5);
+        width: (@BASE_SIZE * 6);
+        height: (@BASE_SIZE * 6);
+        float: left;
+    }
+
+    .header-text {
+        font-weight: 400;
+        color: @IWU_WHITE;
+        float: left;
+        margin: (@BASE_SIZE * 2.5) 0;
+
+        .font-line-size(@BASE_SIZE * 4);
+    }
+
+    .header-reorder {
+        float: right;
+        padding: ((@DEVICE_TITLE_HEIGHT - @IMG_ELLIPSE) / 2);
+    }
+}
+
+.main-content {
+
+    width: 100%;
+    min-height: (@DEVICE_HEIGHT - @DEVICE_TITLE_HEIGHT);
+    margin-top: @DEVICE_TITLE_HEIGHT;
+
+    .card {
+        width: (@DEVICE_WIDTH - (@BASE_SIZE * 3));
+        min-height: (@DEVICE_TITLE_HEIGHT * 3);
+        margin: (@BASE_SIZE * 3) auto;
+        border-radius: 5px;
+        background-color: @IWU_WHITE;
+
+        .raised-content;
+    }
+}

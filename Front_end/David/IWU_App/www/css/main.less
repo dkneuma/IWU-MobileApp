@@ -1,0 +1,209 @@
+/* VARIABLES */
+@IWU_RED: #980826;
+@IWU_WHITE: #F5F5F5;
+@IWU_OFF-WHITE: #EDEAE8;
+@IWU_BLUE: #6195ae;
+@IWU_GREY: #444444;
+
+/*
+@IWU_PROXIMA-NOVA:    "proxima-nova-n4", "proxima-nova", arial;
+@IWU_WISDOM-SCRIPT:   "wisdom-script", "Brush Script MT", cursive;
+@IWU_MUSEO-SLAB:      "museo-slab", georgia, "times new roman", serif;
+@IWU_METROPOLIS:      "Metropolis-19201", georgia, "times new roman", serif;
+*/
+
+@IWU_LATO: 'Lato', georgia, arial, sans-serif;
+
+@BASE_SIZE: 16px;
+@DEVICE_HEIGHT: 1920px;
+@DEVICE_TITLE_HEIGHT: 144px;
+@DEVICE_WIDTH: 1080px;
+@IMG_ELLIPSE: 64px;
+@IMG_HAMBURGER: 64px;
+
+
+
+/* MIXINS */
+.raised-content {
+  box-shadow: 0 1px 2px #aaa; /* HARD CODED VALUE */
+  border-bottom: 1px solid gray; /* HARD CODED VALUE */
+}
+
+/* STYLES */
+html, body {
+  background-color: @IWU_OFF-WHITE;
+  font-family: @IWU_LATO;
+  color: @IWU_GREY;
+  width: @DEVICE_WIDTH;
+  height: (@DEVICE_HEIGHT - @DEVICE_TITLE_HEIGHT); /* HARD CODED VALUE */
+}
+
+.header {
+
+  /* STYLES */
+  width: @DEVICE_WIDTH;
+  height: @DEVICE_TITLE_HEIGHT;
+  background-color: @IWU_RED;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  /* MIXINS */
+  .raised-content;
+
+  /* NESTED CSS */
+  .header-icon {
+    color: f5F5F5;
+    text-decoration: none;
+  }
+
+  .header-menu {
+    float: left;
+    padding: ((@DEVICE_TITLE_HEIGHT - @IMG_HAMBURGER) / 2);
+
+    /*.v-align;*/
+  }
+
+  .header-logo {
+    padding: 0;
+    margin: (@BASE_SIZE * 1.5); /* HARD CODED VALUE */
+    width: (@BASE_SIZE * 6); /* HARD CODED VALUE */
+    height: (@BASE_SIZE * 6); /* HARD CODED VALUE */
+    float: left;
+  }
+
+  .header-text {
+    font-size: (@BASE_SIZE * 4); /* HARD CODED VALUE */
+    font-weight: 400;
+    line-height: (@BASE_SIZE * 5);
+    color: @IWU_WHITE;
+    float: left;
+    margin: (@BASE_SIZE * 2) 0;
+  }
+
+  .header-reorder {
+    float: right;
+    padding: ((@DEVICE_TITLE_HEIGHT - @IMG_ELLIPSE) / 2); /* HARD CODED VALUE */
+
+    /*.v-align;*/
+  }
+}
+
+.main-content {
+
+  /* STYLES */
+  width: 100%;
+  min-height: (@DEVICE_HEIGHT - @DEVICE_TITLE_HEIGHT); /* HARD CODED VALUE */
+  margin-top: (@DEVICE_TITLE_HEIGHT + (@BASE_SIZE * 3)); /* HARD CODED VALUE */
+
+  /* MIXINS */
+
+  /* NESTED CSS */
+  .card {
+    width: (@DEVICE_WIDTH - (@BASE_SIZE * 3)); /* HARD CODED VALUE */
+    margin: (@BASE_SIZE * 3) auto; /* HARD CODED VALUE */
+    border-radius: 5px; /* HARD CODED VALUE */
+    background-color: @IWU_WHITE;
+
+    .raised-content;
+
+    .card-top {
+      overflow: hidden;
+      margin-bottom: (@BASE_SIZE * 2);
+      padding: @BASE_SIZE;
+
+      .card-title {
+        margin: 0;
+        text-align: left;
+        font-size: (@BASE_SIZE * 3);                                              /* HARD CODED VALUE */
+        font-weight: 600;
+        line-height: (@BASE_SIZE * 3);                                              /* HARD CODED VALUE */
+        float: left;
+      }
+
+      .card-title span{
+        font-weight: 100;
+      }
+
+      .card-flaticon:before{
+        font-size: (@BASE_SIZE * 2);
+        line-height: (@BASE_SIZE * 2);
+        float: right;
+        color: @IWU_GREY;
+      }
+    }
+
+    .card-mid {
+      overflow: hidden;
+      padding: @BASE_SIZE;
+    }
+
+    .card-bottom{
+      overflow: hidden;
+      height: (@BASE_SIZE * 4);
+      position: relative;
+    }
+
+    .card-news-item {
+      padding: @BASE_SIZE;
+      border-bottom: 2px solid @IWU_RED;
+      overflow: hidden;
+      position: relative;
+
+      .card-img-icon {
+        max-width: 30%;
+        max-height: (@BASE_SIZE * 9);
+        float: left;
+        margin-right: @BASE_SIZE;
+      }
+
+      .card-secondary-title {
+        font-size: (@BASE_SIZE * 1.5);
+        font-weight: 300;
+        line-height: (@BASE_SIZE * 2);
+        margin: 0 (@BASE_SIZE * 9) 0 0;
+        color: @IWU_GREY;
+      }
+
+      .card-news-date{
+        font-size: (@BASE_SIZE * 0.75);
+        color: @IWU_GREY;
+        float: left;
+        margin-top: @BASE_SIZE;
+        line-height: (@BASE_SIZE * 0.75);
+      }
+      .card-news-tag {
+        font-size: (@BASE_SIZE * 0.75);
+        color: @IWU_WHITE;
+        padding: 0 (@BASE_SIZE * 0.25);
+        background-color: @IWU_GREY;
+        border-radius: 5px;
+        margin-top: @BASE_SIZE;
+        float: right;
+        display: inline;
+        line-height: (@BASE_SIZE * 1.5);
+      }
+    }
+
+    .card-news-item-last{
+      border: none;
+    }
+
+    .card-call-to-action{
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-color: @IWU_RED;
+      color: @IWU_WHITE;
+      text-align: center;
+
+      h4{
+        font-size: (@BASE_SIZE * 1.5);
+        line-height: (@BASE_SIZE * 2);
+        padding: @BASE_SIZE 0;
+      }
+    }
+  }
+}

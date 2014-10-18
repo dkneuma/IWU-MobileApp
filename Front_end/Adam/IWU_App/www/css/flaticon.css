@@ -1,0 +1,55 @@
+/********** VARIABLES **********/
+/* Color Variables */
+/* Font Variables */
+/*
+@IWU_PROXIMA-NOVA:      "proxima-nova-n4", "proxima-nova", arial;
+@IWU_WISDOM-SCRIPT:     "wisdom-script", "Brush Script MT", cursive;
+@IWU_MUSEO-SLAB:        "museo-slab", georgia, "times new roman", serif;
+@IWU_METROPOLIS:        "Metropolis-19201", georgia, "times new roman", serif;
+*/
+/* Sizing Variables */
+/********** MIXINS **********/
+/* Global Mixins */
+.raised-content {
+  box-shadow: 0 1px 2px #aaa;
+  border-bottom: 1px solid gray;
+}
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/icons/flaticon.eot");
+  src: url("../fonts/icons/flaticon.eot#iefix") format("embedded-opentype"), url("../fonts/icons/flaticon.woff") format("woff"), url("../fonts/icons/flaticon.ttf") format("truetype"), url("../fonts/icons/flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-style: normal;
+}
+.flaticon-button8:before {
+  content: "\e000";
+  font-size: 64px;
+  line-height: 64px;
+}
+.flaticon-fork4:before {
+  content: "\e001";
+  font-size: 64px;
+  line-height: 64px;
+}
+.flaticon-fried6:before {
+  content: "\e002";
+  font-size: 64px;
+  line-height: 64px;
+}
+.flaticon-junk5:before {
+  content: "\e003";
+  font-size: 64px;
+  line-height: 64px;
+}
+.flaticon-menu51:before {
+  content: "\e004";
+  font-size: 64px;
+  line-height: 64px;
+}

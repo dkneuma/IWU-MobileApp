@@ -1,0 +1,50 @@
+@import "var-mix.less";
+
+.baldwin-card {
+
+    .card-top {
+        overflow: hidden;
+        margin-bottom: (@BASE_SIZE * 2);
+        padding: @BASE_SIZE;
+
+        .card-title {
+            margin: 0;
+            text-align: left;
+            font-weight: 600;
+            float: left;
+
+            .font-line-size(@BASE_SIZE * 3);
+        }
+
+        .card-title span {
+            font-weight: 100;
+        }
+
+        .card-flaticon-ellipse:before {
+            float: right;
+            color: @IWU_GREY;
+
+            .font-line-size(@BASE_SIZE * 2);
+        }
+    }
+
+    .card-mid {
+        overflow: hidden;
+        padding: @BASE_SIZE;
+    }
+
+    .card-baldwin-item{
+        overflow: hidden;
+        position: relative;
+        width: 33.33333%;
+        float: left;
+        text-align: center;
+
+        .card-flaticon-baldwin:before{
+            color: @IWU_GREY;
+
+            .font-line-size(@BASE_SIZE * 4);
+        }
+    }
+
+}

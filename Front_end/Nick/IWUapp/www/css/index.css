@@ -1,0 +1,66 @@
+html, body {
+    font-family: 'Roboto', sans-serif; line-height:1.2; vertical-align:middle;
+    background-color: #EDEAE8;
+    height: 1632px;
+    width: 1080px;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 200;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#Chapel {
+    background-image: url("../img/chapel.png");     /* from iwuonlineregion.com */
+    height: 700px;
+    color: #F5F5F5;
+}
+
+.card ul {
+    text-align: center;
+    font-size: 32px;
+    padding-top: 44px;
+}
+
+.menu {
+    float: left;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.settings {
+    float: right;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+header h1 {
+    float: left;
+    padding-left: 80px;
+    padding-top: 44px;
+    color: #F5F5F5;
+    font-size: 56px;
+    font-weight: bold;
+}
+header {
+    background-color: #980826;
+    height: 144px;
+    width: 1080px;
+    margin-bottom: 16px;
+}
+
+.card {
+    font-size: 24px;
+    color: #444444;
+    box-shadow:0 1px 2px #aaa;
+    margin:0 16px 16px;
+    border-radius: 3px;
+    background: white;
+    padding-left: 16px;
+    max-height: 75%;
+    min-height: 576px;
+    overflow: hidden;
+}
+

@@ -1,0 +1,48 @@
+@import "var-mix.less";
+
+@font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/icons/flaticon.eot");
+    src: url("../fonts/icons/flaticon.eot#iefix") format("embedded-opentype"),
+    url("../fonts/icons/flaticon.woff") format("woff"),
+    url("../fonts/icons/flaticon.ttf") format("truetype"),
+    url("../fonts/icons/flaticon.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    font-family: Flaticon;
+    font-style: normal;
+}
+
+.flaticon-button8:before {
+    content: "\e000";
+
+    .font-line-size(@IMG_ELLIPSE);
+}
+
+.flaticon-fork4:before {
+    content: "\e001";
+
+    .font-line-size(@IMG_DINNER);
+}
+
+.flaticon-fried6:before {
+    content: "\e002";
+
+    .font-line-size(@IMG_BREAKFAST);
+}
+
+.flaticon-junk5:before {
+    content: "\e003";
+
+    .font-line-size(@IMG_LUNCH);
+}
+
+.flaticon-menu51:before {
+    content: "\e004";
+
+    .font-line-size(@IMG_HAMBURGER);
+}

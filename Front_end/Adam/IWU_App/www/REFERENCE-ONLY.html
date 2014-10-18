@@ -1,0 +1,144 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <!-- Sets width/height to device width/height, removes ability to zoom, sets dpi to device dpi -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Indiana Wesleyan University</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/flaticon.less" />
+
+    <!-- LESS -->
+    <link rel="stylesheet/less" type="text/css" href="css/main.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/news.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/chapel.less" />
+
+    <!-- FONTS -->
+    <!--<link href='http://webfonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>-->
+    <link rel="stylesheet" href="http://use.typekit.net/c/b0ef08/proxima-nova:i4:i7:n4:n7.W0W:N:2,W0Z:N:2,W0V:N:2,W0Y:N:2/d?3bb2a6e53c9684ffdc9a9bf6135b2a629dfd401408a09a37c12b6133c734721526528ed7cc8608f54f66441d67785033b849551fec1f0f16321c2f216f17af0d1089497fb46436b32c2d439641ceb0069b1f4c3cd583ce3adc446c7fcae2e88b0460c3ca84443c2f90ed2c78f4" />
+    <link rel="stylesheet" href="http://use.typekit.net/c/a6cf15/1w;museo-slab,2,SLT:P:i3,QL2:P:i7,QL7:P:n1,SKB:P:n3,VnC:P:n7,QL5:P:n9;proxima-nova,2,b5v:P:i3,b5x:P:i4,b61:P:i7,b5r:P:n1,b5t:P:n3,b5w:P:n4,b5y:P:n6,bBh:P:n7,b62:P:n8,b64:P:n9/d?3bb2a6e53c9684ffdc9a9bf3125b2a62840deb1ee3c3bb406d4109d0af8c68b1d41c32c1f34fc1b1264b929ac3bd49beb0a21f589cbdc545a8806da4a84f1894da37ed07968dc80d68311de93e3509d9b55113707d13d295849dc80bc9ff19fb37d257c018321991d22fcb2eda2ecbab399c5fa03293b1ce27b17171544f216724191eb575acd666be7ec8af576ad0977daf51bf62ccad36c135e879d2ca" />
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/less-1.7.5.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Header (Title Bar) Section -->
+    <section class="header">
+
+        <!-- Hamburger Menu -->
+        <a class="header-icon" href="#">
+            <div class="header-menu">
+                <i class="flaticon-menu51"></i>
+            </div>
+        </a>
+
+        <!-- IWU Logo and Header --> <!-- Will change picture to IWU's Mascot in future revision -->
+        <img class="header-logo" src="img/IWULogoWB.jpg" />
+        <h1 class="header-text">IWU</h1>
+
+        <!-- V-Ellipse -->
+        <a class="header-icon" href="#">
+            <div class="header-reorder">
+                <i class="flaticon-button8"></i>
+            </div>
+        </a>
+    </section>
+
+    <!-- Content Section -->
+    <section class="main-content">
+
+        <!-- News Card -->
+        <div class="card news-card">
+
+            <!-- Top of card, includes card title and icon -->
+            <div class="card-top">
+                <h2 class="card-title">Campus <span>News</span></h2>
+                <a href="#">
+                    <div>
+                        <i class="flaticon-button8 card-flaticon"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Middle of card, contains the three most recent news articles -->
+            <div class="card-mid">
+
+                <!-- News article, most recent -->
+                <a href="#">
+                    <div class="card-news-item">
+                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
+                        <h3 class="card-secondary-title">Intercultural Student Services Coffee Talk</h3>
+                        <p class="card-news-date">16 hours ago<br/><span class="card-news-tag">Campus Announcement</span></p>
+                    </div>
+                </a>
+
+                <!--News article, second most recent -->
+                <a href="#">
+                    <div class="card-news-item">
+                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
+                        <h3 class="card-secondary-title">Wildcats erupt for 5-goal win against Marian</h3>
+                        <p class="card-news-date">12 days ago<br/><span class="card-news-tag">Sojourn</span></p>
+                    </div>
+                </a>
+
+                <!-- News article, third most recent -->
+                <a href="#">
+                    <div class="card-news-item card-news-item-last">
+                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
+                        <h3 class="card-secondary-title">SGA Discussion Panel #2 – Sexuality/LGBTQ Community SGA Discussion Panel #2 – Sexuality/LGBTQ Community</h3> /* 148 Max Char */
+                        <p class="card-news-date">3 months ago<br/><span class="card-news-tag">Campus Announcements</span></p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Bottom of card, contains news call-to-action -->
+            <div class="card-bottom">
+                <a class="card-call-to-action" href="#"><h4>More News</h4></a>
+            </div>
+        </div>
+
+        <!-- Chapel card -->
+        <div class="card chapel-card">
+            <div class="card-top">
+                <h2 class="card-title">Chapel</h2>
+                <a href="#">
+                    <div>
+                        <i class="flaticon-button8 card-flaticon"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="card-mid">
+
+            </div>
+            <div class="card-bottom">
+
+            </div>
+        </div>
+
+        <!-- Weather card -->
+        <div class="card weather-card">
+            <p class="card-title">Lorem ipsum</p>
+        </div>
+
+        <!-- Baldwin menu card -->
+        <div class="card baldwin-card">
+            <p class="card-title">Lorem ipsum</p>
+        </div>
+
+        <!-- Class schedule card -->
+        <div class="card schedule-card">
+            <p class="card-title">Lorem ipsum</p>
+        </div>
+
+        <!-- Radio station card -->
+        <div class="card radio-card">
+            <p class="card-title">Lorem ipsum</p>
+        </div>
+    </section>
+</body>
+</html>

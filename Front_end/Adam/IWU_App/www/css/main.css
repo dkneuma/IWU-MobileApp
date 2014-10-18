@@ -1,0 +1,75 @@
+/********** VARIABLES **********/
+/* Color Variables */
+/* Font Variables */
+/*
+@IWU_PROXIMA-NOVA:      "proxima-nova-n4", "proxima-nova", arial;
+@IWU_WISDOM-SCRIPT:     "wisdom-script", "Brush Script MT", cursive;
+@IWU_MUSEO-SLAB:        "museo-slab", georgia, "times new roman", serif;
+@IWU_METROPOLIS:        "Metropolis-19201", georgia, "times new roman", serif;
+*/
+/* Sizing Variables */
+/********** MIXINS **********/
+/* Global Mixins */
+.raised-content {
+  box-shadow: 0 1px 2px #aaa;
+  border-bottom: 1px solid gray;
+}
+html,
+body {
+  background-color: #edeae8;
+  font-family: "lato", georgia, "times new roman", sans-serif;
+  color: #444444;
+  width: 1080px;
+  min-height: 1776px;
+}
+.header {
+  width: 1080px;
+  height: 144px;
+  background-color: #980826;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1px 2px #aaa;
+  border-bottom: 1px solid gray;
+}
+.header .header-icon {
+  color: f5F5F5;
+  text-decoration: none;
+}
+.header .header-menu {
+  float: left;
+  padding: 40px;
+}
+.header .header-logo {
+  padding: 0;
+  margin: 24px;
+  width: 96px;
+  height: 96px;
+  float: left;
+}
+.header .header-text {
+  font-weight: 400;
+  color: #f5f5f5;
+  float: left;
+  margin: 40px 0;
+  font-size: 64px;
+  line-height: 64px;
+}
+.header .header-reorder {
+  float: right;
+  padding: 40px;
+}
+.main-content {
+  width: 100%;
+  min-height: 1776px;
+  margin-top: 144px;
+}
+.main-content .card {
+  width: 1032px;
+  min-height: 432px;
+  margin: 48px auto;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 2px #aaa;
+  border-bottom: 1px solid gray;
+}

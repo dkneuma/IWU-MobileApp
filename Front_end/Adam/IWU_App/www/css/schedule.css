@@ -1,0 +1,42 @@
+/********** VARIABLES **********/
+/* Color Variables */
+/* Font Variables */
+/*
+@IWU_PROXIMA-NOVA:      "proxima-nova-n4", "proxima-nova", arial;
+@IWU_WISDOM-SCRIPT:     "wisdom-script", "Brush Script MT", cursive;
+@IWU_MUSEO-SLAB:        "museo-slab", georgia, "times new roman", serif;
+@IWU_METROPOLIS:        "Metropolis-19201", georgia, "times new roman", serif;
+*/
+/* Sizing Variables */
+/********** MIXINS **********/
+/* Global Mixins */
+.raised-content {
+  box-shadow: 0 1px 2px #aaa;
+  border-bottom: 1px solid gray;
+}
+.schedule-card .card-top {
+  overflow: hidden;
+  margin-bottom: 32px;
+  padding: 16px;
+}
+.schedule-card .card-top .card-title {
+  margin: 0;
+  text-align: left;
+  font-weight: 600;
+  float: left;
+  font-size: 48px;
+  line-height: 48px;
+}
+.schedule-card .card-top .card-title span {
+  font-weight: 100;
+}
+.schedule-card .card-top .card-flaticon-ellipse:before {
+  float: right;
+  color: #444444;
+  font-size: 32px;
+  line-height: 32px;
+}
+.schedule-card .card-mid {
+  overflow: hidden;
+  padding: 16px;
+}

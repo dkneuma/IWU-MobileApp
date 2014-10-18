@@ -1,0 +1,34 @@
+@import "var-mix.less";
+
+.chapel-card {
+    background: url("../img/chapel.png") no-repeat 25% / cover;
+
+    .card-top {
+        overflow: hidden;
+        margin-bottom: (@BASE_SIZE * 2);
+        padding: @BASE_SIZE;
+
+        .card-title {
+            margin: 0;
+            text-align: left;
+            font-weight: 100;
+            color: @IWU_WHITE;
+            float: left;
+
+            .font-line-size(@BASE_SIZE * 3);
+        }
+
+        .card-flaticon-ellipse:before {
+            float: right;
+            color: @IWU_GREY;
+
+            .font-line-size(@BASE_SIZE * 2);
+        }
+    }
+
+    .card-mid {
+        overflow: hidden;
+        padding: @BASE_SIZE;
+    }
+
+}
