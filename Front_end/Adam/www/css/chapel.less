@@ -1,8 +1,11 @@
+/* Import list of variables and mixins */
 @import "var-mix.less";
 
+/* Wrapper class styles */
 .chapel-card {
     background: url("../img/chapel.png") no-repeat 25% / cover;
 
+    /* Top of card, includes card title styles and icon styles */
     .card-top {
         overflow: hidden;
         margin-bottom: (@BASE_SIZE * 2);
@@ -18,14 +21,19 @@
             .font-line-size(@BASE_SIZE * 3);
         }
 
-        .card-flaticon-ellipse:before {
+        .card-flaticon-container{
             float: right;
+            padding: (@BASE_SIZE * 1.5);
+        }
+
+        .card-flaticon-ellipse:before {
             color: @IWU_GREY;
 
             .font-line-size(@BASE_SIZE * 2);
         }
     }
 
+    /* Middle of card styles */
     .card-mid {
         overflow: hidden;
         padding: @BASE_SIZE;

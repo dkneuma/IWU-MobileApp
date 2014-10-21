@@ -1,5 +1,7 @@
+/* Import list of variables and mixins */
 @import "var-mix.less";
 
+/* Background styles */
 html, body {
     background-color: @IWU_OFF-WHITE;
     font-family: @LATO;
@@ -8,6 +10,7 @@ html, body {
     min-height: (@DEVICE_HEIGHT - @DEVICE_TITLE_HEIGHT);
 }
 
+/* Title bar styles/wrapper class */
 .header {
 
     width: @DEVICE_WIDTH;
@@ -19,16 +22,19 @@ html, body {
 
     .raised-content;
 
+    /* Hamburger menu anchor styles */
     .header-icon {
-        color: f5F5F5;
+        color: @IWU_WHITE;
         text-decoration: none;
     }
 
+    /* Hamburger menu icon styles */
     .header-menu {
         float: left;
         padding: ((@DEVICE_TITLE_HEIGHT - @IMG_HAMBURGER) / 2);
     }
 
+    /* Logo styles */
     .header-logo {
         padding: 0;
         margin: (@BASE_SIZE * 1.5);
@@ -37,6 +43,7 @@ html, body {
         float: left;
     }
 
+    /* Header text styles */
     .header-text {
         font-weight: 400;
         color: @IWU_WHITE;
@@ -46,18 +53,21 @@ html, body {
         .font-line-size(@BASE_SIZE * 4);
     }
 
+    /* Vertical ellipse icon styles */
     .header-reorder {
         float: right;
         padding: ((@DEVICE_TITLE_HEIGHT - @IMG_ELLIPSE) / 2);
     }
 }
 
+/* Main content wrapper class styles */
 .main-content {
 
     width: 100%;
     min-height: (@DEVICE_HEIGHT - @DEVICE_TITLE_HEIGHT);
     margin-top: @DEVICE_TITLE_HEIGHT;
 
+    /* Global card styles */
     .card {
         width: (@DEVICE_WIDTH - (@BASE_SIZE * 3));
         min-height: (@DEVICE_TITLE_HEIGHT * 3);

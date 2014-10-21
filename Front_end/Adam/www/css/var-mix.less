@@ -29,15 +29,13 @@
 
 /********** MIXINS **********/
 
-/* Global Mixins */
-
-// Gives blocks the appearance of being raised off the background
+/* Gives blocks the appearance of being raised off the background */
 .raised-content {
     box-shadow: 0 1px 2px #aaa;
     border-bottom: 1px solid gray;
 }
 
-// Assigns font-size the size of the inputted value, and line-height the size of the inputted value rounded to the next multiple of the base size
+/* Assigns font-size the size of the inputted value, and line-height the size of the inputted value rounded to the next multiple of the base size */
 .font-line-size (@FONT-LINE-SIZE) {
     font-size: @FONT-LINE-SIZE;
     line-height: (@BASE_SIZE * (ceil(abs(@FONT-LINE-SIZE / @BASE_SIZE))))

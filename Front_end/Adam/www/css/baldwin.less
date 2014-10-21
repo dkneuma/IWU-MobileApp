@@ -1,7 +1,10 @@
+/* Import list of variables and mixins */
 @import "var-mix.less";
 
+/* Wrapper class styles */
 .baldwin-card {
 
+    /* Top of card, includes card title styles and icon styles */
     .card-top {
         overflow: hidden;
         margin-bottom: (@BASE_SIZE * 2);
@@ -20,19 +23,25 @@
             font-weight: 100;
         }
 
-        .card-flaticon-ellipse:before {
+        .card-flaticon-container{
             float: right;
+            padding: (@BASE_SIZE * 1.5);
+        }
+
+        .card-flaticon-ellipse:before {
             color: @IWU_GREY;
 
             .font-line-size(@BASE_SIZE * 2);
         }
     }
 
+    /* Middle of card styles */
     .card-mid {
         overflow: hidden;
         padding: @BASE_SIZE;
     }
 
+    /* Baldwin menu option styles */
     .card-baldwin-item{
         overflow: hidden;
         position: relative;

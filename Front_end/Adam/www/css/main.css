@@ -1,3 +1,4 @@
+/* Import list of variables and mixins */
 /********** VARIABLES **********/
 /* Color Variables */
 /* Font Variables */
@@ -9,11 +10,13 @@
 */
 /* Sizing Variables */
 /********** MIXINS **********/
-/* Global Mixins */
+/* Gives blocks the appearance of being raised off the background */
 .raised-content {
   box-shadow: 0 1px 2px #aaa;
   border-bottom: 1px solid gray;
 }
+/* Assigns font-size the size of the inputted value, and line-height the size of the inputted value rounded to the next multiple of the base size */
+/* Background styles */
 html,
 body {
   background-color: #edeae8;
@@ -22,6 +25,7 @@ body {
   width: 1080px;
   min-height: 1776px;
 }
+/* Title bar styles/wrapper class */
 .header {
   width: 1080px;
   height: 144px;
@@ -31,9 +35,14 @@ body {
   z-index: 10;
   box-shadow: 0 1px 2px #aaa;
   border-bottom: 1px solid gray;
+  /* Hamburger menu anchor styles */
+  /* Hamburger menu icon styles */
+  /* Logo styles */
+  /* Header text styles */
+  /* Vertical ellipse icon styles */
 }
 .header .header-icon {
-  color: f5F5F5;
+  color: #f5f5f5;
   text-decoration: none;
 }
 .header .header-menu {
@@ -59,10 +68,12 @@ body {
   float: right;
   padding: 40px;
 }
+/* Main content wrapper class styles */
 .main-content {
   width: 100%;
   min-height: 1776px;
   margin-top: 144px;
+  /* Global card styles */
 }
 .main-content .card {
   width: 1032px;
