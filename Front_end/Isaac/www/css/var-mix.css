@@ -1,0 +1,17 @@
+/********** VARIABLES **********/
+/* Color Variables */
+/* Font Variables */
+/*
+@IWU_PROXIMA-NOVA:      "proxima-nova-n4", "proxima-nova", arial;
+@IWU_WISDOM-SCRIPT:     "wisdom-script", "Brush Script MT", cursive;
+@IWU_MUSEO-SLAB:        "museo-slab", georgia, "times new roman", serif;
+@IWU_METROPOLIS:        "Metropolis-19201", georgia, "times new roman", serif;
+*/
+/* Sizing Variables */
+/********** MIXINS **********/
+/* Gives blocks the appearance of being raised off the background */
+.raised-content {
+  box-shadow: 0 1px 2px #aaa;
+  border-bottom: 1px solid gray;
+}
+/* Assigns font-size the size of the inputted value, and line-height the size of the inputted value rounded to the next multiple of the base size */
