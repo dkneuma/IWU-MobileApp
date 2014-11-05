@@ -13,7 +13,9 @@ app.get('/text', function(req, res){
 	res.json(test)
 })
 
-app.get('/file', function(req, res){
+// News XML
+app.get('/News', function(req, res){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	res.sendFile(path.join(__dirname, 'test.xml'))
 })
-
