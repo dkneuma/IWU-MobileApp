@@ -7,7 +7,7 @@
     /* Top of card, includes card title styles and icon styles */
     .card-top {
         overflow: hidden;
-        margin-bottom: (@BASE_SIZE / 2);
+        margin-bottom: (@BASE_SIZE / 3);
         padding: @BASE_SIZE;
 
         .card-title {
@@ -44,18 +44,19 @@
     /* weather today option styles */
     .card-weather-today {
 
+      position: relative;
+          bottom: 20px;
+
       h2 {
-        float: left;
-        margin: (@BASE_SIZE * 4) (@BASE_SIZE * 5);
+        float: right;
+        margin: (@BASE_SIZE * 4) (@BASE_SIZE * 2.5);
 
         .font-line-size(@BASE_SIZE * 9);
       }
 
-
-
       .card-flaticon-weather:before{
         color: @IWU_GREY;
-        float: left;
+        float: right;
 
         .font-line-size(@BASE_SIZE * 18);
       }
@@ -86,7 +87,9 @@
         .card-flaticon-weather:before{
             color: @IWU_GREY;
             text-align: center;
-            margin-left: (@BASE_SIZE * 4);
+            position: relative;
+                left: 65px;
+            margin-right: (@BASE_SIZE );
 
             .font-line-size(@BASE_SIZE * 8);
         }
