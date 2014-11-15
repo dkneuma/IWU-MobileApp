@@ -14,9 +14,13 @@ app.get('/text', function(req, res){
 	res.json(test)
 })
 
-app.get('/file', function(req, res){
+// News XML
+app.get('/News', function(req, res){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	res.sendFile(path.join(__dirname, 'test.xml'))
 })
+<<<<<<< HEAD
 
 app.get('/chapel', function(req, res){
 	res.sendFile(path.join(__dirname, 'chapelSchedule.xml'))
@@ -25,3 +29,5 @@ app.get('/chapel', function(req, res){
 app.get('/food', function(req, res){
 	res.sendFile(path.join(__dirname, 'baldwinSchedule.xml'))
 })
+=======
+>>>>>>> origin/master

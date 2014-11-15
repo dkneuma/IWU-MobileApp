@@ -1,0 +1,102 @@
+/* Import list of variables and mixins */
+@import "var-mix.less";
+
+/* Wrapper class styles */
+.weather-card {
+
+    /* Top of card, includes card title styles and icon styles */
+    .card-top {
+        overflow: hidden;
+        margin-bottom: (@BASE_SIZE / 3);
+        padding: @BASE_SIZE;
+
+        .card-title {
+            margin: 0;
+            text-align: left;
+            font-weight: 600;
+            float: left;
+
+            .font-line-size(@BASE_SIZE * 3);
+        }
+
+        .card-title span {
+            font-weight: 100;
+        }
+
+        .card-flaticon-container{
+            float: right;
+            padding: (@BASE_SIZE * 1.5);
+        }
+
+        .card-flaticon-ellipse:before {
+            color: @IWU_GREY;
+
+            .font-line-size(@BASE_SIZE * 2);
+        }
+    }
+
+    /* Middle of card styles */
+    .card-mid {
+        overflow: hidden;
+        padding: @BASE_SIZE;
+    }
+
+    /* weather today option styles */
+    .card-weather-today {
+
+      position: relative;
+          bottom: 20px;
+
+      h2 {
+        float: right;
+        margin: (@BASE_SIZE * 4) (@BASE_SIZE * 2.5);
+
+        .font-line-size(@BASE_SIZE * 9);
+      }
+
+      .card-flaticon-weather:before{
+        color: @IWU_GREY;
+        float: right;
+
+        .font-line-size(@BASE_SIZE * 18);
+      }
+
+    }
+
+    /* weather item styles */
+    .card-weather-item{
+        overflow: hidden;
+        position: relative;
+        width: 33.33333%;
+        float: left;
+        text-align: center;
+        border-right: 2px solid @IWU_RED;
+        border-top: 2px solid @IWU_RED;
+
+        h2 {
+          float: right;
+          margin-right: (@BASE_SIZE / 2);
+          .font-line-size(@BASE_SIZE * 2.5);
+        }
+
+        h3 {
+          clear: both;
+          text-align: center;
+        }
+
+        .card-flaticon-weather:before{
+            color: @IWU_GREY;
+            text-align: center;
+            position: relative;
+                left: 65px;
+            margin-right: (@BASE_SIZE );
+
+            .font-line-size(@BASE_SIZE * 8);
+        }
+    }
+
+  .card-weather-item-last{
+    border-right: none;
+  }
+
+}

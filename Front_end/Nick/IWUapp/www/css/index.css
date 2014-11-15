@@ -4,38 +4,78 @@ html, body {
     height: 1632px;
     width: 1080px;
 }
-
 h1 {
     font-size: 60px;
     font-weight: 200;
     padding-top: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
-
 #Chapel {
     background-image: url("../img/chapel.png");     /* from iwuonlineregion.com */
-    height: 700px;
+    background-repeat: no-repeat;
+    opacity: 0.78;
     color: #F5F5F5;
 }
-
+#Chapel h2 {
+    font-weight: 400;
+    font-size: 32px;
+    padding-left: 16px;
+    padding-bottom: 10px;
+}
+#Chapel span {
+    font-weight: 400;
+    font-size: 48px;
+    padding-left: 16px;
+}
+.classTime {
+    width: 25%;
+    float: left;
+    font-size: 40px;
+    padding-right: 8px;
+    padding-left: 8px;
+    background-color: whitesmoke;
+}
+.className {
+    width: 75%;
+    float: right;
+    font-size: 40px;
+    padding-right: 8px;
+    padding-left: 8px;
+    background-color: whitesmoke;
+}
+#schedule {
+    position: relative;
+}
+#schedule h2 {
+    font-weight: 400;
+    line-height: 2.5;
+    font-size: 32px;
+    padding-left: 16px;
+    padding-bottom: 10px;
+}
+#schedule p {
+    padding: 20px;
+    margin: 0;
+    border-right: 2px #000000;
+}
 .card ul {
     text-align: center;
     font-size: 32px;
     padding-top: 44px;
 }
-
+.card h1 {
+    padding-left: 16px;
+}
 .menu {
     float: left;
     padding-top: 24px;
     padding-bottom: 24px;
 }
-
 .settings {
     float: right;
     padding-top: 24px;
     padding-bottom: 24px;
 }
-
 header h1 {
     float: left;
     padding-left: 80px;
@@ -50,16 +90,14 @@ header {
     width: 1080px;
     margin-bottom: 16px;
 }
-
 .card {
     font-size: 24px;
     color: #444444;
     box-shadow:0 1px 2px #aaa;
-    margin:0 16px 16px;
+    margin:0 24px 24px;
     border-radius: 3px;
     background: white;
-    padding-left: 16px;
-    max-height: 75%;
+    max-height: 60%;
     min-height: 576px;
     overflow: hidden;
 }

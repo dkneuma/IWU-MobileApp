@@ -1,0 +1,55 @@
+html, body {
+    font-family: 'Roboto', sans-serif; line-height:1.2; vertical-align:middle;
+    background-color: #980826;
+    color: #F5F5F5;
+    height: 1845px;
+    width: 1080px;
+}
+a:link {text-decoration: none; color: #F5F5F5;}
+a:active {text-decoration: none; color: #F5F5F5;}
+a:visited {text-decoration: none; color: #F5F5F5;}
+h3 {
+    width: 200px;
+    font-weight: 200;
+}
+img {
+    margin-top: 480px;
+    height: 282px;
+    width: 720px;
+}
+#footer {
+    font-size: 40px;
+    font-weight: 200;
+    position: absolute;
+    bottom: 0;
+    width: 270px;
+    margin-left: 405px;
+    margin-right: 405px;
+}
+.logo {
+    margin-left: 180px;
+    margin-bottom: 180px;
+}
+#username {
+    margin-top: 40px;
+}
+#loginButton {
+    width: 270px;
+    font-size: 40px;
+    color: #F5F5F5;
+    float: right;
+    background-color: #444444;
+    border: none;
+}
+.login input {
+    width: 540px;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 200;
+}
+.login {
+    margin-left: 270px;
+    margin-right: 270px;
+}
