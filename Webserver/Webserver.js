@@ -5,6 +5,7 @@ app.listen(8000)
 var echo = []
 //Test Data
 var test = "Bacon ipsum dolor sit amet prosciutto shoulder fatback brisket salami swine strip steak sausage capicola corned beef ribeye turducken. Frankfurter leberkas pig, pastrami turducken prosciutto doner pork belly tongue ground round kielbasa turkey. Kielbasa ham biltong, salami boudin jowl short ribs. Capicola leberkas frankfurter, boudin swine rump brisket t-bone drumstick ham spare ribs venison strip steak porchetta. Strip steak fatback beef ribs turkey short loin. Flank short ribs hamburger sausage andouille."
+
 //Console Log because i gotta b sure it workin
 console.log('Port 8000')
 
@@ -17,3 +18,10 @@ app.get('/file', function(req, res){
 	res.sendFile(path.join(__dirname, 'test.xml'))
 })
 
+app.get('/chapel', function(req, res){
+	res.sendFile(path.join(__dirname, 'chapelSchedule.xml'))
+})
+
+app.get('/food', function(req, res){
+	res.sendFile(path.join(__dirname, 'baldwinSchedule.xml'))
+})
