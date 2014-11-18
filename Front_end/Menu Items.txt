@@ -6,3 +6,4 @@ Radio
 Schedule
 Settings (TBD)
 Weather
+Bible verse of the day (Bible Gateway)
