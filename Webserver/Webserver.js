@@ -1,30 +1,63 @@
-var express = require('express')
-var app = express()
-var path = require('path')
-app.listen(8000)
-var echo = []
-//Test Data
-var test = "Bacon ipsum dolor sit amet prosciutto shoulder fatback brisket salami swine strip steak sausage capicola corned beef ribeye turducken. Frankfurter leberkas pig, pastrami turducken prosciutto doner pork belly tongue ground round kielbasa turkey. Kielbasa ham biltong, salami boudin jowl short ribs. Capicola leberkas frankfurter, boudin swine rump brisket t-bone drumstick ham spare ribs venison strip steak porchetta. Strip steak fatback beef ribs turkey short loin. Flank short ribs hamburger sausage andouille."
-//Console Log because i gotta b sure it workin
-console.log('Port 8000')
+var express = require('express');
+var app = express();
+var path = require('path');
+var port = 8080;
+app.listen(port);
+var echo = [];
 
-//send bacon to app
-app.get('/text', function(req, res){
-	res.json(test)
-})
+//Outputs current port
+console.log('Port: ' + port);
 
-// News XML
-app.get('/News', function(req, res){
+// Baldwin Menu
+app.get('/baldwin', function(req, res){
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	res.sendFile(path.join(__dirname, 'test.xml'))
+	res.sendFile(path.join(__dirname, 'baldwin.xml'));
 })
 
+// Chapel Schedule
 app.get('/chapel', function(req, res){
-	res.sendFile(path.join(__dirname, 'chapelSchedule.xml'))
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.sendFile(path.join(__dirname, 'chapel.xml'));
 })
 
-app.get('/food', function(req, res){
-	res.sendFile(path.join(__dirname, 'baldwinSchedule.xml'))
+// News Sources
+app.get('/athletics', function(req, res){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.sendFile(path.join(__dirname, 'athletics.xml'));
+})
+app.get('/portal', function(req, res){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.sendFile(path.join(__dirname, 'portal.xml'));
+})
+app.get('/president', function(req, res){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.sendFile(path.join(__dirname, 'president.xml'));
+})
+app.get('/sga', function(req, res){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.sendFile(path.join(__dirname, 'sga.xml'));
+})
+app.get('/sojourn', function(req, res){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.sendFile(path.join(__dirname, 'sojourn.xml'));
+})
+app.get('/spectrum', function(req, res){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.sendFile(path.join(__dirname, 'spectrum.xml'));
+})
+
+// Verse of the Day
+app.get('/votd', function(req, res){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.sendFile(path.join(__dirname, 'votd.xml'));
 })
 
