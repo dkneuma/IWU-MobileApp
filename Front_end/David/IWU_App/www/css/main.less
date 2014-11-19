@@ -32,6 +32,7 @@
 /* STYLES */
 html, body {
   background-color: @IWU_OFF-WHITE;
+  /*bg-img(@fountian.jpg) {background-image:url("@{fountain.jpg}");}*/
   font-family: @IWU_LATO;
   color: @IWU_GREY;
   width: @DEVICE_WIDTH;
@@ -114,11 +115,11 @@ html, body {
 
       .card-title {
         margin: 0;
-        text-align: left;
+        text-align: right;
         font-size: (@BASE_SIZE * 3);                                              /* HARD CODED VALUE */
         font-weight: 600;
         line-height: (@BASE_SIZE * 3);                                              /* HARD CODED VALUE */
-        float: left;
+        float: right;
       }
 
       .card-title span{
@@ -153,7 +154,7 @@ html, body {
       .card-img-icon {
         max-width: 30%;
         max-height: (@BASE_SIZE * 9);
-        float: left;
+        float: right;
         margin-right: @BASE_SIZE;
       }
 
@@ -205,5 +206,13 @@ html, body {
         padding: @BASE_SIZE 0;
       }
     }
+  }
+}
+.radio{
+  background: url("../img/main-campus.jpg") no-repeat 50% / cover;
+
+  img{
+    display: block;
+    margin: auto;
   }
 }
