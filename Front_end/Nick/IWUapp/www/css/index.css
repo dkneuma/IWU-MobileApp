@@ -10,6 +10,23 @@ h1 {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+#chapelSpeaker p {
+    opacity: 1;
+    color: #444444;
+    margin: 32px;
+    margin-top: 0;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 48px;
+    padding-top: 32px;
+}
+#chapelSpeaker {
+    background: whitesmoke;
+    background:rgba(255,255,255,0.6);
+    height: 412px;
+    margin: 12px;
+    text-align: center;
+}
 #Chapel {
     background-image: url("../img/chapel.png");     /* from iwuonlineregion.com */
     background-repeat: no-repeat;
@@ -21,6 +38,7 @@ h1 {
     font-size: 32px;
     padding-left: 16px;
     padding-bottom: 10px;
+    margin-bottom: 48px;
 }
 #Chapel span {
     font-weight: 400;
