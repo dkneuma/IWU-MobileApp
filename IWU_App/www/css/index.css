@@ -1,0 +1,139 @@
+html, body {
+    font-family: 'Roboto', sans-serif; line-height:1.2; vertical-align:middle;
+    background-color: #EDEAE8;
+    height: 1632px;
+    width: 1080px;
+}
+h1 {
+    font-size: 60px;
+    font-weight: 200;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#chapelSpeaker p {
+    opacity: 1;
+    color: #444444;
+    margin: 32px;
+    margin-top: 0;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 48px;
+    padding-top: 32px;
+}
+#chapelSpeaker {
+    background: whitesmoke;
+    background:rgba(255,255,255,0.75);
+    margin: 12px;
+    text-align: center;
+}
+#Chapel {
+    background-image: url("../img/chapel.png");     /* from iwuonlineregion.com */
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.78;
+    color: #F5F5F5;
+}
+#Chapel h2 {
+    font-weight: 400;
+    font-size: 32px;
+    padding-left: 16px;
+    padding-bottom: 10px;
+    margin-bottom: 48px;
+}
+#Chapel span {
+    font-weight: 400;
+    font-size: 48px;
+    padding-left: 16px;
+}
+/*.classTime {
+    width: 25%;
+    float: left;
+    font-size: 40px;
+    padding-right: 8px;
+    padding-left: 8px;
+    background-color: whitesmoke;
+}
+.className {
+    width: 75%;
+    float: right;
+    font-size: 40px;
+    padding-right: 8px;
+    padding-left: 8px;
+    background-color: whitesmoke;
+}*/
+#classes {
+    background: whitesmoke;
+    background:rgba(255,255,255,0.75);
+    margin: 12px;
+    text-align: center;
+}
+#classes p {
+    opacity: 1;
+    color: #444444;
+    margin: 32px;
+    margin-top: 0;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 48px;
+    padding-top: 32px;
+}
+#schedule {
+    background-image: url("../img/library.jpg");     /* from iwupresident.com */
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.78;
+    color: #F5F5F5;
+    position: relative;
+}
+#schedule h2 {
+    font-weight: 400;
+    font-size: 40px;
+    padding-left: 16px;
+    padding-bottom: 10px;
+    margin-bottom: 48px;
+}
+
+.card ul {
+    text-align: center;
+    font-size: 32px;
+    padding-top: 44px;
+}
+.card h1 {
+    padding-left: 16px;
+}
+.menu {
+    float: left;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.settings {
+    float: right;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+header h1 {
+    float: left;
+    padding-left: 80px;
+    padding-top: 44px;
+    color: #F5F5F5;
+    font-size: 56px;
+    font-weight: bold;
+}
+header {
+    background-color: #980826;
+    height: 144px;
+    width: 1080px;
+    margin-bottom: 16px;
+}
+.card {
+    font-size: 24px;
+    color: #444444;
+    box-shadow:0 1px 2px #aaa;
+    margin:0 24px 24px;
+    border-radius: 3px;
+    background: white;
+    max-height: 60%;
+    min-height: 576px;
+    overflow: hidden;
+}
+

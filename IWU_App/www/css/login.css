@@ -1,0 +1,67 @@
+html, body {
+    font-family: 'Roboto', sans-serif; line-height:1.2; vertical-align:middle;
+    background-color: #980826;
+    color: #F5F5F5;
+    height: 1776px;
+    width: 1080px;
+}
+a:link {color: #F5F5F5;}
+a:active {color: #F5F5F5;}
+a:visited {color: #F5F5F5;}
+h3 {
+    width: 200px;
+    font-weight: 200;
+}
+img {
+    margin-top: 420px;
+    height: 353px;
+    width: 900px;
+}
+#footer {
+    font-size: 48px;
+    position: absolute;
+    bottom: 0;
+    width: 540px;
+    margin-left: 270px;
+    margin-right: 270px;
+    margin-bottom: 40px;
+}
+.logo {
+    margin-left: 90px;
+    margin-bottom: 90px;
+}
+#username {
+    margin-top: 40px;
+}
+#guestLogin {
+    width: 540px;
+    font-size: 48px;
+    color: #F5F5F5;
+    background:rgba(255,255,255,0);
+    border: 2px solid #F5F5F5;
+    padding: 0;
+}
+#loginButton {
+    width: 540px;
+    font-size: 48px;
+    color: #F5F5F5;
+    float: right;
+    background-color: #444444;
+    border: none;
+    padding: 0;
+}
+.login input {
+    width: 540px;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: 200;
+    padding-left: 16px;
+    padding-bottom: 8px;
+    padding-top: 12px;
+}
+.login {
+    margin-left: 270px;
+    margin-right: 270px;
+}
