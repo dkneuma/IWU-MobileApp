@@ -2,9 +2,10 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <title>Indiana Weslyian University</title>
+    <title>Indiana Wesleyan University</title>
 
     <!-- CSS -->
+
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/flaticon.css">
     <link rel="stylesheet/less" type="text/css"  href="css/main.less" />
@@ -13,96 +14,85 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 
     <!-- JS -->
+    <script src="js/jquery-1.11.1.min.js" type = "text/javascript"></script>
     <!--<script type="text/javascript" src="cordova.js"></script>-->
     <script type="text/javascript" src="js/less-1.7.5.min.js"></script>
+    <!--<script type="text/javascript">
+        var audio = false;
+        function Audio(){
+            audio = !audio;
+            if (audio == true){
+                document.getElementById("PlayPauseButton").src = "PauseButton.png";
+                document.getElementById("audio").innerHTML = '<audio style="height: 28; z-index: 9999;" src="http://primary.moodyradiostream.org/wgnrfm.mp3" type="audio/mp3" autoplay=""> </audio>';
+            }
+            else{
+                document.getElementById("audio").innerHTML = '';
+                document.getElementById("PlayPauseButton").src = "playbutton.png";
+            }
+        }
+
+    </script>-->
 
 </head>
 <body>
-    <section class="header">
-        <a class="header-icon" href="#">
-            <div class="header-menu">
-                <i class="flaticon-menu51"></i>
-            </div>
-        </a>
-        <img class="header-logo" src="img/IWULogoWB.jpg" />
-        <h1 class="header-text">IWU</h1>
-        <a class="header-icon" href="#">
-            <div class="header-reorder">
-                <i class="flaticon-button8"></i>
-            </div>
-        </a>
-    </section>
-    <section class="main-content">
-        <div class="card">
-            <div class="card-top">
-                <h2 class="card-title">Campus <span>News</span></h2>
-                <a href="#">
-                    <div>
-                        <i class="flaticon-button8 card-flaticon"></i>
-                    </div>
-                </a>
-            </div>
-            <div class="card-mid">
-                <a href="#">
-                    <div class="card-news-item">
-                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title">Intercultural Student Services Coffee Talk</h3>
-                        <p class="card-news-date">16 hours ago<br/><span class="card-news-tag">Campus Announcement</span></p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="card-news-item">
-                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title">Wildcats erupt for 5-goal win against Marian</h3>
-                        <p class="card-news-date">12 days ago<br/><span class="card-news-tag">Sojourn</span></p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="card-news-item card-news-item-last">
-                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title">SGA Discussion Panel #2 – Sexuality/LGBTQ Community SGA Discussion Panel #2 – Sexuality/LGBTQ Community</h3> <!-- 148 Max Char -->
-                        <p class="card-news-date">3 months ago<br/><span class="card-news-tag">Campus Announcements</span></p>
-                    </div>
-                </a>
-            </div>
-            <div class="card-bottom">
-                <a class="card-call-to-action" href="#"><h4>More News</h4></a>
-            </div>
+<section class="header">
+    <a class="header-icon" href="#">
+        <div class="header-menu">
+            <i class="flaticon-menu51"></i>
         </div>
-        <div class="card">
-            <div class="card-top">
-                <h2 class="card-title">Test <span>Card</span></h2>
-                <a href="#">
-                    <div>
-                        <i class="flaticon-button8 card-flaticon"></i>
-                    </div>
-                </a>
-            </div>
-            <div class="card-mid">
-                <a href="#">
-                    <div class="card-news-item">
-                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title">This is another test</h3>
-                        <p class="card-news-date">Yesteryear<br/><span class="card-news-tag">Yeah</span></p>
-                    </div>
-                </a>
-            </div>
-            <div class="card-bottom">
-                <a class="card-call-to-action" href="#"><h4>More News</h4></a>
-            </div>
+    </a>
+    <img class="header-logo" src="943fortresslogo.jpg" />
+    <h1 class="header-text">IWU</h1>
+    <a class="header-icon" href="#">
+        <div class="header-reorder">
+            <i class="flaticon-button8"></i>
         </div>
-        <div class="card">
-            <p class="card-title">Lorem ipsum</p>
+    </a>
+</section>
+<section class="main-content">
+    <div class="card radio">
+        <div class="card-top">
+            <h2 class="card-title">94.3 <span>The Fortress</span></h2>
+            <!--<a href="#">
+                <div>
+                    <i class="flaticon-button8 card-flaticon"></i>
+                </div>
+            </a>-->
         </div>
-        <div class="card">
-            <p class="card-title">Lorem ipsum</p>
+        <div class="card-mid" id="PlayPauseButton">
+            <a href="#">
+                <div class="card-news-item">
+                    <img id="PlayPauseButtonImg" src="playbutton.png" alt="playButton" width="20%" height="10%" style="margin-bottom: 24px" >
+                   
+                </div>
+            </a>
         </div>
-        <div class="card">
-            <p class="card-title">Lorem ipsum</p>
+        <script>
+            var audio = false;
+            $("#PlayPauseButton").click(function(){
+
+                audio = !audio;
+                if (audio == true){
+                    document.getElementById("PlayPauseButtonImg").src = "PauseButton.png";
+                    document.getElementById("audio").innerHTML = '<audio style="height: 28; z-index: 9999;" src="http://primary.moodyradiostream.org/wgnrfm.mp3" type="audio/mp3" autoplay=""> </audio>';
+                }
+                else{
+                    document.getElementById("audio").innerHTML = '';
+                    document.getElementById("PlayPauseButtonImg").src = "playbutton.png";
+                }
+            });
+        </script>
+        <div class="card-bottom">
+            <a class="card-call-to-action" href="#"><h4>How do I set a picture up there?</h4></a>
+
         </div>
-        <div class="card">
-            <p class="card-title">Lorem ipsum</p>
-        </div>
-    </section>
+    </div>
+
+    <div class="card">
+
+        <p class="card-title">Lorem ipsum</p>
+    </div>
+</section>
+<div id="audio"></div>
 </body>
 </html>
