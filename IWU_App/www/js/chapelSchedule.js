@@ -1,5 +1,6 @@
 $.ajax({
     type: 'GET',
+    //url: 'http://localhost:8080/chapel',
     url: 'http://levi.cis.indwes.edu:8080/chapel',
     dataType: 'xml',
     success: function (data) {
