@@ -8,7 +8,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
 
     <!-- LESS -->
     <link rel="stylesheet/less" type="text/css" href="css/main.less" />
@@ -19,14 +19,7 @@
     <link rel="stylesheet/less" type="text/css" href="css/baldwin.less" />
 
     <!-- FONTS -->
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
-    <!--
-    <link rel="stylesheet" href="http://use.typekit.net/c/b0ef08/proxima-nova:i4:i7:n4:n7.W0W:N:2,W0Z:N:2,W0V:N:2,W0Y:N:2/d?3bb2a6e53c9684ffdc9a9bf6135b2a629dfd401408a09a37c12b6133c734721526528ed7cc8608f54f66441d67785033b849551fec1f0f16321c2f216f17af0d1089497fb46436b32c2d439641ceb0069b1f4c3cd583ce3adc446c7fcae2e88b0460c3ca84443c2f90ed2c78f4" />
-    <link rel="stylesheet" href="http://use.typekit.net/c/a6cf15/1w;museo-slab,2,SLT:P:i3,QL2:P:i7,QL7:P:n1,SKB:P:n3,VnC:P:n7,QL5:P:n9;proxima-nova,2,b5v:P:i3,b5x:P:i4,b61:P:i7,b5r:P:n1,b5t:P:n3,b5w:P:n4,b5y:P:n6,bBh:P:n7,b62:P:n8,b64:P:n9/d?3bb2a6e53c9684ffdc9a9bf3125b2a62840deb1ee3c3bb406d4109d0af8c68b1d41c32c1f34fc1b1264b929ac3bd49beb0a21f589cbdc545a8806da4a84f1894da37ed07968dc80d68311de93e3509d9b55113707d13d295849dc80bc9ff19fb37d257c018321991d22fcb2eda2ecbab399c5fa03293b1ce27b17171544f216724191eb575acd666be7ec8af576ad0977daf51bf62ccad36c135e879d2ca" />
-    -->
-
-    <!-- JS -->
-    <script type="text/javascript" src="js/less-1.7.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic" />
 
 </head>
 <body>
@@ -34,9 +27,10 @@
         <a class="header-icon" href="#">
             <div class="header-menu">
                 <i class="flaticon-menu51"></i>
+                <!-- WIll have two divs on top of one another. Top div will contain menu items. Bottom div will darken background and onClick will close menu -->
             </div>
         </a>
-        <img class="header-logo" src="img/IWULogoWB.jpg" />
+        <img class="header-logo" src="img/head_two.png" />
         <h1 class="header-text">IWU</h1>
         <a class="header-icon" href="#">
             <div class="header-reorder">
@@ -45,6 +39,23 @@
         </a>
     </section>
     <section class="main-content">
+        <div class="card verse-card">
+            <div class="card-top">
+                <h2 class="card-title">Verse of the <span>Day</span></h2>
+                <a>
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="card-mid">
+                <p class="chapter" id="chapter"></p>
+                <p class="verse" id="verse"></p>
+            </div>
+            <div class="card-bottom">
+                <!--TODO: Add "View In Context" option-->
+            </div>
+        </div>
         <div class="card news-card">
             <div class="card-top">
                 <h2 class="card-title">Campus <span>News</span></h2>
@@ -58,21 +69,21 @@
                 <a href="#">
                     <div class="card-news-item card-news-item-first">
                         <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title">Intercultural Student Services Coffee Talk</h3>
+                        <h3 class="card-secondary-title" id="news-title-0"></h3>
                         <p class="card-news-date">16 hours ago<br/><span class="card-news-tag">Campus Announcement</span></p>
                     </div>
                 </a>
                 <a href="#">
                     <div class="card-news-item">
                         <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title">Wildcats erupt for 5-goal win against Marian</h3>
+                        <h3 class="card-secondary-title" id="news-title-1"></h3>
                         <p class="card-news-date">12 days ago<br/><span class="card-news-tag">Sojourn</span></p>
                     </div>
                 </a>
                 <a href="#">
                     <div class="card-news-item card-news-item-last">
                         <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title">SGA Discussion Panel #2 – Sexuality/LGBTQ Community SGA Discussion Panel #2 – Sexuality/LGBTQ Community</h3>  <!-- 148 Max Char -->
+                        <h3 class="card-secondary-title" id="news-title-2"></h3>
                         <p class="card-news-date">3 months ago<br/><span class="card-news-tag">Campus Announcements</span></p>
                     </div>
                 </a>
@@ -91,15 +102,32 @@
                 </a>
             </div>
             <div class="card-mid">
-
+                <p class="skips"></p>
+                <div class="chapel-carousel">
+                    <div class="item">
+                        <p class="chapel-info" id="speaker-0"></p>
+                        <p class="chapel-info" id="description-0"></p>
+                        <p class="chapel-info" id="date-0"></p>
+                    </div>
+                    <div class="item">
+                        <p class="chapel-info" id="speaker-1"></p>
+                        <p class="chapel-info" id="description-1"></p>
+                        <p class="chapel-info" id="date-1"></p>
+                    </div>
+                    <div class="item">
+                        <p class="chapel-info" id="speaker-2"></p>
+                        <p class="chapel-info" id="description-2"></p>
+                        <p class="chapel-info" id="date-2"></p>
+                    </div>
+                </div>
             </div>
             <div class="card-bottom">
-
+                <!--TODO: Add "Full Chapel Schedule" option-->
             </div>
         </div>
         <div class="card schedule-card">
             <div class="card-top">
-                <h2 class="card-title">Class <span>Schedule</span></h2>
+                <h2 class="card-title">Today's <span>Classes</span></h2>
                 <a href="#">
                     <div class="card-flaticon-container">
                         <i class="flaticon-button8 card-flaticon-ellipse"></i>
@@ -107,12 +135,28 @@
                 </a>
             </div>
             <div class="card-mid">
-                <ul>
-                    <li>10:00am - Chapel</li>
-                    <li>11:15am - CIS346 Internet Programming</li>
-                    <li>1:25pm - HST185 Foundations of Civ to 1648</li>
-                    <li>2:30pm - CIS482 Senior Project</li>
-                </ul>
+                <h3>Monday</h3>
+                <div class="schedule-carousel">
+                    <div class="item">
+                        <p>8:55am</p>
+                        <p>PHE-105-B Badminton</p>
+                    </div>
+                    <div class="item">
+                        <p>11:15am</p>
+                        <p>CIS-346-A Computer Networks Data Communication</p>
+                    </div>
+                    <div class="item">
+                        <p>1:25pm</p>
+                        <p>HST-185-A Foundations of Civ to 1648</p>
+                    </div>
+                    <div class="item">
+                        <p>2:20pm</p>
+                        <p>CIS-482-A Senior Project I</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <!--TODO: Add "Full Schedule" option (if possible)-->
             </div>
         </div>
         <div class="card baldwin-card">
@@ -125,32 +169,80 @@
                 </a>
             </div>
             <div class="card-mid">
-                <a href="">
-                    <div class="card-baldwin-item">
-                        <i class="flaticon-fried6 card-flaticon-baldwin"></i>
-                        <p class="card-secondary-title-small">Breakfast</p>
+                <a>
+                    <div class="card-baldwin-item" id="baldwin-item-0">
+                        <i class="flaticon-fried6 card-flaticon-baldwin card-flaticon-breakfast"></i>
+                        <h3 class="card-secondary-title-small">Breakfast</h3>
+                    </div>
+                    <div class="hidden-content">
+                        <div id="baldwin-carousel-0"></div>
                     </div>
                 </a>
-                <a href="">
-                    <div class="card-baldwin-item">
+                <a>
+                    <div class="card-baldwin-item" id="baldwin-item-1">
                         <i class="flaticon-junk5 card-flaticon-baldwin"></i>
-                        <p class="card-secondary-title-small">Lunch</p>
+                        <h3 class="card-secondary-title-small">Lunch</h3>
+                    </div>
+                    <div class="hidden-content">
+                        <div id="baldwin-carousel-1"></div>
                     </div>
                 </a>
-                <a href="">
-                    <div class="card-baldwin-item card-baldwin-item-last">
+                <a>
+                    <div class="card-baldwin-item card-baldwin-item-last" id="baldwin-item-2">
                         <i class="flaticon-fork4 card-flaticon-baldwin"></i>
-                        <p class="card-secondary-title-small">Dinner</p>
+                        <h3 class="card-secondary-title-small">Dinner</h3>
+                    </div>
+                    <div class="hidden-content">
+                        <div id="baldwin-carousel-2"></div>
                     </div>
                 </a>
             </div>
+            <div class="card-bottom">
+                <!--TODO: Add baldy and wildkitty hours-->
+            </div>
         </div>
         <div class="card radio-card">
-            <h2 class="card-title">Radio Station</h2>
+            <div class="card-top">
+                <h2 class="card-title">The <span>Fortress</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="card-mid">
+                <div id="demo"></div>
+            </div>
+            <div class="card-bottom">
+
+            </div>
         </div>
         <div class="card weather-card">
-            <h2 class="card-title">Weather</h2>
+            <div class="card-top">
+                <h2 class="card-title">Campus <span>Weather</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="card-mid">
+
+            </div>
+            <div class="card-bottom">
+
+            </div>
         </div>
     </section>
+
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/less-1.7.5.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/calls.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+
+
 </body>
 </html>

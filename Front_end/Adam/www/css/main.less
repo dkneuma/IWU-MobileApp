@@ -70,11 +70,40 @@ html, body {
     /* Global card styles */
     .card {
         width: (@DEVICE_WIDTH - (@BASE_SIZE * 3));
-        min-height: (@DEVICE_TITLE_HEIGHT * 3);
+        min-height: (@DEVICE_TITLE_HEIGHT * 2.5);
         margin: (@BASE_SIZE * 3) auto;
         border-radius: 5px;
         background-color: @IWU_WHITE;
 
         .raised-content;
+
+        /* Top of card, includes card title styles and icon styles */
+        .card-top {
+            margin-bottom: (@BASE_SIZE * 1.5);
+
+            .card-title {
+                margin: @BASE_SIZE;
+                text-align: left;
+                font-weight: 600;
+                float: left;
+
+                .font-line-size(@BASE_SIZE * 3);
+            }
+
+            .card-title span {
+                font-weight: 100;
+            }
+
+            .card-flaticon-container{
+                float: right;
+                padding: (@BASE_SIZE * 1.5);
+            }
+
+            .card-flaticon-ellipse:before {
+                color: @IWU_GREY;
+
+                .font-line-size(@BASE_SIZE * 2);
+            }
+        }
     }
 }
