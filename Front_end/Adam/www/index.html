@@ -25,21 +25,16 @@
 <body>
     <section class="header">
         <a class="header-icon" href="#">
-            <div class="header-menu">
+            <div class="header-menu" id="header-hamburger-menu">
                 <i class="flaticon-menu51"></i>
                 <!-- WIll have two divs on top of one another. Top div will contain menu items. Bottom div will darken background and onClick will close menu -->
             </div>
         </a>
         <img class="header-logo" src="img/head_two.png" />
         <h1 class="header-text">IWU</h1>
-        <a class="header-icon" href="#">
-            <div class="header-reorder">
-                <i class="flaticon-button8"></i>
-            </div>
-        </a>
     </section>
     <section class="main-content">
-        <div class="card verse-card">
+        <div class="card verse-card" id="votdTarget">
             <div class="card-top">
                 <h2 class="card-title">Verse of the <span>Day</span></h2>
                 <a>
@@ -56,7 +51,7 @@
                 <!--TODO: Add "View In Context" option-->
             </div>
         </div>
-        <div class="card news-card">
+        <div class="card news-card" id="newsTarget">
             <div class="card-top">
                 <h2 class="card-title">Campus <span>News</span></h2>
                 <a href="#">
@@ -92,7 +87,7 @@
                 <a class="card-call-to-action" href="#"><h4>More News</h4></a>
             </div>
         </div>
-        <div class="card chapel-card">
+        <div class="card chapel-card" id="chapelTarget">
             <div class="card-top">
                 <h2 class="card-title">Chapel</h2>
                 <a href="#">
@@ -125,7 +120,7 @@
                 <!--TODO: Add "Full Chapel Schedule" option-->
             </div>
         </div>
-        <div class="card schedule-card">
+        <div class="card schedule-card" id="scheduleTarget">
             <div class="card-top">
                 <h2 class="card-title">Today's <span>Classes</span></h2>
                 <a href="#">
@@ -159,7 +154,7 @@
                 <!--TODO: Add "Full Schedule" option (if possible)-->
             </div>
         </div>
-        <div class="card baldwin-card">
+        <div class="card baldwin-card" id="baldwinTarget">
             <div class="card-top">
                 <h2 class="card-title">Baldwin <span>Menu</span></h2>
                 <a href="#">
@@ -201,7 +196,7 @@
                 <!--TODO: Add baldy and wildkitty hours-->
             </div>
         </div>
-        <div class="card radio-card">
+        <div class="card radio-card" id="radioTarget">
             <div class="card-top">
                 <h2 class="card-title">The <span>Fortress</span></h2>
                 <a href="#">
@@ -211,13 +206,13 @@
                 </a>
             </div>
             <div class="card-mid">
-                <div id="demo"></div>
+                <div id="radioPlay"><i id="controls" class="flaticon-play43"></i></div>
             </div>
             <div class="card-bottom">
 
             </div>
         </div>
-        <div class="card weather-card">
+        <div class="card weather-card" id="weatherTarget">
             <div class="card-top">
                 <h2 class="card-title">Campus <span>Weather</span></h2>
                 <a href="#">
@@ -238,8 +233,10 @@
 
     <!-- JS -->
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="js/less-1.7.5.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/calls.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
 

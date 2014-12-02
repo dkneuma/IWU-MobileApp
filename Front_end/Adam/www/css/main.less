@@ -18,7 +18,7 @@ html, body {
     background-color: @IWU_RED;
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 1000;
 
     .raised-content;
 
@@ -66,6 +66,32 @@ html, body {
     width: 100%;
     min-height: (@DEVICE_HEIGHT - @DEVICE_TITLE_HEIGHT);
     margin-top: @DEVICE_TITLE_HEIGHT;
+    position: relative;
+
+    /* Hamburger menu styles */
+    .bottom-overlay{
+        z-index: 10;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: @IWU_GREY;
+        opacity: 0.6;
+    }
+    .top-overlay{
+        z-index: 100;
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        margin-left: -@DEVICE_WIDTH;
+
+        .hamburger-item{
+            padding: (@BASE_SIZE * 3);
+            background-color: @IWU_WHITE;
+            border-bottom: 1px solid @IWU_GREY;
+
+            .font-line-size(@BASE_SIZE * 4);
+        }
+    }
 
     /* Global card styles */
     .card {
@@ -74,6 +100,8 @@ html, body {
         margin: (@BASE_SIZE * 3) auto;
         border-radius: 5px;
         background-color: @IWU_WHITE;
+        position: relative;
+        z-index: 0;
 
         .raised-content;
 
