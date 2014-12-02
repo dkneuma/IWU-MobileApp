@@ -20,9 +20,14 @@ newsSource = ["http://www.iwusojourn.com/feed/", "http://www.iwupresident.com/fe
 destination = ["XML/sojourn.xml", "XML/president.xml", "XML/sga.xml", "XML/spectrum.xml", "XML/athletics.xml"]
 //console.log(newsSource.length);
 
-for(var i=0; i<newsSource.length; i++){
-	setTimeout(newsRequest(newsSource[i],destination[i]),20000);
-}
+setInterval(
+	function () {
+		for(var i=0; i<newsSource.length; i++){
+			setTimeout(newsRequest(newsSource[i],destination[i]),20000);
+		}
+		console.log("One Interval")
+	}, 3600000
+);
 
 /**********************************************
 Sending Data
