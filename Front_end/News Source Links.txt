@@ -1,0 +1,8 @@
+News Sources
+------------
+
+Sojourn: http://www.iwusojourn.com/feed/
+President: http://www.iwupresident.com/feed/
+SGA Blog: http://www.iwusga.com/feed/
+Spectrum: http://www.iwuspectrum.com/feed/
+Athletics: http://www.iwuwildcats.com/rss.php
