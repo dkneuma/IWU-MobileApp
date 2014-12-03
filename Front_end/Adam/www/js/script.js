@@ -37,7 +37,7 @@ function baldwinBreakfast(){
         $("#baldwin-carousel-0").owlCarousel({
             items:      2,
             nav:        false,
-            dots:       true
+            dots:       false
         });
     });
 }
@@ -48,7 +48,7 @@ function baldwinLunch(){
         $("#baldwin-carousel-1").owlCarousel({
             items:      2,
             nav:        false,
-            dots:       true
+            dots:       false
         });
     });
 }
@@ -59,7 +59,7 @@ function baldwinDinner(){
         $("#baldwin-carousel-2").owlCarousel({
             items:      2,
             nav:        false,
-            dots:       true
+            dots:       false
         });
     });
 }

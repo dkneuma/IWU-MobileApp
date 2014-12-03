@@ -4,7 +4,7 @@
 /* Background styles */
 html, body {
     background-color: @IWU_OFF-WHITE;
-    font-family: @LATO;
+    font-family: @OSANS;
     color: @IWU_GREY;
     width: @DEVICE_WIDTH;
     min-height: (@DEVICE_HEIGHT - @DEVICE_TITLE_HEIGHT);
@@ -110,12 +110,14 @@ html, body {
             margin-bottom: (@BASE_SIZE * 1.5);
 
             .card-title {
-                margin: @BASE_SIZE;
                 text-align: left;
-                font-weight: 600;
+                font-weight: 300;
                 float: left;
+                padding-left: 16px;
+                padding-top: 20px;
+                padding-bottom: 20px;
 
-                .font-line-size(@BASE_SIZE * 3);
+                .font-line-size(@BASE_SIZE * 3.75);
             }
 
             .card-title span {

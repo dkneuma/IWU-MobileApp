@@ -1,0 +1,47 @@
+.swipingArea {
+    background: whitesmoke;
+    background:rgba(255,255,255,0.75);
+    margin: 12px;
+    text-align: center;
+}
+.swipingArea p {
+    opacity: 1;
+    color: #444444;
+    margin: 32px;
+    margin-top: 0;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 48px;
+    padding-top: 32px;
+}
+.schedule-card {
+    background-image: url("../img/library.jpg");     /* from iwupresident.com */
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.78;
+    color: #F5F5F5;
+    position: relative;
+}
+.schedule-card h2 {
+    font-weight: 400;
+    font-size: 40px;
+    padding-left: 16px;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+/*
+.card h1 {
+    padding-left: 16px;
+}
+.card {
+    font-size: 24px;
+    color: #444444;
+    box-shadow:0 1px 2px #aaa;
+    margin:0 24px 24px;
+    border-radius: 3px;
+    background: white;
+    max-height: 60%;
+    min-height: 576px;
+    overflow: hidden;
+}
+*/

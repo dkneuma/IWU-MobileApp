@@ -18,14 +18,14 @@ $(document).ready(function() {
     $(".chapel-carousel").owlCarousel({
         items:      1,
         nav:        false,
-        dots:       true
+        dots:       false
     });
 
     //Schedule Owl Carousel
     $(".schedule-carousel").owlCarousel({
         items:      1,
         nav:        false,
-        dots:       true
+        dots:       false
     });
 
     //Baldwin onClick functions / Owl Carousels (very inefficient and needs work)

@@ -5,7 +5,7 @@
 /*function news() {
     $.ajax({
         type: 'GET',
-        url: 'http://192.168.1.106:8080/portal',
+        url: 'http://levi.cis.indwes.edu:8080/portal',
         dataType: 'xml',
         success: function (data) {
 
@@ -30,7 +30,7 @@
 function votd(){
     $.ajax({
         type: 'GET',
-        url: 'http://192.168.1.106:8080/votd',
+        url: 'http://levi.cis.indwes.edu:8080/votd',
         dataType: 'xml',
         success: function (data) {
             $(data).find('item').each(function () {
@@ -57,7 +57,7 @@ function votd(){
 function chapel(){
     $.ajax({
         type: 'GET',
-        url: 'http://192.168.1.106:8080/chapel',
+        url: 'http://levi.cis.indwes.edu:8080/chapel',
         dataType: 'xml',
         success: function (data) {
 
@@ -85,7 +85,7 @@ function chapel(){
 function baldwin(){
     $.ajax({
         type: 'GET',
-        url: 'http://192.168.1.106:8080/baldwin',
+        url: 'http://levi.cis.indwes.edu:8080/baldwin',
         dataType: 'xml',
         success: function (data) {
 
@@ -137,7 +137,7 @@ function baldwin(){
 function currentWeather(){
     $.ajax({
         type: 'GET',
-        url: 'http://192.168.1.106:8080/weather-current',
+        url: 'http://levi.cis.indwes.edu:8080/weather-current',
         dataType: 'xml',
         success: function (data) {
             var temp = $(data).find('temperature').attr('value');
@@ -152,7 +152,7 @@ function currentWeather(){
 function futureWeather(){
     $.ajax({
         type: 'GET',
-        url: 'http://192.168.1.106:8080/weather-future',
+        url: 'http://levi.cis.indwes.edu:8080/weather-future',
         dataType: 'xml',
         success: function (data) {
             var counter = 0;
