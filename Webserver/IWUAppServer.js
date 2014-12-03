@@ -6,6 +6,9 @@ app.listen(port);
 var echo = [];
 var request = require('request');
 var fs = require('fs');
+var $ = require('jquery');
+var jsdom = require("jsdom");
+var window = jsdom.jsdom().parentWindow;
 var newsSource;
 var destination;
 
@@ -26,7 +29,8 @@ setInterval(
 			setTimeout(newsRequest(newsSource[i],destination[i]),20000);
 		}
 		console.log("One Interval")
-	}, 3600000
+		sortNews();
+	}, 10000//3600000
 );
 
 /**********************************************
@@ -119,4 +123,26 @@ function newsRequest(url, file) {
 			//console.log(response.statusCode);
 		}
 	})
-}
+};
+
+function sortNews(){
+	var newsString = (fs.readFileSync('XML/sojourn.xml').toString() + "\n" + fs.readFileSync('XML/athletics.xml').toString() + "\n" + fs.readFileSync('XML/sga.xml').toString() + "\n" + fs.readFileSync('XML/president.xml').toString() + "\n" + fs.readFileSync('XML/spectrum.xml').toString());
+	fs.writeFile('XML/news.xml',newsString);
+
+	/*$('XML/news.xml').find('rss').each(function(){
+		console.log('runs');
+	});*/
+
+	jsdom.jQueryify(window, "http://code.jquery.com/jquery.js", function () {
+  	var $ = window.$;
+
+		console.log('inside window');
+
+		$(newsString).find('rss').each(function(){
+			console.log('runs');
+		});
+
+	});
+
+
+};
