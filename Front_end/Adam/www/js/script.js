@@ -65,23 +65,15 @@ function baldwinDinner(){
 }
 
 // Radio
-/*function radio(){
-    var media = new Media('http://thefortress.indwes.edu:8000/listen.pls', null, mediaError());
+function radio(){
     $('#radioPlay').click(function(){
         $('#radioPlay').toggleClass('radio-start');
         if($('#radioPlay').hasClass('radio-start') == true){
             $('#controls').removeClass('flaticon-play43').addClass('flaticon-pause27');
-            media.play();
         }
         else{
             $('#controls').removeClass('flaticon-pause27').addClass('flaticon-play43');
-            media.stop();
         }
     });
 
 }
-
-function mediaError(e){
-    alert('Media Error');
-    alert(JSON.stringify(e));
-}*/

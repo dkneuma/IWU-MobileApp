@@ -6,11 +6,11 @@
 $(document).ready(function() {
 
     // Ajax
-    portal();
+    //news();
     votd();
     chapel();
     baldwin();
-    //radio();
+    radio();
     currentWeather();
     futureWeather();
 

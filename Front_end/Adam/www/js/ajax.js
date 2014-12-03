@@ -2,11 +2,7 @@
  * TODO: Fix onError Functions
  * TODO: Optimize Code */
 
-function news(){
-
-}
-
-function portal() {
+/*function news() {
     $.ajax({
         type: 'GET',
         url: 'http://192.168.1.106:8080/portal',
@@ -30,7 +26,7 @@ function portal() {
             console.log('Portal Ajax Error');
         }
     });
-}
+}*/
 function votd(){
     $.ajax({
         type: 'GET',
