@@ -1,103 +1,285 @@
-<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/flaticon.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,100italic,100,400italic,500,500italic,700italic,700' rel='stylesheet' type='text/css'>
-    <title>IWU Home</title>
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/chapelSchedule.js"></script>
-    <script src="js/owl.carousel.js"></script>
-    <!--<script src="js/functionCalls.js"></script>-->
+
+    <!-- Sets width/height to device width/height, removes ability to zoom, sets dpi to device dpi -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Indiana Wesleyan University</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+
+    <!-- LESS -->
+    <link rel="stylesheet/less" type="text/css" href="css/main.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/flaticon.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/votd.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/news.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/chapel.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/schedule.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/baldwin.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/radio.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/weather.less" />
+
+    <!-- FONTS -->
+    <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' />
 
 </head>
-
 <body>
-
-<header>
-    <div class="menu">
-        <a href="menu.html"><img src="img/menuwhite.png" alt="menu"></a>
-    </div>
-
-    <h1>Indiana Wesleyan University</h1>
-
-    <div class="settings">
-        <a href="settings.html"><img src="img/settingswhite.png" alt="settings"></a>
-    </div>
-</header>
-
-<div class="card" id="schedule">      <!--shows class schedule for current day-->
-    <h1>Class Schedule</h1>
-    <h2>Monday</h2>
-    <div id="classes">
-        <div class="owl-carousel">
-            <div class="item">
-                <p>8:55am</p>
-                <p>PHE-105-B Badminton</p>
+    <section class="header">
+        <a class="header-icon" href="#">
+            <div class="header-menu" id="header-hamburger-menu">
+                <i class="flaticon-menu51"></i>
+                <!-- WIll have two divs on top of one another. Top div will contain menu items. Bottom div will darken background and onClick will close menu -->
             </div>
-            <div class="item">
-                <p>11:15am</p>
-                <p>CIS-346-A Computer Networks Data Communication</p>
+        </a>
+        <img class="header-logo" src="img/head_two.png" />
+        <h1 class="header-text">IWU</h1>
+    </section>
+    <section class="main-content">
+        <div class="card verse-card" id="votdTarget">
+            <div class="card-top">
+                <h2 class="card-title">Verse of the <span>Day</span></h2>
+                <a>
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
             </div>
-            <div class="item">
-                <p>1:25pm</p>
-                <p>HST-185-A Foundations of Civ to 1648</p>
+            <div class="card-mid">
+                <div class="wrapper">
+                    <p class="verse" id="verse"></p>
+                    <p class="chapter" id="chapter"></p>
+                </div>
             </div>
-            <div class="item">
-                <p>2:20pm</p>
-                <p>CIS-482-A Senior Project I</p>
+            <div class="card-bottom">
+                <!--TODO: Add "View In Context" option-->
             </div>
         </div>
-    </div>
-</div>
-
-<div class="card" id="Weather">
-    <h1>Marion</h1>
-        <div>
-
+        <div class="card news-card" id="newsTarget">
+            <div class="card-top">
+                <h2 class="card-title">Campus <span>News</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="card-mid">
+                <div class="wrapper">
+                    <div class="news-carousel">
+                        <div class="item">
+                            <h3 class="secondary-title" id="news-title-0">Defense Keys Women’s Basketball Blowout Win at Grace</h3>
+                            <p class="description" id="news-description-0">WINONA LAKE, Ind. -- Grace (Ind.) struggled all evening to answer the Indiana Wesleyan University women&rsquo;s basketball defensive pressure on Wednesday night in...</p>
+                            <p class="tag" id="news-tags-0">IWU Athletics: Women's Basketball</p>
+                            <p class="date" id="news-date-0">12 hours ago</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="secondary-title" id="news-title-1">Daniel McMasters: IWU’s biggest sports fan</h3>
+                            <p class="description" id="news-description-1">Think you’re a big Indiana Wesleyan University sports fan? Think again. Daniel McMasters (sr) aims to attend every IWU home sports game - for every sport. He’s collected every program...</p>
+                            <p class="tag" id="news-tags-1">The Sojourn</p>
+                            <p class="date" id="news-date-1">14 hours ago</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="secondary-title" id="news-title-2">Ferguson: ‘A time to pray for the healing of our land’</h3>
+                            <p class="description" id="news-description-2">It is one of our nation’s most endearing qualities that when disaster strikes, we reach out to help. We pray. We go. We provide shelter, food and care. We rebuild. Then we...</p>
+                            <p class="tag" id="news-tags-2">The President's Blog</p>
+                            <p class="date" id="news-date-2">2 days ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <!--TODO: Add "More news" or "Next News item" option-->
+            </div>
         </div>
-</div>
-
-<div class="card" id="Chapel">
-    <h1>Chapel</h1>
-    <h2>Skips Remaining:<span>4</span></h2>     <!-- will have live data -->
-    <div id="chapelSpeaker">
-        <div class="owl-carousel">
-            <div class="item">
-                <p id="speaker-0"></p>
-                <p id="description-0"></p>
-                <p id="date-0"></p>
+        <div class="card chapel-card" id="chapelTarget">
+            <div class="card-top">
+                <h1 class="card-title">Chapel</h1>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
             </div>
-            <div class="item">
-                <p id="speaker-1"></p>
-                <p id="description-1"></p>
-                <p id="date-1"></p>
+            <div class="card-mid">
+                <h2 class="skips">Skips Remaining:<span>4</span></h2>
+                <div class="wrapper">
+                    <div class="chapel-carousel">
+                        <div class="item">
+                            <p class="chapel-info" id="speaker-0"></p>
+                            <p class="chapel-info" id="description-0"></p>
+                            <p class="chapel-info" id="date-0"></p>
+                        </div>
+                        <div class="item">
+                            <p class="chapel-info" id="speaker-1"></p>
+                            <p class="chapel-info" id="description-1"></p>
+                            <p class="chapel-info" id="date-1"></p>
+                        </div>
+                        <div class="item">
+                            <p class="chapel-info" id="speaker-2"></p>
+                            <p class="chapel-info" id="description-2"></p>
+                            <p class="chapel-info" id="date-2"></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="item">
-                <p id="speaker-2"></p>
-                <p id="description-2"></p>
-                <p id="date-2"></p>
+            <div class="card-bottom">
+                <!--TODO: Add "Full Chapel Schedule" option-->
             </div>
         </div>
-    </div>
-</div>
+        <div class="card schedule-card" id="scheduleTarget">
+            <div class="card-top">
+                <h1 class="card-title">Today's Classes</h1>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="card-mid">
+                <h2 class="schedule-day" id="scheduleDay">Monday</h2>
+                <div class="wrapper">
+                    <div class="schedule-carousel">
+                        <div class="item">
+                            <p class="class-info">8:55am</p>
+                            <p class="class-info">PHE-105-B Badminton</p>
+                        </div>
+                        <div class="item">
+                            <p class="class-info">11:15am</p>
+                            <p class="class-info">CIS-346-A Computer Networks Data Communication</p>
+                        </div>
+                        <div class="item">
+                            <p class="class-info">1:25pm</p>
+                            <p class="class-info">HST-185-A Foundations of Civ to 1648</p>
+                        </div>
+                        <div class="item">
+                            <p class="class-info">2:20pm</p>
+                            <p class="class-info">CIS-482-A Senior Project I</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <!--TODO: Add "Full Schedule" option (if possible)-->
+            </div>
+        </div>
+        <div class="card baldwin-card" id="baldwinTarget">
+            <div class="card-top">
+                <h2 class="card-title">Baldwin <span>Menu</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="card-mid">
+                <a>
+                    <div class="card-baldwin-item" id="baldwin-item-0">
+                        <i class="flaticon-fried6 card-flaticon-baldwin card-flaticon-breakfast"></i>
+                        <h3 class="card-secondary-title-small">Breakfast</h3>
+                    </div>
+                    <div class="hidden-content">
+                        <div id="baldwin-carousel-0"></div>
+                    </div>
+                </a>
+                <a>
+                    <div class="card-baldwin-item" id="baldwin-item-1">
+                        <i class="flaticon-junk5 card-flaticon-baldwin"></i>
+                        <h3 class="card-secondary-title-small">Lunch</h3>
+                    </div>
+                    <div class="hidden-content">
+                        <div id="baldwin-carousel-1"></div>
+                    </div>
+                </a>
+                <a>
+                    <div class="card-baldwin-item card-baldwin-item-last" id="baldwin-item-2">
+                        <i class="flaticon-fork4 card-flaticon-baldwin"></i>
+                        <h3 class="card-secondary-title-small">Dinner</h3>
+                    </div>
+                    <div class="hidden-content">
+                        <div id="baldwin-carousel-2"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="card-bottom">
+                <!--TODO: Add baldy and wildkitty hours-->
+            </div>
+        </div>
+        <div class="card radio-card" id="radioTarget">
+            <div class="card-top">
+                <h2 class="card-title">The <span>Fortress</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="card-mid">
+                <div class="wrapper" id="radioPlay">
+                    <i id="controls" class="flaticon-play43">
+                        <audio id="radioPlayer" src="http://primary.moodyradiostream.org/wgnrfm.mp3"></audio>
+                    </i>
+                </div>
+            </div>
+            <div class="card-bottom">
 
-<div class="card">
-    <h1>Bacon ipsum dolor sit amet jerky pork belly bacon, pork loin tri-tip frankfurter turkey leberkas tenderloin cow bresaola hamburger beef ribs meatloaf. Tri-tip leberkas prosciutto landjaeger salami ribeye. Ribeye tenderloin biltong rump, brisket jowl sirloin corned beef. Corned beef jerky pork chop meatloaf. Tongue tri-tip pastrami short loin, short ribs bacon landjaeger ham hock sausage prosciutto porchetta spare ribs capicola biltong filet mignon. Fatback meatball tongue, sausage boudin hamburger ground round chicken drumstick spare ribs short loin swine. Ground round brisket kevin tenderloin drumstick doner turducken prosciutto pork loin meatball jowl.
+            </div>
+        </div>
+        <div class="card weather-card" id="weatherTarget">
+            <div class="card-top">
+                <h2 class="card-title">Campus <span>Weather</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="card-mid">
+                <div class="wrapper">
+                    <div class="current-weather-wrapper">
+                        <p class="current-weather" id="currentTemp"></p>
+                    </div>
+                    <div class="weather-carousel">
+                        <div class="item">
+                            <p class="day" id="day-0">Mon</p>
+                            <p class="temp" id="temp-0"></p>
+                        </div>
+                        <div class="item">
+                            <p class="day" id="day-1">Tues</p>
+                            <p class="temp" id="temp-1"></p>
+                        </div>
+                        <div class="item">
+                            <p class="day" id="day-2">Wed</p>
+                            <p class="temp" id="temp-2"></p>
+                        </div>
+                        <div class="item">
+                            <p class="day" id="day-3">Thur</p>
+                            <p class="temp" id="temp-3"></p>
+                        </div>
+                        <div class="item">
+                            <p class="day" id="day-4">Fri</p>
+                            <p class="temp" id="temp-4"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bottom">
 
-        Spare ribs ham hock pastrami meatball rump, flank salami andouille tongue short loin strip steak t-bone. Rump ham hock tri-tip frankfurter ground round, short ribs chuck leberkas pork chop salami filet mignon t-bone. Short ribs ham venison tri-tip pork ball tip hamburger cow swine sausage ground round meatloaf beef ribs. Meatball bresaola beef cow swine. Andouille salami hamburger doner ground round jerky filet mignon beef ribs. Andouille cow hamburger, porchetta tenderloin pork kevin ground round. Beef sausage hamburger flank, prosciutto venison kielbasa chicken pig fatback.</h1>
-</div>
-<h1><a href="login.html">login</a></h1>
-<!--<div>Icons made by Yannick, Rami McMin, Google from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>         is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>-->
-<script>
-    $('.owl-carousel').owlCarousel({
-        items:1,
-        dots: false
-    });
-</script>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="js/less-1.7.5.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/calls.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+
+
 </body>
 </html>

@@ -4,39 +4,40 @@
 /* Wrapper class styles */
 .chapel-card {
     background: url("../img/chapel.png") no-repeat 25% / cover;
-
-    /* Top of card, includes card title styles and icon styles */
-    .card-top {
-        overflow: hidden;
-        margin-bottom: (@BASE_SIZE * 2);
-        padding: @BASE_SIZE;
-
-        .card-title {
-            margin: 0;
-            text-align: left;
-            font-weight: 100;
-            color: @IWU_WHITE;
-            float: left;
-
-            .font-line-size(@BASE_SIZE * 3);
-        }
-
-        .card-flaticon-container{
-            float: right;
-            padding: (@BASE_SIZE * 1.5);
-        }
-
-        .card-flaticon-ellipse:before {
-            color: @IWU_GREY;
-
-            .font-line-size(@BASE_SIZE * 2);
-        }
-    }
+    color: @IWU_WHITE;
 
     /* Middle of card styles */
     .card-mid {
         overflow: hidden;
         padding: @BASE_SIZE;
-    }
 
+        .skips{
+            font-weight: 400;
+            padding-left: @BASE_SIZE;
+            padding-bottom: (@BASE_SIZE * 0.75);
+
+            .font-line-size (@BASE_SIZE * 2);
+
+            span{
+                font-size: (@BASE_SIZE * 3);
+                padding-left: @BASE_SIZE;
+            }
+        }
+
+        .wrapper{
+            background:rgba(255,255,255,0.75);
+            margin: (@BASE_SIZE * 0.75);
+            text-align: center;
+
+            .chapel-info{
+                opacity: 1;
+                color: @IWU_GREY;
+                padding: (@BASE_SIZE * 1.5);
+                margin: 0;
+                font-weight: 400;
+
+                .font-line-size (@BASE_SIZE * 3);
+            }
+        }
+    }
 }

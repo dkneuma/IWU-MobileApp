@@ -1,0 +1,41 @@
+/* Import list of variables and mixins */
+@import "var-mix.less";
+
+/* Wrapper class styles */
+.verse-card {
+    background: url("../img/chapel_2.jpg") no-repeat 25% / cover;
+    color: @IWU_WHITE;
+
+    /* Middle of card styles */
+    .card-mid {
+        overflow: hidden;
+        padding: @BASE_SIZE;
+
+        .wrapper{
+            background: rgba(255,255,255,0.75);
+            margin: (@BASE_SIZE * 0.75);
+            text-align: center;
+
+            .verse{
+                opacity: 1;
+                color: @IWU_GREY;
+                padding: (@BASE_SIZE * 1.5);
+                margin: 0;
+                font-weight: 300;
+                line-height: (@BASE_SIZE * 2.5) !important;
+
+                .font-line-size (@BASE_SIZE * 2);
+            }
+            .chapter{
+                opacity: 1;
+                color: @IWU_GREY;
+                padding: 0 (@BASE_SIZE * 1.5) (@BASE_SIZE * 1.5);
+                margin: 0;
+                text-align: right;
+
+                .font-line-size (@BASE_SIZE * 1.75);
+            }
+        }
+    }
+
+}
