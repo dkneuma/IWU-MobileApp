@@ -14,21 +14,28 @@ $(document).ready(function() {
     currentWeather();
     futureWeather();
 
-    //Chapel Owl Carousel
+    // Chapel Owl Carousel
     $(".chapel-carousel").owlCarousel({
         items:      1,
         nav:        false,
         dots:       false
     });
 
-    //Schedule Owl Carousel
+    // Schedule Owl Carousel
     $(".schedule-carousel").owlCarousel({
         items:      1,
         nav:        false,
         dots:       false
     });
 
-    //Baldwin onClick functions / Owl Carousels (very inefficient and needs work)
+    // News Owl Carousel
+    $(".news-carousel").owlCarousel({
+        items:      1,
+        nav:        false,
+        dots:       false
+    });
+
+    // Baldwin onClick functions / Owl Carousels (very inefficient and needs work)
     $("#baldwin-item-0").click(function() {
         baldwinBreakfast()
     });
@@ -40,7 +47,7 @@ $(document).ready(function() {
     });
 
 
-    //Hamburger menu
+    // Hamburger menu
     $('#header-hamburger-menu').click(function(){
         if($('.bottom-overlay').length){
             hamburgerClose();

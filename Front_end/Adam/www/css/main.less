@@ -75,14 +75,13 @@ html, body {
         width: 100%;
         height: 100%;
         background-color: @IWU_GREY;
-        opacity: 0.25;
+        opacity: 0.6;
     }
     .top-overlay{
         z-index: 100;
         position: absolute;
         width: 80%;
         height: 100%;
-        min-height: 100%;
         margin-left: -@DEVICE_WIDTH;
 
         .menu-item:link{
@@ -108,7 +107,7 @@ html, body {
     /* Global card styles */
     .card {
         width: (@DEVICE_WIDTH - (@BASE_SIZE * 3));
-        min-height: (@DEVICE_TITLE_HEIGHT * 2.5);
+        /*min-height: (@DEVICE_TITLE_HEIGHT * 2.5);*/
         margin: (@BASE_SIZE * 3) auto;
         border-radius: 5px;
         background-color: @IWU_WHITE;
@@ -142,7 +141,7 @@ html, body {
             }
 
             .card-flaticon-ellipse:before {
-                color: @IWU_GREY;
+                color: @IWU_WHITE;
 
                 .font-line-size(@BASE_SIZE * 2);
             }

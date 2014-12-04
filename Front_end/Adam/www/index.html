@@ -9,16 +9,17 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
-    <link rel="stylesheet" type="text/css" href="css/chapel.css">
-    <link rel="stylesheet" type="text/css" href="css/schedule.css">
 
     <!-- LESS -->
     <link rel="stylesheet/less" type="text/css" href="css/main.less" />
     <link rel="stylesheet/less" type="text/css" href="css/flaticon.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/votd.less" />
     <link rel="stylesheet/less" type="text/css" href="css/news.less" />
     <link rel="stylesheet/less" type="text/css" href="css/chapel.less" />
     <link rel="stylesheet/less" type="text/css" href="css/schedule.less" />
     <link rel="stylesheet/less" type="text/css" href="css/baldwin.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/radio.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/weather.less" />
 
     <!-- FONTS -->
     <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' />
@@ -46,8 +47,10 @@
                 </a>
             </div>
             <div class="card-mid">
-                <p class="chapter" id="chapter"></p>
-                <p class="verse" id="verse"></p>
+                <div class="wrapper">
+                    <p class="verse" id="verse"></p>
+                    <p class="chapter" id="chapter"></p>
+                </div>
             </div>
             <div class="card-bottom">
                 <!--TODO: Add "View In Context" option-->
@@ -63,30 +66,31 @@
                 </a>
             </div>
             <div class="card-mid">
-                <a href="#">
-                    <div class="card-news-item card-news-item-first">
-                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title" id="news-title-0">Leadership Fair - TODAY</h3>
-                        <p class="card-news-date">16 hours ago<br/><span class="card-news-tag">Campus Announcement</span></p>
+                <div class="wrapper">
+                    <div class="news-carousel">
+                        <div class="item">
+                            <h3 class="secondary-title" id="news-title-0">Defense Keys Women’s Basketball Blowout Win at Grace</h3>
+                            <p class="description" id="news-description-0">WINONA LAKE, Ind. -- Grace (Ind.) struggled all evening to answer the Indiana Wesleyan University women&rsquo;s basketball defensive pressure on Wednesday night in...</p>
+                            <p class="date" id="news-date-0">12 hours ago</p>
+                            <p class="tag" id="news-tags-0">IWU Athletics: Women's Basketball</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="secondary-title" id="news-title-1">Daniel McMasters: IWU’s biggest sports fan</h3>
+                            <p class="description" id="news-description-1">Think you’re a big Indiana Wesleyan University sports fan? Think again. Daniel McMasters (sr) aims to attend every IWU home sports game - for every sport. He’s collected every program...</p>
+                            <p class="date" id="news-date-1">14 hours ago</p>
+                            <p class="tag" id="news-tags-1">The Sojourn</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="secondary-title" id="news-title-2">Ferguson: ‘A time to pray for the healing of our land’</h3>
+                            <p class="description" id="news-description-2">It is one of our nation’s most endearing qualities that when disaster strikes, we reach out to help. We pray. We go. We provide shelter, food and care. We rebuild. Then we...</p>
+                            <p class="date" id="news-date-2">2 days ago</p>
+                            <p class="tag" id="news-tags-2">The President's Blog</p>
+                        </div>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="card-news-item">
-                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title" id="news-title-1">DO I CARE</h3>
-                        <p class="card-news-date">12 days ago<br/><span class="card-news-tag">Sojourn</span></p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="card-news-item card-news-item-last">
-                        <img class="card-img-icon" src="img/IWULogoWB.jpg" />
-                        <h3 class="card-secondary-title" id="news-title-2">NO AJAX NO!!!</h3>
-                        <p class="card-news-date">3 months ago<br/><span class="card-news-tag">Campus Announcements</span></p>
-                    </div>
-                </a>
+                </div>
             </div>
             <div class="card-bottom">
-                <a class="card-call-to-action" href="#"><h4>More News</h4></a>
+                <!--TODO: Add "More news" or "Next News item" option-->
             </div>
         </div>
         <div class="card chapel-card" id="chapelTarget">
@@ -100,7 +104,7 @@
             </div>
             <div class="card-mid">
                 <h2 class="skips">Skips Remaining:<span>4</span></h2>
-                <div class="swipingArea">
+                <div class="wrapper">
                     <div class="chapel-carousel">
                         <div class="item">
                             <p class="chapel-info" id="speaker-0"></p>
@@ -134,26 +138,26 @@
                 </a>
             </div>
             <div class="card-mid">
-                <h2>Monday</h2>
-                <div class="swipingArea">
+                <h2 class="schedule-day" id="scheduleDay">Monday</h2>
+                <div class="wrapper">
                     <div class="schedule-carousel">
                         <div class="item">
-                            <p>8:55am</p>
-                            <p>PHE-105-B Badminton</p>
+                            <p class="class-info">8:55am</p>
+                            <p class="class-info">PHE-105-B Badminton</p>
                         </div>
                         <div class="item">
-                            <p>11:15am</p>
-                            <p>CIS-346-A Computer Networks Data Communication</p>
+                            <p class="class-info">11:15am</p>
+                            <p class="class-info">CIS-346-A Computer Networks Data Communication</p>
                         </div>
                         <div class="item">
-                            <p>1:25pm</p>
-                            <p>HST-185-A Foundations of Civ to 1648</p>
+                            <p class="class-info">1:25pm</p>
+                            <p class="class-info">HST-185-A Foundations of Civ to 1648</p>
                         </div>
                         <div class="item">
-                            <p>2:20pm</p>
-                            <p>CIS-482-A Senior Project I</p>
+                            <p class="class-info">2:20pm</p>
+                            <p class="class-info">CIS-482-A Senior Project I</p>
                         </div>
-                </div>
+                    </div>
                 </div>
             </div>
             <div class="card-bottom">
@@ -212,7 +216,11 @@
                 </a>
             </div>
             <div class="card-mid">
-                <div id="radioPlay"><i id="controls" class="flaticon-play43"></i></div>
+                <div class="wrapper" id="radioPlay">
+                    <i id="controls" class="flaticon-play43">
+                        <audio id="radioPlayer" src="http://primary.moodyradiostream.org/wgnrfm.mp3"></audio>
+                    </i>
+                </div>
             </div>
             <div class="card-bottom">
 

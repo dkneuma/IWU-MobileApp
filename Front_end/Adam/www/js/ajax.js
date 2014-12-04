@@ -111,13 +111,13 @@ function baldwin(){
                     var name = $(this).children('name').text();
 
                     $(path).append('<div class="item"></div>');
-                    $(path + ' div.item:last-of-type').append('<h4>' + name + '</h4>');
+                    $(path + ' div.item:last-of-type').append('<h4 class="baldwin-line">' + name + '</h4>');
                     $(path + ' div.item:last-of-type').append('<ul></ul>');
 
                     $(this).children('food').each(function(){
                         var food = $(this).text();
 
-                        $(path + ' div.item:last-of-type ul').append('<li>' + food + '</li>');
+                        $(path + ' div.item:last-of-type ul').append('<li class="food-item">' + food + '</li>');
                     });
                 });
 

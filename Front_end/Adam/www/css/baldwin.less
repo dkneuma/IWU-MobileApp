@@ -3,52 +3,67 @@
 
 /* Wrapper class styles */
 .baldwin-card {
+    background: url("../img/baldwin.jpg") no-repeat 25% / cover;
+    color: @IWU_WHITE;
 
     /* Middle of card styles */
     .card-mid {
         overflow: hidden;
         padding: @BASE_SIZE;
-    }
 
-    /* Baldwin menu option styles */
-    .card-baldwin-item{
-        overflow: hidden;
-        position: relative;
-        width: 33.33333%;
-        float: left;
-        text-align: center;
-        border-right: 2px solid @IWU_BLUE;
-        padding: (@BASE_SIZE * 1.5) 0;
-
-        .card-flaticon-baldwin:before{
+        /* Baldwin menu option styles */
+        .card-baldwin-item{
             color: @IWU_GREY;
-            .font-line-size(@BASE_SIZE * 4);
+            background: rgba(255,255,255,0.75);
+            overflow: hidden;
+            position: relative;
+            width: 30%;
+            float: left;
+            text-align: center;
+            padding: (@BASE_SIZE * 3) 0;
+            margin-left: 2.5%;
+
+            /* TODO: Fix percentage margin */
+
+            .card-flaticon-baldwin:before{
+
+                .font-line-size(@BASE_SIZE * 6);
+            }
+            .card-flaticon-breakfast:before{
+                line-height: (@BASE_SIZE * 6) !important;
+
+                .font-line-size(@BASE_SIZE * 7.25);
+            }
+            .card-secondary-title-small{
+                padding-top: (@BASE_SIZE * 0.5);
+                font-weight: 300;
+
+                .font-line-size(@BASE_SIZE * 2.5);
+            }
         }
-        .card-flaticon-breakfast:before{
-            line-height: (@BASE_SIZE * 4) !important;
-            .font-line-size(@BASE_SIZE * 6);
+        .card-baldwin-item-last{
+            border: none;
         }
-        .card-secondary-title-small{
-            .font-line-size(@BASE_SIZE * 1.5);
+        .hidden-content{
+            display: none;
+            padding-left: (@BASE_SIZE * 3.5);
+
+            .baldwin-line{
+                font-weight: 400;
+                .font-line-size(@BASE_SIZE * 3);
+            }
+            .food-item{
+                font-weight: 400;
+                .font-line-size(@BASE_SIZE * 2);
+            }
         }
-    }
-    .card-baldwin-item-last{
-        border: none;
-    }
-    .hidden-content{
-        display: none;
-        padding-left: 32px;
     }
 
     /* onClick Styles */
     .baldwin-disable{
         display: none;
     }
-    .baldwin-active{
-        border-right: 2px solid @IWU_BLUE;
-    }
     .baldwin-active + .hidden-content{
         display: block;
     }
-
 }
