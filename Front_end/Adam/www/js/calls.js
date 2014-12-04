@@ -21,6 +21,13 @@ $(document).ready(function() {
         dots:       false
     });
 
+    // Weather Owl Carousel
+    $(".weather-carousel").owlCarousel({
+        items:      2,
+        nav:        false,
+        dots:       false
+    });
+
     // Schedule Owl Carousel
     $(".schedule-carousel").owlCarousel({
         items:      1,
@@ -57,7 +64,7 @@ $(document).ready(function() {
         }
     });
 
-    $('a[href^="#"]').click(function(event) {
+   /*$('a[href^="#"]').click(function(event) {
 
         var target = $( $(this).attr('href') );
 
@@ -68,8 +75,7 @@ $(document).ready(function() {
             }, 1000);
         }
 
-    });
-
+    });*/
     /* TODO: close hamburger menu when clicking outside of menu */
     /*$('.bottom-overlay').click(function(){
         $('div.top-overlay').remove();

@@ -142,7 +142,7 @@ function currentWeather(){
         success: function (data) {
             var temp = $(data).find('temperature').attr('value');
             temp = Math.round(temp);
-            /* TODO: Add append method */
+            $('#currentTemp').append(temp + '&deg;');
         },
         error: function (xhr, type) {
             console.log('Current Weather Ajax Error');
@@ -163,8 +163,9 @@ function futureWeather(){
             $(data).find('time').each(function(){
                 var temp = $(this).children('temperature').attr('max');
                 temp = Math.round(temp);
+                $('#temp-' + counter).append(temp + '&deg;');
 
-                /* TODO: Add append method (from xml and day-of-week variable) */
+                /* TODO: Add append method for day-of-week */
 
                 counter++;
             });

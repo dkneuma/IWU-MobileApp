@@ -10,5 +10,32 @@
     .card-mid {
         overflow: hidden;
         padding: @BASE_SIZE;
+
+        .current-weather-wrapper {
+            width: 60%;
+            margin: auto;
+
+            .current-weather {
+                margin: 0;
+                text-align: right;
+
+                .font-line-size(@BASE_SIZE * 10);
+            }
+        }
+        .weather-carousel{
+
+            .day{
+                float: left;
+                margin: (@BASE_SIZE) (@BASE_SIZE * 3) (@BASE_SIZE) 0;
+
+                .font-line-size(@BASE_SIZE * 4);
+            }
+            .temp{
+                float: left;
+                margin: (@BASE_SIZE) 0 (@BASE_SIZE) 0;
+
+                .font-line-size(@BASE_SIZE * 4);
+            }
+        }
     }
 }
