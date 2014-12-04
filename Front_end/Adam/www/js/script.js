@@ -16,13 +16,16 @@ function hamburgerOpen() {
     $('.main-content').prepend('<div class="top-overlay"></div><div class="bottom-overlay"></div>');
     $('.top-overlay').append('<ul></ul>');
     $('.top-overlay ul').append(
-        '<a href="#votdTarget" id="votd" onclick="hamburgerClose()"><li class="hamburger-item">Verse of the Day</li></a>' +
-        '<a href="#newsTarget" id="news" onclick="hamburgerClose()"><li class="hamburger-item">Campus News</li></a>' +
-        '<a href="#chapelTarget" id="chapel" onclick="hamburgerClose()"><li class="hamburger-item">Chapel</li></a>' +
-        '<a href="#scheduleTarget" id="schedule" onclick="hamburgerClose()"><li class="hamburger-item">Class Schedule</li></a>' +
-        '<a href="#baldwinTarget" id="baldwin" onclick="hamburgerClose()"><li class="hamburger-item">Baldwin Menu</li></a>' +
-        '<a href="#radioTarget" id="radio" onclick="hamburgerClose()"><li class="hamburger-item">The Fortress</li></a>' +
-        '<a href="#weatherTarget" id="weather" onclick="hamburgerClose()"><li class="hamburger-item">Weather</li></a>'
+        '<a href="#votdTarget" id="votd" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item">Verse of the Day</li></a>' +
+        '<a href="#newsTarget" id="news" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item">Campus News</li></a>' +
+        '<a href="#chapelTarget" id="chapel" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item">Chapel</li></a>' +
+        '<a href="#scheduleTarget" id="schedule" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item">Class Schedule</li></a>' +
+        '<a href="#baldwinTarget" id="baldwin" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item">Baldwin Menu</li></a>' +
+        '<a href="#radioTarget" id="radio" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item">The Fortress</li></a>' +
+        '<a href="#weatherTarget" id="weather" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item">Weather</li></a>' +
+        '<a href="#weatherTarget" id="weather" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item no-border"></li></a>' +
+        '<a href="#weatherTarget" id="weather" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item no-border"></li></a>' +
+        '<a href="#weatherTarget" id="weather" class="menu-item" onclick="hamburgerClose()"><li class="hamburger-item no-border"></li></a>'
     ).promise().done(function () {
             $('.top-overlay').animate({
                 margin: 0
