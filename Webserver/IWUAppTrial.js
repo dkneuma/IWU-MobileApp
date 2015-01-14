@@ -276,7 +276,9 @@ function sortNews(){
       newsRequest(newsSource[i],destination[i]);
   }
 
-//Not sure what is the right order. If this is it, then news.XML is created empty  
+//Not sure what is the right order. If this is it, then news.XML is created empty 
+
+//Runs functions one after another, beginning with UpdateLocalData and ending in closeXML. Currently does not run properly. 
   updateLocalData(function(tempString){
     writeLocalData(tempString,function(){
       parseXML(tempString,function(){
