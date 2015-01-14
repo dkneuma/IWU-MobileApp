@@ -1,19 +1,14 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var port = 8070;
-app.listen(port);
 var echo = [];
 var request = require('request');
 var fs = require('fs');
 var $ = require('jquery');
 var jsdom = require("jsdom");
 var window = jsdom.jsdom().parentWindow;
-var tempString = ""
-var newsSource;
-var destination;
-var newsItemsArray = [];
-var newsArrayLength = 0;
+var port = 8070;
+app.listen(port);
 
 
 //Outputs current port
@@ -24,8 +19,12 @@ console.log('Port: ' + port);
 Receiving Data
 **********************************************/
 
-newsSource = ["http://www.iwusojourn.com/feed/", "http://www.iwupresident.com/feed/", "http://www.iwusga.com/feed/", "http://www.iwuspectrum.com/feed/", "http://www.iwuwildcats.com/rss.php"];
-destination = ["XML/sojourn.xml", "XML/president.xml", "XML/sga.xml", "XML/spectrum.xml", "XML/athletics.xml"]
+var newsSource = ["http://www.iwusojourn.com/feed/", "http://www.iwupresident.com/feed/", "http://www.iwusga.com/feed/", "http://www.iwuspectrum.com/feed/", "http://www.iwuwildcats.com/rss.php"];
+var destination = ["XML/sojourn.xml", "XML/president.xml", "XML/sga.xml", "XML/spectrum.xml", "XML/athletics.xml"]
+var newsItemsArray = [];
+var newsArrayLength = 0;
+var newsString;
+
 //console.log(newsSource.length);
 
 
@@ -98,33 +97,32 @@ function newsRequest(url, file) {
 
 function updateLocalData(callback){
 //Get info out of local files and store it to the same string
+  var tempString = "";
+  var logData;
   for(var i=0; i<destination.length; i++){
-    fs.readFile(destination[i], function(err , logData){
-      tempString += logData.toString();
-      tempString += "\n";
-      console.log('updated data');
-    })
+    logData = fs.readFileSync(destination[i])// function(err , logData){
+    tempString += logData.toString();
+    tempString += "\n";
   }
-
-  callback();
+      //console.log(tempString);
+    //})
+  console.log("updatedData")
+  callback(tempString);
 }
 
-function writeLocalData(callback){
+function writeLocalData(tempString, callback){
 //Write string to a new local file.
-  fs.writeFile('XML/news.xml',tempString, function(err){
-    console.log('Compiled XML');
-  });
-
-  callback();
-
+  fs.writeFileSync('XML/news.xml',tempString);
+  
+  console.log("NewsFileWrittenFirstTime");
+  callback(tempString);
 }
 
-function parseXML(callback){
+function parseXML(tempString, callback){
 //Get rid of all of the XML garbage and get the contents
-
   jsdom.jQueryify(window, "http://code.jquery.com/jquery.js", function () {
     var $ = window.$;
-    //console.log(newsString);
+    console.log("Before Parse");
     $("body").append(tempString);
 
     var pubDate
@@ -146,10 +144,10 @@ function parseXML(callback){
         channelTitle = $(this).children('title').text();
         channelTitle = channelTitle.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
         channelTitle = channelTitle.replace(/\&/g,"&amp;");
+        
 
         $(this).children('item').each(function(){
 
-          var j=0;
           newsItemsArray[i] = {};
 
           itemTitle = $(this).children('title').text();
@@ -167,10 +165,13 @@ function parseXML(callback){
           newsItemsArray[i]['channel'] = channelTitle;
 
 
+
           guid = $(this).children('guid').text();
           if(guid ==""){
             guid = "False";
           }
+
+
           newsItemsArray[i]['guid'] = guid;
 
           description = $(this).children('description').text();
@@ -179,14 +180,17 @@ function parseXML(callback){
           if(description==""){
             description = "False";
           }
+
+
           newsItemsArray[i]['description'] = description;
 
           pubDate = $(this).children('pubDate').text();
-          pubDateArray.push(pubDate);
+
           if(pubDate==""){
             pubDate = "False";
           }
           newsItemsArray[i]['date'] = pubDate;
+
 
           content = $(this).children('encoded').text();
           content = content.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
@@ -194,19 +198,24 @@ function parseXML(callback){
           if(content==""){
             content = "False";
           }
+
           newsItemsArray[i]['content'] = content;
-		  newsArrayLength++;
+		      
+          newsArrayLength++;
           i++;
 
-          console.log('item added to array');
+          console.log("i"+i);
 
-        });
+        });        
 
       });
 
     });
-  });
+    
+    console.log("Created Array")
 
+  });
+  
   callback();
 
 }
@@ -247,7 +256,7 @@ function fillXML(callback){
 function closeXML(callback){
 //Adds closing tags.
   newsString += "\n</root>";
-  fs.writeFile('XML/news.xml',newsString, function(err){});
+  fs.writeFileSync('XML/news.xml',newsString);
   console.log("File Written");
   callback();
 }
@@ -272,14 +281,14 @@ function sortNews(){
       newsRequest(newsSource[i],destination[i]);
   }
   
-  updateLocalData(function(){
-    writeLocalData(function(){
-      parseXML(function(){
+/*
+  closeXML(function(){
+    fillXML(function(){
+      initialXML(function(){
         sortArray(function(){
-          initialXML(function(){
-            fillXML(function(){
-              closeXML(function(){
-
+          parseXML(tempString,function(){
+            writeLocalData(tempString,function(){
+              updateLocalData(function(tempString){
               });
             });
           });
@@ -287,5 +296,22 @@ function sortNews(){
       });
     });
   });
+*/
+updateLocalData(function(tempString){
+  writeLocalData(tempString,function(){
+    parseXML(tempString,function(){
+      sortArray(function(){
+        initialXML(function(){
+          fillXML(function(){
+            closeXML(function(){
+
+            });console.log(1)
+          });console.log(2)
+        });console.log(3)
+      });console.log(4)
+    });console.log(5)
+  });console.log(6)
+});
+
 
 }
