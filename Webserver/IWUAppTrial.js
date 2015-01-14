@@ -212,8 +212,9 @@ function parseXML(tempString, callback){
       });
     });
     console.log("Created Array")
+    callback();
   });
-  callback(); //Call next function
+  //callback(); //Call next function
 }
 
 function sortArray(callback){
