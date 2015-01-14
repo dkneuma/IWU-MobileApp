@@ -229,15 +229,12 @@ function sortArray(callback){
   callback(); //Call next function
 }
 
-function initialXML(callback){
-//Prepare to overwrite news.xml with our own rss feed. This creates the opening tags.
-  console.log('xml initialized') 
-  newsString = "<root>";
-  callback(); // Call next functino
-}
-
 function fillXML(callback){
 //Places the array of items into an rss feed, then puts the feed into news.xml
+
+  console.log('xml initialized') 
+  newsString = "<root>";
+
   for (l=0; l<newsArrayLength; l++){
     console.log('item added to XML String');
     newsString += "\n\t<item>\n\t\t<title>" + newsItemsArray[l]['item'] + "</title>\n\t\t<channel>" + newsItemsArray[l]['channel'] + "</channel>\n\t\t<guid>" + newsItemsArray[l]['guid'] + "</guid>\n\t\t<description>" + newsItemsArray[l]['description'] + "</description>\n\t\t<date>"
@@ -245,22 +242,18 @@ function fillXML(callback){
     //NewsString contains all the array contents. We're preparing to add these array contents to our XML
   }
   newsArrayLength = 0; //In case this is called again.
-  callback(); //Call next function
-}
 
-function closeXML(callback){
-//Adds closing tags.
+  //Adds closing tags.
   newsString += "\n</root>"; //Add closing tag
   fs.writeFileSync('XML/news.xml',newsString); //Write to file
   console.log("File Written");
+
   callback(); //Call next function
 }
 
-/*
-function sortNews(callback){
 //Run stuff in order
 
-
+/*
   setTimeout(updateLocalData,20000);
   setTimeout(writeLocalData,45000);
   setTimeout(parseXML,70000);
@@ -283,16 +276,11 @@ function sortNews(){
     writeLocalData(tempString,function(){
       parseXML(tempString,function(){
         sortArray(function(){
-          initialXML(function(){
             fillXML(function(){
-              closeXML(function(){
-
-              });console.log(1)
-            });console.log(2)
-          });console.log(3)
-        });console.log(4)
-      });console.log(5)
-    });console.log(6)
+          });console.log(1)
+        });console.log(2)
+      });console.log(3)
+    });console.log(4)
   });
 
 //This might be the right order. Variables don't pass correctly in this.
