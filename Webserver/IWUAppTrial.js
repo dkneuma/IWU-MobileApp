@@ -11,7 +11,7 @@ var fs = require('fs');                   //Node module for reading/writing file
 var $ = require('jquery');                //Allows use of jquery
 var jsdom = require("jsdom");             //Allows use of jsdom
 var window = jsdom.jsdom().parentWindow;  //creates windows for jquery
-var port = 8070;                          //port for server
+var port = 8080;                          //port for server
 app.listen(port);                         //event listener on port
 console.log('Port: ' + port);             //Outputs current port
 
@@ -26,18 +26,12 @@ Gets XML Data from various sources, organizes them, and stores them locally.
 var newsSource = ["http://www.iwusojourn.com/feed/", "http://www.iwupresident.com/feed/", "http://www.iwusga.com/feed/", "http://www.iwuspectrum.com/feed/", "http://www.iwuwildcats.com/rss.php"];
 var destination = ["XML/sojourn.xml", "XML/president.xml", "XML/sga.xml", "XML/spectrum.xml", "XML/athletics.xml"]
 
-//global variables
+//sortNews calls several modules that get XML Data, organizes it, and stores it to News.XML
+sortNews();
+setInterval(sortNews,70000);//3600000);
 var newsItemsArray = [];
 var newsArrayLength = 0;
 var newsString;
-
-//sortNews calls several modules that get XML Data, organizes it, and stores it to News.XML
-
-//setInterval(function () {
-    sortNews();
- // },480000	//3600000
-//);
-
 
 /**********************************************
 Sending Data
@@ -103,6 +97,7 @@ function newsRequest(url, file) {
 
 function updateLocalData(callback){
 //Get info out of local files and store it to the same string
+  
   var tempString = "";
   var logData;
   for(var i=0; i<destination.length; i++){
@@ -117,11 +112,10 @@ function updateLocalData(callback){
 
 function writeLocalData(tempString, callback){
 //Write string to a new local file.
- 
+
   fs.writeFileSync('XML/news.xml',tempString); //Write tempString to news.xml file
   
   console.log("NewsFileWrittenFirstTime");  
-
   callback(tempString);  ////Call next function synchronously and pass tempString
 }
 
@@ -206,15 +200,13 @@ function parseXML(tempString, callback){
 		      
           newsArrayLength++; //Increment a variable representing length of array
           i++;
-
-          console.log("i"+i);
         });        
       });
     });
     console.log("Created Array")
-    callback();
+    $("body").empty(); //Empty the jquery page
+    callback(); // Call next function
   });
-  //callback(); //Call next function
 }
 
 function sortArray(callback){
@@ -236,41 +228,30 @@ function fillXML(callback){
   console.log('xml initialized') 
   newsString = "<root>";
 
-  for (l=0; l<newsArrayLength; l++){
-    console.log('item added to XML String');
+  for (var l=0; l<newsArrayLength; l++){
     newsString += "\n\t<item>\n\t\t<title>" + newsItemsArray[l]['item'] + "</title>\n\t\t<channel>" + newsItemsArray[l]['channel'] + "</channel>\n\t\t<guid>" + newsItemsArray[l]['guid'] + "</guid>\n\t\t<description>" + newsItemsArray[l]['description'] + "</description>\n\t\t<date>"
      + newsItemsArray[l]['date'] + "</date>\n\t\t<content>" + newsItemsArray[l]['content'] + "</content>\n\t</item>";
     //NewsString contains all the array contents. We're preparing to add these array contents to our XML
   }
-  newsArrayLength = 0; //In case this is called again.
 
-  //Adds closing tags.
   newsString += "\n</root>"; //Add closing tag
+
   fs.writeFileSync('XML/news.xml',newsString); //Write to file
   console.log("File Written");
 
   callback(); //Call next function
 }
 
-//Run stuff in order
-
-/*
-  setTimeout(updateLocalData,20000);
-  setTimeout(writeLocalData,45000);
-  setTimeout(parseXML,70000);
-  setTimeout(sortArray, 200000);
-  setTimeout(initialXML,300000);
-  setTimeout(fillXML,320000);
-  setTimeout(closeXML,550000);
-*/
-
 function sortNews(){
+//reset global variables
+newsItemsArray = [];
+newsArrayLength = 0;
+newsString;
+
 //Run stuff in order
   for(var i=0; i<newsSource.length-1; i++){
       newsRequest(newsSource[i],destination[i]);
   }
-
-//Not sure what is the right order. If this is it, then news.XML is created empty 
 
 //Runs functions one after another, beginning with UpdateLocalData and ending in closeXML. Currently does not run properly. 
   updateLocalData(function(tempString){
@@ -278,28 +259,9 @@ function sortNews(){
       parseXML(tempString,function(){
         sortArray(function(){
             fillXML(function(){
-          });console.log(1)
-        });console.log(2)
-      });console.log(3)
-    });console.log(4)
-  });
-
-//This might be the right order. Variables don't pass correctly in this.
-/*
-  closeXML(function(){
-    fillXML(function(){
-      initialXML(function(){
-        sortArray(function(){
-          parseXML(tempString,function(){
-            writeLocalData(tempString,function(){
-              updateLocalData(function(tempString){
-              });
-            });
           });
         });
       });
     });
   });
-*/
-
 }
