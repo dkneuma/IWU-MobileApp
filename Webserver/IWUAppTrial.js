@@ -1,33 +1,37 @@
-var express = require('express');
+/*********************************************
+Required Packages/Dependencies
+*********************************************/
+
+var express = require('express');         //Allows use of Express
 var app = express();
-var path = require('path');
+var path = require('path');               //Node module for using filesystem
 var echo = [];
-var request = require('request');
-var fs = require('fs');
-var $ = require('jquery');
-var jsdom = require("jsdom");
-var window = jsdom.jsdom().parentWindow;
-var port = 8070;
-app.listen(port);
-
-
-//Outputs current port
-console.log('Port: ' + port);
+var request = require('request');         //Allows use of Request
+var fs = require('fs');                   //Node module for reading/writing files
+var $ = require('jquery');                //Allows use of jquery
+var jsdom = require("jsdom");             //Allows use of jsdom
+var window = jsdom.jsdom().parentWindow;  //creates windows for jquery
+var port = 8070;                          //port for server
+app.listen(port);                         //event listener on port
+console.log('Port: ' + port);             //Outputs current port
 
 
 /**********************************************
 Receiving Data
+
+Gets XML Data from various sources, organizes them, and stores them locally.
 **********************************************/
 
+//list of sources and places to store them locally
 var newsSource = ["http://www.iwusojourn.com/feed/", "http://www.iwupresident.com/feed/", "http://www.iwusga.com/feed/", "http://www.iwuspectrum.com/feed/", "http://www.iwuwildcats.com/rss.php"];
 var destination = ["XML/sojourn.xml", "XML/president.xml", "XML/sga.xml", "XML/spectrum.xml", "XML/athletics.xml"]
+
+//global variables
 var newsItemsArray = [];
 var newsArrayLength = 0;
 var newsString;
 
-//console.log(newsSource.length);
-
-
+//sortNews calls several modules that get XML Data, organizes it, and stores it to News.XML
 
 //setInterval(function () {
     sortNews();
@@ -37,6 +41,8 @@ var newsString;
 
 /**********************************************
 Sending Data
+
+Data being sent to the application from our Server
 **********************************************/
 
 // Baldwin Menu
@@ -86,9 +92,9 @@ Function Calls
 
 function newsRequest(url, file) {
 //Get files off of the internet and write them to local files
-  //console.log(url);
+
   request(url, function (error, response, body){
-    if (response.statusCode == 200){
+    if (response.statusCode == 200){  //If the website provides a good statuscode 
       request(url).pipe(fs.createWriteStream(file, function(err){})); //Gets file from internet and writes locally to "file" location.
     }
 
@@ -100,30 +106,32 @@ function updateLocalData(callback){
   var tempString = "";
   var logData;
   for(var i=0; i<destination.length; i++){
-    logData = fs.readFileSync(destination[i])// function(err , logData){
-    tempString += logData.toString();
-    tempString += "\n";
+    logData = fs.readFileSync(destination[i])//logData is the contents of the file "destination[i]"
+    tempString += logData.toString(); //Add contents to tempString then
+    tempString += "\n"; //Add a new line
   }
-      //console.log(tempString);
-    //})
+
   console.log("updatedData")
-  callback(tempString);
+  callback(tempString); //Call next function synchronously and pass tempString
 }
 
 function writeLocalData(tempString, callback){
 //Write string to a new local file.
-  fs.writeFileSync('XML/news.xml',tempString);
+ 
+  fs.writeFileSync('XML/news.xml',tempString); //Write tempString to news.xml file
   
-  console.log("NewsFileWrittenFirstTime");
-  callback(tempString);
+  console.log("NewsFileWrittenFirstTime");  
+
+  callback(tempString);  ////Call next function synchronously and pass tempString
 }
 
 function parseXML(tempString, callback){
 //Get rid of all of the XML garbage and get the contents
-  jsdom.jQueryify(window, "http://code.jquery.com/jquery.js", function () {
-    var $ = window.$;
+  jsdom.jQueryify(window, "http://code.jquery.com/jquery.js", function () { //Allows use of jquery
+    var $ = window.$; //Targets window
     console.log("Before Parse");
-    $("body").append(tempString);
+
+    $("body").append(tempString);//Puts tempString into the windows so that jquery can find it.
 
     var pubDate
     var newsItems;
@@ -137,19 +145,21 @@ function parseXML(tempString, callback){
 
     //Channel Title, Item Title, guid, Description, PubDate, content:encoded
 
-    $("body").find('rss').each(function(){
+    $("body").find('rss').each(function(){  //In each RSS tag
 
-      $(this).children('channel').each(function(){
+      $(this).children('channel').each(function(){ //In each channel inside each RSS tag
 
+        //clean up XML by removing tab, new line, and other junk characters
         channelTitle = $(this).children('title').text();
         channelTitle = channelTitle.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
         channelTitle = channelTitle.replace(/\&/g,"&amp;");
         
 
-        $(this).children('item').each(function(){
+        $(this).children('item').each(function(){ //In each item inside each channel inside each RSS tag
 
-          newsItemsArray[i] = {};
+          newsItemsArray[i] = {}; //2 dimensional array to contain each RSS item
 
+          //clean up XML by removing tab, new line, and other junk characters
           itemTitle = $(this).children('title').text();
           itemTitle = itemTitle.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
           itemTitle = itemTitle.replace(/\&/g,"&amp;");
@@ -157,67 +167,53 @@ function parseXML(tempString, callback){
             itemTitle = "False";
           }
 
-          newsItemsArray[i]['item'] = itemTitle;
+          newsItemsArray[i]['item'] = itemTitle; //Add item to array
 
           if(channelTitle==""){
             channelTitle = "False";
           }
-          newsItemsArray[i]['channel'] = channelTitle;
+          newsItemsArray[i]['channel'] = channelTitle; //Add channel to array
 
-
-
-          guid = $(this).children('guid').text();
+          guid = $(this).children('guid').text(); 
           if(guid ==""){
             guid = "False";
           }
+          newsItemsArray[i]['guid'] = guid; //Add guid to array
 
-
-          newsItemsArray[i]['guid'] = guid;
-
+          //clean up XML by removing tab, new line, and other junk characters
           description = $(this).children('description').text();
           description = description.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
           description = description.replace(/\&/g,"&amp;");
           if(description==""){
             description = "False";
           }
-
-
-          newsItemsArray[i]['description'] = description;
+          newsItemsArray[i]['description'] = description; // Add description to array
 
           pubDate = $(this).children('pubDate').text();
-
           if(pubDate==""){
             pubDate = "False";
           }
-          newsItemsArray[i]['date'] = pubDate;
+          newsItemsArray[i]['date'] = pubDate; // Add pubDate to array
 
-
+          //clean up XML by removing tab, new line, and other junk characters
           content = $(this).children('encoded').text();
           content = content.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
           content = content.replace(/\&/g,"&amp;");
           if(content==""){
             content = "False";
           }
-
-          newsItemsArray[i]['content'] = content;
+          newsItemsArray[i]['content'] = content; //Add content to array
 		      
-          newsArrayLength++;
+          newsArrayLength++; //Increment a variable representing length of array
           i++;
 
           console.log("i"+i);
-
         });        
-
       });
-
     });
-    
     console.log("Created Array")
-
   });
-  
-  callback();
-
+  callback(); //Call next function
 }
 
 function sortArray(callback){
@@ -230,35 +226,34 @@ function sortArray(callback){
       return date2 - date1;
     });
 
-  callback();
+  callback(); //Call next function
 }
 
 function initialXML(callback){
 //Prepare to overwrite news.xml with our own rss feed. This creates the opening tags.
   console.log('xml initialized') 
   newsString = "<root>";
-  tempString = "";
-  callback();
+  callback(); // Call next functino
 }
 
 function fillXML(callback){
 //Places the array of items into an rss feed, then puts the feed into news.xml
   for (l=0; l<newsArrayLength; l++){
     console.log('item added to XML String');
-    tempString = "\n\t<item>\n\t\t<title>" + newsItemsArray[l]['item'] + "</title>\n\t\t<channel>" + newsItemsArray[l]['channel'] + "</channel>\n\t\t<guid>" + newsItemsArray[l]['guid'] + "</guid>\n\t\t<description>" + newsItemsArray[l]['description'] + "</description>\n\t\t<date>"
+    newsString += "\n\t<item>\n\t\t<title>" + newsItemsArray[l]['item'] + "</title>\n\t\t<channel>" + newsItemsArray[l]['channel'] + "</channel>\n\t\t<guid>" + newsItemsArray[l]['guid'] + "</guid>\n\t\t<description>" + newsItemsArray[l]['description'] + "</description>\n\t\t<date>"
      + newsItemsArray[l]['date'] + "</date>\n\t\t<content>" + newsItemsArray[l]['content'] + "</content>\n\t</item>";
-    newsString += tempString;
+    //NewsString contains all the array contents. We're preparing to add these array contents to our XML
   }
-
-  callback();
+  newsArrayLength = 0; //In case this is called again.
+  callback(); //Call next function
 }
 
 function closeXML(callback){
 //Adds closing tags.
-  newsString += "\n</root>";
-  fs.writeFileSync('XML/news.xml',newsString);
+  newsString += "\n</root>"; //Add closing tag
+  fs.writeFileSync('XML/news.xml',newsString); //Write to file
   console.log("File Written");
-  callback();
+  callback(); //Call next function
 }
 
 /*
@@ -280,7 +275,25 @@ function sortNews(){
   for(var i=0; i<newsSource.length-1; i++){
       newsRequest(newsSource[i],destination[i]);
   }
-  
+
+//Not sure what is the right order. If this is it, then news.XML is created empty  
+  updateLocalData(function(tempString){
+    writeLocalData(tempString,function(){
+      parseXML(tempString,function(){
+        sortArray(function(){
+          initialXML(function(){
+            fillXML(function(){
+              closeXML(function(){
+
+              });console.log(1)
+            });console.log(2)
+          });console.log(3)
+        });console.log(4)
+      });console.log(5)
+    });console.log(6)
+  });
+
+//This might be the right order. Variables don't pass correctly in this.
 /*
   closeXML(function(){
     fillXML(function(){
@@ -297,21 +310,5 @@ function sortNews(){
     });
   });
 */
-updateLocalData(function(tempString){
-  writeLocalData(tempString,function(){
-    parseXML(tempString,function(){
-      sortArray(function(){
-        initialXML(function(){
-          fillXML(function(){
-            closeXML(function(){
-
-            });console.log(1)
-          });console.log(2)
-        });console.log(3)
-      });console.log(4)
-    });console.log(5)
-  });console.log(6)
-});
-
 
 }
