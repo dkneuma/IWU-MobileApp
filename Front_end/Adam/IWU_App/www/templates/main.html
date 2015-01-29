@@ -1,0 +1,228 @@
+<ion-view view-title="{{navTitle}}">
+    <ion-content>
+        <!--Verse card and header-->
+        <div class="card verse-card" id="votdTarget">
+            <div class="item item-divider">
+                <h2 class="card-title">Verse of the <span>Day</span></h2>
+                <a>
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <!--Verse card content pulled from Bible Gateway-->
+            <div class="item item-text-wrap">
+                <div class="wrapper">
+                    <p class="verse" id="verse"></p>
+                    <p class="chapter" id="chapter"></p>
+                </div>
+            </div>
+        </div>
+        <!--News card and header-->
+        <div class="card news-card" id="newsTarget">
+            <div class="item item-divider">
+                <h2 class="card-title">Campus <span>News</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <!--News card articles-->
+            <div class="item item-text-wrap">
+                <div class="wrapper">
+                    <div class="news-carousel">
+                        <div class="item">
+                            <h3 class="secondary-title" id="news-title-0">Defense Keys Women’s Basketball Blowout Win at Grace</h3>
+                            <p class="description" id="news-description-0">WINONA LAKE, Ind. -- Grace (Ind.) struggled all evening to answer the Indiana Wesleyan University women&rsquo;s basketball defensive pressure on Wednesday night in...</p>
+                            <p class="tag" id="news-tags-0">IWU Athletics: Women's Basketball</p>
+                            <p class="date" id="news-date-0">12 hours ago</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="secondary-title" id="news-title-1">Daniel McMasters: IWU’s biggest sports fan</h3>
+                            <p class="description" id="news-description-1">Think you’re a big Indiana Wesleyan University sports fan? Think again. Daniel McMasters (sr) aims to attend every IWU home sports game - for every sport. He’s collected every program...</p>
+                            <p class="tag" id="news-tags-1">The Sojourn</p>
+                            <p class="date" id="news-date-1">14 hours ago</p>
+                        </div>
+                        <div class="item">
+                            <h3 class="secondary-title" id="news-title-2">Ferguson: ‘A time to pray for the healing of our land’</h3>
+                            <p class="description" id="news-description-2">It is one of our nation’s most endearing qualities that when disaster strikes, we reach out to help. We pray. We go. We provide shelter, food and care. We rebuild. Then we...</p>
+                            <p class="tag" id="news-tags-2">The President's Blog</p>
+                            <p class="date" id="news-date-2">2 days ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Chapel card and header-->
+        <div class="card chapel-card" id="chapelTarget">
+            <div class="item item-divider">
+                <h1 class="card-title">Chapel</h1>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <!--Chapel schedule and skips (potentially)-->
+            <div class="item item-text-wrap">
+                <h2 class="skips">Skips Remaining:<span>4</span></h2>
+                <div class="wrapper">
+                    <div class="chapel-carousel">
+                        <div class="item">
+                            <p class="chapel-info" id="speaker-0"></p>
+                            <p class="chapel-info" id="description-0"></p>
+                            <p class="chapel-info" id="date-0"></p>
+                        </div>
+                        <div class="item">
+                            <p class="chapel-info" id="speaker-1"></p>
+                            <p class="chapel-info" id="description-1"></p>
+                            <p class="chapel-info" id="date-1"></p>
+                        </div>
+                        <div class="item">
+                            <p class="chapel-info" id="speaker-2"></p>
+                            <p class="chapel-info" id="description-2"></p>
+                            <p class="chapel-info" id="date-2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Class schedule and header-->
+        <div class="card schedule-card" id="scheduleTarget">
+            <div class="item item-divider">
+                <h1 class="card-title">Today's Classes</h1>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <!--Class schedule for current day-->
+            <div class="item item-text-wrap">
+                <h2 class="schedule-day" id="scheduleDay">Monday</h2>
+                <div class="wrapper">
+                    <div class="schedule-carousel">
+                        <div class="item">
+                            <p class="class-info">8:55am</p>
+                            <p class="class-info">PHE-105-B Badminton</p>
+                        </div>
+                        <div class="item">
+                            <p class="class-info">11:15am</p>
+                            <p class="class-info">CIS-346-A Computer Networks Data Communication</p>
+                        </div>
+                        <div class="item">
+                            <p class="class-info">1:25pm</p>
+                            <p class="class-info">HST-185-A Foundations of Civ to 1648</p>
+                        </div>
+                        <div class="item">
+                            <p class="class-info">2:20pm</p>
+                            <p class="class-info">CIS-482-A Senior Project I</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Baldwin card and header-->
+        <div class="card baldwin-card" id="baldwinTarget">
+            <div class="item item-divider">
+                <h2 class="card-title">Baldwin <span>Menu</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <!--Daily Baldwin meals with expandable menu-->
+            <div class="item item-text-wrap">
+                <a>
+                    <div class="card-baldwin-item" id="baldwin-item-0">
+                        <i class="flaticon-fried6 card-flaticon-baldwin card-flaticon-breakfast"></i>
+                        <h3 class="card-secondary-title-small">Breakfast</h3>
+                    </div>
+                    <div class="hidden-content">
+                        <div id="baldwin-carousel-0"></div>
+                    </div>
+                </a>
+                <a>
+                    <div class="card-baldwin-item" id="baldwin-item-1">
+                        <i class="flaticon-junk5 card-flaticon-baldwin"></i>
+                        <h3 class="card-secondary-title-small">Lunch</h3>
+                    </div>
+                    <div class="hidden-content">
+                        <div id="baldwin-carousel-1"></div>
+                    </div>
+                </a>
+                <a>
+                    <div class="card-baldwin-item card-baldwin-item-last" id="baldwin-item-2">
+                        <i class="flaticon-fork4 card-flaticon-baldwin"></i>
+                        <h3 class="card-secondary-title-small">Dinner</h3>
+                    </div>
+                    <div class="hidden-content">
+                        <div id="baldwin-carousel-2"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--Radio card and header-->
+        <div class="card radio-card" id="radioTarget">
+            <div class="item item-divider">
+                <h2 class="card-title">The <span>Fortress</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <!--Radio player (currently set to Moody)-->
+            <div class="item item-text-wrap">
+                <div class="wrapper" id="radioPlay">
+                    <i id="controls" class="flaticon-play43">
+                        <audio id="radioPlayer" src="http://primary.moodyradiostream.org/wgnrfm.mp3"></audio>
+                    </i>
+                </div>
+            </div>
+        </div>
+        <!--Weather card and header-->
+        <div class="card weather-card" id="weatherTarget">
+            <div class="card-top">
+                <h2 class="card-title">Campus <span>Weather</span></h2>
+                <a href="#">
+                    <div class="card-flaticon-container">
+                        <i class="flaticon-button8 card-flaticon-ellipse"></i>
+                    </div>
+                </a>
+            </div>
+            <!--Weather forecast 5 day carousel-->
+            <div class="card-mid">
+                <div class="wrapper">
+                    <div class="current-weather-wrapper">
+                        <p class="current-weather" id="currentTemp"></p>
+                    </div>
+                    <div class="weather-carousel">
+                        <div class="item">
+                            <p class="day" id="day-0">Mon</p>
+                            <p class="temp" id="temp-0"></p>
+                        </div>
+                        <div class="item">
+                            <p class="day" id="day-1">Tues</p>
+                            <p class="temp" id="temp-1"></p>
+                        </div>
+                        <div class="item">
+                            <p class="day" id="day-2">Wed</p>
+                            <p class="temp" id="temp-2"></p>
+                        </div>
+                        <div class="item">
+                            <p class="day" id="day-3">Thur</p>
+                            <p class="temp" id="temp-3"></p>
+                        </div>
+                        <div class="item">
+                            <p class="day" id="day-4">Fri</p>
+                            <p class="temp" id="temp-4"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
