@@ -15,6 +15,8 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+// INSERT SCSS BELOW
+
 $positive: #980826 !default;
 
 ion-nav-bar .testIcon{
@@ -25,6 +27,15 @@ ion-nav-bar .testIcon img{
     position: relative;
     max-height: 100%;
 }
+
+
+
+
+
+
+
+
+// INSERT SCSS ABOVE
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;

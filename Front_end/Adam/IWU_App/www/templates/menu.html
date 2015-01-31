@@ -16,29 +16,8 @@
         <ion-header-bar class="bar-positive"></ion-header-bar>
         <ion-content>
             <ion-list>
-                <ion-item nav-clear menu-close href="#/app/main">
-                    Dashboard
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/news">
-                    Campus News
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/chapel">
-                    Chapel
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/schedule">
-                    Class Schedule
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/baldwin">
-                    Baldwin Menu
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/radio">
-                    The Fortress
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/weather">
-                    Campus Weather
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/settings">
-                    Settings
+                <ion-item nav-clear menu-close ng-repeat="item in menuItems" href="{{menuItems.title}}">
+                    {{menuItems.url}}
                 </ion-item>
             </ion-list>
         </ion-content>
