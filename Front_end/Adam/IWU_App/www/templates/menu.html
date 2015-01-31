@@ -16,8 +16,8 @@
         <ion-header-bar class="bar-positive"></ion-header-bar>
         <ion-content>
             <ion-list>
-                <ion-item nav-clear menu-close ng-repeat="item in menuItems" href="{{menuItems.title}}">
-                    {{menuItems.url}}
+                <ion-item nav-clear menu-close ng-repeat="menuItem in menuItems" href="{{menuItem.url}}">
+                    {{menuItem.title}}
                 </ion-item>
             </ion-list>
         </ion-content>
