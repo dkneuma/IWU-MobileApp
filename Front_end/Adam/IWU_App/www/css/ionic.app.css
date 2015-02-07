@@ -14,12 +14,110 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+/* Color Variables */
+/* Font Variables */
+/* Sizing Variables */
+/* Nav Bar */
 ion-nav-bar .testIcon {
   position: relative; }
 
 ion-nav-bar .testIcon img {
   position: relative;
   max-height: 100%; }
+
+ion-nav-bar .bar.bar-positive {
+  border: none; }
+
+/* Global Button styles */
+.main-wrapper button {
+  height: 150px;
+  position: relative;
+  border: none;
+  line-height: 16px; }
+
+.main-wrapper .button.button-block {
+  margin: 0; }
+
+.main-wrapper span {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 12px; }
+
+/* Top button row styles */
+/* Individual button styles */
+#votd {
+  background: #5ead7d; }
+
+#news {
+  background: #f0c75e; }
+
+#baldwin {
+  background: #393939; }
+
+#schedule {
+  background: #df3d32; }
+
+#chapel {
+  background: #db724f; }
+
+#settings {
+  background: #417282; }
+
+/* Wrapper styles */
+.main-wrapper {
+  position: relative; }
+
+/* Verse card styles */
+/*ion-content .verse-card{
+  background-image: url("../img/chapel_2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 50%;
+}*/
+/*ion-content .item{
+  background: transparent;
+  font-size: ($base_size * 0.75);
+  padding: ($base_size * 0.5);
+  border: none;
+}
+ion-content .item p{
+  font-size: inherit;
+}
+
+ion-content .verse-card .item-text-wrap{
+  height: 250px;
+}
+
+ion-content .verse-card .item-divider{
+  color: $IWU_white;
+  font-size: ($base_size * 1.5);
+  line-height: ($base_size * 1.5);
+}
+*/
+/* Global card styles */
+/*
+.card {
+
+}
+ion-content .item-text-wrap .wrapper {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: ($base_size * 0.125);
+  padding: ($base_size * 0.5);
+  text-align: center;
+}*/
+/* Global styles */
+ion-content {
+  font-family: "Open Sans", georgia, "times new roman", sans-serif;
+  font-size: 16px; }
+
+ion-content a:visited {
+  color: #F5F5F5;
+  text-decoration: none; }
+
+ion-content a:link {
+  color: #F5F5F5;
+  text-decoration: none; }
 
 /*!
   Ionicons, v1.5.2

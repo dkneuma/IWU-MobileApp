@@ -15,28 +15,125 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
-// INSERT SCSS BELOW
-
+/* Color Variables */
 $positive: #980826 !default;
+$IWU_white: #F5F5F5;
+$IWU_off-white: #EDEAE8;
+$IWU_blue: #6195AE;
+$IWU_red: #980826;
+$IWU_grey: #444444;
+$IWU_light-grey: #E1E1E1;
 
+/* Font Variables */
+$openSans: "Open Sans", georgia, "times new roman", sans-serif;
+
+/* Sizing Variables */
+$base_size: 16px;
+
+/* Nav Bar */
 ion-nav-bar .testIcon{
-    position: relative;
+  position: relative;
 }
 
 ion-nav-bar .testIcon img{
-    position: relative;
-    max-height: 100%;
+  position: relative;
+  max-height: 100%;
+}
+ion-nav-bar .bar.bar-positive{
+  border: none;
+}
+/* Global Button styles */
+.main-wrapper button{
+  height: 150px;
+  position: relative;
+  border: none;
+  line-height: $base_size;
+}
+.main-wrapper .button.button-block{
+  margin: 0;
+}
+.main-wrapper span{
+  position: absolute;
+  top: ($base_size * 0.5);
+  right: ($base_size * 0.5);
+  font-size: ($base_size * 0.75);
 }
 
+/* Top button row styles */
+.main-wrapper .button-top{
+
+}
+
+/* Individual button styles */
+#votd{
+  background: #5ead7d;
+}
+#news{
+  background: #f0c75e;
+}
+#baldwin{
+  background: #393939;
+}
+#schedule{
+  background: #df3d32;
+}
+#chapel{
+  background: #db724f;
+}
+#settings{
+  background: #417282;
+}
+/* Wrapper styles */
+.main-wrapper{
+  position: relative;
+}
+
+/* Verse card styles */
+
+/*ion-content .verse-card{
+  background-image: url("../img/chapel_2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 50%;
+}*/
+/*ion-content .item{
+  background: transparent;
+  font-size: ($base_size * 0.75);
+  padding: ($base_size * 0.5);
+  border: none;
+}
+ion-content .item p{
+  font-size: inherit;
+}
+
+ion-content .verse-card .item-text-wrap{
+  height: 250px;
+}
+
+ion-content .verse-card .item-divider{
+  color: $IWU_white;
+  font-size: ($base_size * 1.5);
+  line-height: ($base_size * 1.5);
+}
+*//* Global card styles *//*
+.card {
+
+}
+ion-content .item-text-wrap .wrapper {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: ($base_size * 0.125);
+  padding: ($base_size * 0.5);
+  text-align: center;
+}*/
 
 
-
-
-
-
-
-// INSERT SCSS ABOVE
-
+/* Global styles */
+ion-content {
+  font-family: $openSans;
+  font-size: $base_size;
+}
+ion-content a:visited{color: $IWU_white; text-decoration: none}
+ion-content a:link{color: $IWU_white; text-decoration: none}
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 

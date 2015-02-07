@@ -1,0 +1,91 @@
+<ion-view view-title="{{navTitle}}">
+    <ion-content>
+        <button class="button button-block button-calm">
+            <h2>Test Button</h2>
+        </button>
+        <!--Verse card and header-->
+        <a href="#/app/votd">
+            <div class="card verse-card" id="votdTarget">
+                <div class="item item-divider">
+                    Verse of the Day
+                </div>
+            </div>
+        </a>
+        <!--News card and header-->
+        <a href="#/app/news">
+            <div class="card news-card" id="newsTarget">
+                <div class="item item-divider">
+                    Campus News
+                </div>
+            </div>
+        </a>
+        <!--Chapel card and header-->
+        <a href="#/app/chapel">
+            <div class="card chapel-card" id="chapelTarget">
+                <div class="item item-divider">
+                    Chapel
+                </div>
+            </div>
+        </a>
+        <!--Class schedule and header-->
+        <a href="#/app/schedule">
+            <div class="card schedule-card" id="scheduleTarget">
+                <div class="item item-divider">
+                    Today's Classes
+                </div>
+            </div>
+        </a>
+        <!--Baldwin card and header-->
+        <a href="#/app/baldwin">
+            <div class="card baldwin-card" id="baldwinTarget">
+                <div class="item item-divider">
+                    Baldwin Menu
+                </div>
+            </div>
+        </a>
+        <!--Radio card and header-->
+        <a href="#/app/radio">
+            <div class="card radio-card" id="radioTarget">
+                <div class="item item-divider">
+                    The Fortress
+                </div>
+            </div>
+        </a>
+        <!--Weather card and header-->
+        <a href="#/app/weather">
+            <div class="card weather-card" id="weatherTarget">
+                <div class="item item-divider">
+                    Campus Weather
+                </div>
+                <!--Weather forecast 5 day carousel-->
+                <div class="item item-text-wrap">
+                    <div class="current-weather-wrapper">
+                        <p class="current-weather" id="currentTemp"></p>
+                    </div>
+                    <ion-slide-box show-pager="false">
+                        <ion-slide>
+                            <p class="day" id="day-0">Mon</p>
+                            <p class="temp" id="temp-0"></p>
+                        </ion-slide>
+                        <ion-slide>
+                            <p class="day" id="day-1">Tues</p>
+                            <p class="temp" id="temp-1"></p>
+                        </ion-slide>
+                        <ion-slide>
+                            <p class="day" id="day-2">Wed</p>
+                            <p class="temp" id="temp-2"></p>
+                        </ion-slide>
+                        <ion-slide>
+                            <p class="day" id="day-3">Thur</p>
+                            <p class="temp" id="temp-3"></p>
+                        </ion-slide>
+                        <ion-slide>
+                            <p class="day" id="day-4">Fri</p>
+                            <p class="temp" id="temp-4"></p>
+                        </ion-slide>
+                    </ion-slide-box>
+                </div>
+            </div>
+        </a>
+    </ion-content>
+</ion-view>

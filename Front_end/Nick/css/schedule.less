@@ -1,0 +1,38 @@
+/* Import list of variables and mixins */
+@import "var-mix.less";
+
+/* Wrapper class styles */
+.schedule-card {
+    background: url("../img/library.jpg") no-repeat 25% / cover;     /* from iwupresident.com */
+    color: @IWU_WHITE;
+    position: relative;
+
+    /* Middle of card styles */
+    .card-mid {
+        overflow: hidden;
+        padding: @BASE_SIZE;
+
+        .schedule-day{
+            font-weight: 400;
+            font-size: (@BASE_SIZE * 2.5);
+            padding: @BASE_SIZE;
+            margin-bottom: (@BASE_SIZE * 0.75);
+        }
+
+        .wrapper{
+            background:rgba(255,255,255,0.75);
+            margin: (@BASE_SIZE * 0.75);
+            text-align: center;
+
+            .class-info{
+                opacity: 1;
+                color: @IWU_GREY;
+                padding: (@BASE_SIZE * 2);
+                margin: 0;
+                font-weight: 400;
+                .font-line-size(@BASE_SIZE * 3);
+            }
+        }
+    }
+
+}

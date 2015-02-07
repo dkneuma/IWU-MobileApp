@@ -1,195 +1,46 @@
 <ion-view view-title="{{navTitle}}">
     <ion-content>
-        <!--Verse card and header-->
-        <a href="#/app/votd">
-            <div class="card verse-card" id="votdTarget">
-                <div class="item item-divider">
-                    Verse of the Day
-                </div>
-                <!--Verse card content pulled from Bible Gateway-->
-                <div class="item item-text-wrap item-light">
-                    <div class="wrapper">
-                        <p class="verse" id="verse">{{verse}}</p>
-                        <p class="chapter" id="chapter">{{chapter}}</p>
-                    </div>
-                </div>
+        <div class="main-wrapper">
+            <div class="card">
+                <div class="item item-divider">Weather</div>
+                <div class="item item-text-wrap">Weather Data</div>
             </div>
-        </a>
-        <!--News card and header-->
-        <a href="#/app/news">
-            <div class="card news-card" id="newsTarget">
-                <div class="item item-divider">
-                    Campus News
-                </div>
-                <!--News card articles-->
-                <div class="item item-text-wrap">
-                    <ion-slide-box show-pager="false">
-                        <ion-slide>
-                            <h3 class="secondary-title" id="news-title-0">Defense Keys Women’s Basketball Blowout Win at Grace</h3>
-                            <p class="description" id="news-description-0">WINONA LAKE, Ind. -- Grace (Ind.) struggled all evening to answer the Indiana Wesleyan University women&rsquo;s basketball defensive pressure on Wednesday night in...</p>
-                            <p class="tag" id="news-tags-0">IWU Athletics: Women's Basketball</p>
-                            <p class="date" id="news-date-0">12 hours ago</p>
-                        </ion-slide>
-                        <ion-slide>
-                            <h3 class="secondary-title" id="news-title-1">Daniel McMasters: IWU’s biggest sports fan</h3>
-                            <p class="description" id="news-description-1">Think you’re a big Indiana Wesleyan University sports fan? Think again. Daniel McMasters (sr) aims to attend every IWU home sports game - for every sport. He’s collected every program...</p>
-                            <p class="tag" id="news-tags-1">The Sojourn</p>
-                            <p class="date" id="news-date-1">14 hours ago</p>
-                        </ion-slide>
-                        <ion-slide>
-                            <h3 class="secondary-title" id="news-title-2">Ferguson: ‘A time to pray for the healing of our land’</h3>
-                            <p class="description" id="news-description-2">It is one of our nation’s most endearing qualities that when disaster strikes, we reach out to help. We pray. We go. We provide shelter, food and care. We rebuild. Then we...</p>
-                            <p class="tag" id="news-tags-2">The President's Blog</p>
-                            <p class="date" id="news-date-2">2 days ago</p>
-                        </ion-slide>
-                    </ion-slide-box>
-                </div>
-            </div>
-        </a>
-        <!--Chapel card and header-->
-        <a href="#/app/chapel">
-            <div class="card chapel-card" id="chapelTarget">
-                <div class="item item-divider">
-                    Chapel
-                </div>
-                <!--Chapel schedule and skips (potentially)-->
-                <div class="item item-text-wrap">
-                    <h2 class="skips">Skips Remaining:<span>4</span></h2>
-                    <ion-slide-box show-pager="false">
-                        <ion-slide>
-                            <p class="chapel-info" id="speaker-0"></p>
-                            <p class="chapel-info" id="description-0"></p>
-                            <p class="chapel-info" id="date-0"></p>
-                        </ion-slide>
-                        <ion-slide>
-                            <p class="chapel-info" id="speaker-1"></p>
-                            <p class="chapel-info" id="description-1"></p>
-                            <p class="chapel-info" id="date-1"></p>
-                        </ion-slide>
-                        <ion-slide>
-                            <p class="chapel-info" id="speaker-2"></p>
-                            <p class="chapel-info" id="description-2"></p>
-                            <p class="chapel-info" id="date-2"></p>
-                        </ion-slide>
-                    </ion-slide-box>
-                </div>
-            </div>
-        </a>
-        <!--Class schedule and header-->
-        <a href="#/app/schedule">
-            <div class="card schedule-card" id="scheduleTarget">
-                <div class="item item-divider">
-                    Today's Classes
-                </div>
-                <!--Class schedule for current day-->
-                <div class="item item-text-wrap">
-                    <h2 class="schedule-day" id="scheduleDay">Monday</h2>
-                    <ion-slide-box show-pager="false">
-                        <ion-slide>
-                            <p class="class-info">8:55am</p>
-                            <p class="class-info">PHE-105-B Badminton</p>
-                        </ion-slide>
-                        <ion-slide>
-                            <p class="class-info">1:25pm</p>
-                            <p class="class-info">HST-185-A Foundations of Civ to 1648</p>
-                        </ion-slide>
-                        <ion-slide>
-                            <p class="class-info">2:20pm</p>
-                            <p class="class-info">CIS-482-A Senior Project I</p>
-                        </ion-slide>
-                    </ion-slide-box>
-                </div>
-            </div>
-        </a>
-        <!--Baldwin card and header-->
-        <a href="#/app/baldwin">
-            <div class="card baldwin-card" id="baldwinTarget">
-                <div class="item item-divider">
-                    Baldwin Menu
-                </div>
-                <!--Daily Baldwin meals with expandable menu-->
-                <div class="item item-text-wrap">
-                    <a>
-                        <div class="card-baldwin-item" id="baldwin-item-0">
-                            <i class="flaticon-fried6 card-flaticon-baldwin card-flaticon-breakfast"></i>
-                            <h3 class="card-secondary-title-small">Breakfast</h3>
-                        </div>
-                        <div class="hidden-content">
-                            <div id="baldwin-carousel-0"></div>
-                        </div>
+            <div class="row">
+                <div class="col">
+                    <a href="#/app/votd">
+                        <button class="button button-block button-positive button-top" id="votd"><span>Verse of the Day</span></button>
                     </a>
-                    <a>
-                        <div class="card-baldwin-item" id="baldwin-item-1">
-                            <i class="flaticon-junk5 card-flaticon-baldwin"></i>
-                            <h3 class="card-secondary-title-small">Lunch</h3>
-                        </div>
-                        <div class="hidden-content">
-                            <div id="baldwin-carousel-1"></div>
-                        </div>
-                    </a>
-                    <a>
-                        <div class="card-baldwin-item card-baldwin-item-last" id="baldwin-item-2">
-                            <i class="flaticon-fork4 card-flaticon-baldwin"></i>
-                            <h3 class="card-secondary-title-small">Dinner</h3>
-                        </div>
-                        <div class="hidden-content">
-                            <div id="baldwin-carousel-2"></div>
-                        </div>
+                </div>
+                <div class="col">
+                    <a href="#/app/news">
+                        <button class="button button-block button-positive button-top" id="news"><span>Campus News</span></button>
                     </a>
                 </div>
             </div>
-        </a>
-        <!--Radio card and header-->
-        <a href="#/app/radio">
-            <div class="card radio-card" id="radioTarget">
-                <div class="item item-divider">
-                    The Fortress
+            <div class="row">
+                <div class="col">
+                    <a href="#/app/baldwin">
+                        <button class="button button-block button-positive button-mid" id="baldwin"><span>Baldwin Menu</span></button>
+                    </a>
                 </div>
-                <!--Radio player (currently set to Moody)-->
-                <div class="item item-text-wrap">
-                    <div class="wrapper" id="radioPlay">
-                        <i id="controls" class="flaticon-play43">
-                            <audio id="radioPlayer" src="http://primary.moodyradiostream.org/wgnrfm.mp3"></audio>
-                        </i>
-                    </div>
+                <div class="col">
+                    <a href="#/app/schedule">
+                        <button class="button button-block button-positive button-mid" id="schedule"><span>Class Schedule</span></button>
+                    </a>
                 </div>
             </div>
-        </a>
-        <!--Weather card and header-->
-        <a href="#/app/weather">
-            <div class="card weather-card" id="weatherTarget">
-                <div class="item item-divider">
-                    Campus Weather
+            <div class="row">
+                <div class="col">
+                    <a href="#/app/chapel">
+                        <button class="button button-block button-positive button-bottom" id="chapel"><span>Chapel Info</span></button>
+                    </a>
                 </div>
-                <!--Weather forecast 5 day carousel-->
-                <div class="item item-text-wrap">
-                    <div class="current-weather-wrapper">
-                        <p class="current-weather" id="currentTemp"></p>
-                    </div>
-                    <ion-slide-box show-pager="false">
-                        <ion-slide>
-                            <p class="day" id="day-0">Mon</p>
-                            <p class="temp" id="temp-0"></p>
-                        </ion-slide>
-                        <ion-slide>
-                            <p class="day" id="day-1">Tues</p>
-                            <p class="temp" id="temp-1"></p>
-                        </ion-slide>
-                        <ion-slide>
-                            <p class="day" id="day-2">Wed</p>
-                            <p class="temp" id="temp-2"></p>
-                        </ion-slide>
-                        <ion-slide>
-                            <p class="day" id="day-3">Thur</p>
-                            <p class="temp" id="temp-3"></p>
-                        </ion-slide>
-                        <ion-slide>
-                            <p class="day" id="day-4">Fri</p>
-                            <p class="temp" id="temp-4"></p>
-                        </ion-slide>
-                    </ion-slide-box>
+                <div class="col">
+                    <a href="#/app/settings">
+                        <button class="button button-block button-positive button-bottom" id="settings"><span>Settings</span></button>
+                    </a>
                 </div>
             </div>
-        </a>
+        </div>
     </ion-content>
 </ion-view>
