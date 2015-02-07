@@ -1,7 +1,8 @@
-angular.module('starter.controllers', [])
+angular.module('iwuApp.controllers', [])
 
     .controller('AppCtrl', function ($scope) {
         $scope.menuItems = [
+            {title: 'Dashboard', url: '#/app/main'},
             {title: 'Verse of the Day', url: '#/app/votd'},
             {title: 'Campus News', url: '#/app/news'},
             {title: 'Chapel', url: '#/app/chapel'},
@@ -18,65 +19,111 @@ angular.module('starter.controllers', [])
     })
 
     .controller('MainCtrl', function ($scope, $http) {
-        /*$scope.playlists = [
-            {title: 'Reggae', id: 1},
-            {title: 'Chill', id: 2},
-            {title: 'Dubstep', id: 3},
-            {title: 'Indie', id: 4},
-            {title: 'Rap', id: 5},
-            {title: 'Cowbelll', id: 6}
-        ];*/
-
         $scope.navTitle = '<span>IWU</span>';
 
-        /*$http.get('http://levi.cis.indwes.edu:8080/votd')
+        $http.get('http://api.openweathermap.org/data/2.5/weather?id=4923210&units=imperial&mode=json&APPID=82459d090e8552ff5ef308f72a1a5642')
             .success(function(data){
-                var x2js = new X2JS();
-                var jsonObj = x2js.xml_str2json(data);
+                /*var x2js = new X2JS();
+                var jsonObj = x2js.xml_str2json(data);*/
+                var jsonObj = data;
 
-                var title = jsonObj.rss.channel.item.title;
-                var verse = jsonObj.rss.channel.item.encoded.__cdata;
+                var city = jsonObj.name;
+                var temp = jsonObj.main.temp;
+                var tempMin = jsonObj.main.temp_min;
+                var tempMax = jsonObj.main.temp_max;
+                var icon = jsonObj.weather.icon;
 
-                verse = verse.replace(/&ldquo;/,"");
-                verse = verse.replace(/\[(.*)\]/,"");
-                verse = verse.replace(/&rdquo;(.*)/,"");
+                // Weather Condition Codes: http://openweathermap.org/weather-conditions
+                if(icon == '01d'){
+                    // Clear Day
+                }
+                else if(icon == '01n'){
+                    // Clear Night
+                }
+                else if(icon == '02d'){
+                    // Few Clouds Day
+                }
+                else if(icon == '02n'){
+                    // Few Clouds Night
+                }
+                else if(icon == '03d'){
+                    // Scattered Clouds Day
+                }
+                else if(icon == '03n'){
+                    // Scattered Clouds Night
+                }
+                else if(icon == '04d'){
+                    // Broken Clouds Day
+                }
+                else if(icon == '04n'){
+                    // Broken Clouds Night
+                }
+                else if(icon == '09d'){
+                    // Shower Rain Day/Night
+                }
+                else if(icon == '09n'){
+                    // Shower Rain Day/Night
+                }
+                else if(icon == '10d'){
+                    // Rain Day
+                }
+                else if(icon == '10n'){
+                    // Rain Night
+                }
+                else if(icon == '11d'){
+                    // Thunderstorm Day/Night
+                }
+                else if(icon == '11n'){
+                    // Thunderstorm Day/Night
+                }
+                else if(icon == '13d'){
+                    // Snow Day/Night
+                }
+                else if(icon == '13n'){
+                    // Snow Day/Night
+                }
+                else if(icon == '50d'){
+                    // Mist Day/Night
+                }
+                else if(icon == '50n'){
+                    // Mist Day/Night
+                }
+                else{
+                    // Clear Day (default value)
+                }
 
-                $scope.chapter = title;
-                $scope.verse = verse;
+                $scope.city = city;
+                $scope.temp = temp;
+                $scope.tempMin = tempMin;
+                $scope.tempMax = tempMax;
+                $scope.icon = icon;
             })
             .error(function(){
                 console.log('not working');
-            });*/
+            });
+
     })
 
     .controller('VotdCtrl', function ($scope){
-        $scope.navTitle = '<span>VOTD</span>';
+        $scope.navTitle = 'VOTD';
     })
 
     .controller('NewsCtrl', function ($scope){
-        $scope.navTitle = '<span>News</span>';
+        $scope.navTitle = 'News';
     })
 
     .controller('ChapelCtrl', function ($scope){
-        $scope.navTitle = '<span>Chapel</span>';
+        $scope.navTitle = 'Chapel';
     })
 
     .controller('ScheduleCtrl', function ($scope){
-        $scope.navTitle = '<span>Schedule</span>';
+        $scope.navTitle = 'Schedule';
     })
 
     .controller('BaldwinCtrl', function ($scope){
-        $scope.navTitle = '<span>Baldwin</span>';
-    })
-
-    .controller('RadioCtrl', function ($scope){
-        $scope.navTitle = '<span>Radio</span>';
-    })
-
-    .controller('WeatherCtrl', function ($scope){
-        $scope.navTitle = '<span>Weather</span>';
+        $scope.navTitle = 'Baldwin';
     })
 
     .controller('SettingsCtrl', function ($scope){
-        $scope.navTitle = '<span>Settings</span>';
+        $scope.navTitle = 'Settings';
     });

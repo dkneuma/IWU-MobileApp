@@ -2,42 +2,46 @@
     <ion-content>
         <div class="main-wrapper">
             <div class="card">
-                <div class="item item-divider">Weather</div>
-                <div class="item item-text-wrap">Weather Data</div>
+                <div class="item item-text-wrap">
+                    <p>City: {{city}}</p>
+                    <p>Temp: {{temp}}</p>
+                    <p>Min Temp: {{tempMin}}</p>
+                    <p>Max Temp: {{tempMax}}</p>
+                </div>
             </div>
             <div class="row">
                 <div class="col">
                     <a href="#/app/votd">
-                        <button class="button button-block button-positive button-top" id="votd"><span>Verse of the Day</span></button>
+                        <button class="button button-block button-positive" id="votd"><span>Verse of the Day</span></button>
                     </a>
                 </div>
                 <div class="col">
                     <a href="#/app/news">
-                        <button class="button button-block button-positive button-top" id="news"><span>Campus News</span></button>
+                        <button class="button button-block button-positive" id="news"><span>Campus News</span></button>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <a href="#/app/baldwin">
-                        <button class="button button-block button-positive button-mid" id="baldwin"><span>Baldwin Menu</span></button>
+                        <button class="button button-block button-positive" id="baldwin"><span>Baldwin Menu</span></button>
                     </a>
                 </div>
                 <div class="col">
                     <a href="#/app/schedule">
-                        <button class="button button-block button-positive button-mid" id="schedule"><span>Class Schedule</span></button>
+                        <button class="button button-block button-positive" id="schedule"><span>Class Schedule</span></button>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <a href="#/app/chapel">
-                        <button class="button button-block button-positive button-bottom" id="chapel"><span>Chapel Info</span></button>
+                        <button class="button button-block button-positive" id="chapel"><span>Chapel Info</span></button>
                     </a>
                 </div>
                 <div class="col">
                     <a href="#/app/settings">
-                        <button class="button button-block button-positive button-bottom" id="settings"><span>Settings</span></button>
+                        <button class="button button-block button-positive" id="settings"><span>Settings</span></button>
                     </a>
                 </div>
             </div>
