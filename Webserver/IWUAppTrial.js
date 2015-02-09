@@ -11,7 +11,7 @@ var fs = require('fs');                   //Node module for reading/writing file
 var $ = require('jquery');                //Allows use of jquery
 var jsdom = require("jsdom");             //Allows use of jsdom
 var window = jsdom.jsdom().parentWindow;  //creates windows for jquery
-var port = 8080;                          //port for server
+var port = 8070;                          //port for server
 app.listen(port);                         //event listener on port
 console.log('Port: ' + port);             //Outputs current port
 
@@ -57,7 +57,7 @@ app.get('/chapel', function(req, res){
 app.get('/news', function(req, res){
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.sendFile(path.join(__dirname, 'XML/news.xml'))
+  res.sendFile(path.join(__dirname, 'XML/news.JSON'))
 });
 
 
@@ -225,7 +225,8 @@ function sortArray(callback){
 function fillXML(callback){
 //Places the array of items into an rss feed, then puts the feed into news.xml
 
-  console.log('xml initialized') 
+  console.log('JSON initialized') 
+  /*
   newsString = "<root>";
 
   for (var l=0; l<newsArrayLength; l++){
@@ -235,8 +236,10 @@ function fillXML(callback){
   }
 
   newsString += "\n</root>"; //Add closing tag
+  */
+  newsString = JSON.stringify(newsItemsArray);
 
-  fs.writeFileSync('XML/news.xml',newsString); //Write to file
+  fs.writeFileSync('XML/news.JSON',newsString); //Write to file
   console.log("File Written");
 
   callback(); //Call next function
@@ -244,9 +247,9 @@ function fillXML(callback){
 
 function sortNews(){
 //reset global variables
-newsItemsArray = [];
-newsArrayLength = 0;
-newsString;
+  newsItemsArray = [];
+  newsArrayLength = 0;
+  newsString;
 
 //Run stuff in order
   for(var i=0; i<newsSource.length-1; i++){

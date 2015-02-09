@@ -28,7 +28,7 @@ var destination = ["XML/sojourn.xml", "XML/president.xml", "XML/sga.xml", "XML/s
 
 //sortNews calls several modules that get XML Data, organizes it, and stores it to News.XML
 sortNews();
-setInterval(sortNews,3600000);
+setInterval(sortNews,70000);//3600000);
 var newsItemsArray = [];
 var newsArrayLength = 0;
 var newsString;
@@ -57,7 +57,7 @@ app.get('/chapel', function(req, res){
 app.get('/news', function(req, res){
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.sendFile(path.join(__dirname, 'XML/news.xml'))
+  res.sendFile(path.join(__dirname, 'XML/news.JSON'))
 });
 
 
@@ -158,19 +158,19 @@ function parseXML(tempString, callback){
           itemTitle = itemTitle.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
           itemTitle = itemTitle.replace(/\&/g,"&amp;");
           if(itemTitle==""){
-            itemTitle = "False";
+            itemTitle = "";
           }
 
           newsItemsArray[i]['item'] = itemTitle; //Add item to array
 
           if(channelTitle==""){
-            channelTitle = "False";
+            channelTitle = "";
           }
           newsItemsArray[i]['channel'] = channelTitle; //Add channel to array
 
           guid = $(this).children('guid').text(); 
           if(guid ==""){
-            guid = "False";
+            guid = "";
           }
           newsItemsArray[i]['guid'] = guid; //Add guid to array
 
@@ -179,13 +179,13 @@ function parseXML(tempString, callback){
           description = description.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
           description = description.replace(/\&/g,"&amp;");
           if(description==""){
-            description = "False";
+            description = "";
           }
           newsItemsArray[i]['description'] = description; // Add description to array
 
           pubDate = $(this).children('pubDate').text();
           if(pubDate==""){
-            pubDate = "False";
+            pubDate = "";
           }
           newsItemsArray[i]['date'] = pubDate; // Add pubDate to array
 
@@ -194,7 +194,7 @@ function parseXML(tempString, callback){
           content = content.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
           content = content.replace(/\&/g,"&amp;");
           if(content==""){
-            content = "False";
+            content = "";
           }
           newsItemsArray[i]['content'] = content; //Add content to array
 		      
@@ -225,7 +225,8 @@ function sortArray(callback){
 function fillXML(callback){
 //Places the array of items into an rss feed, then puts the feed into news.xml
 
-  console.log('xml initialized') 
+  console.log('JSON initialized') 
+  /*
   newsString = "<root>";
 
   for (var l=0; l<newsArrayLength; l++){
@@ -235,8 +236,10 @@ function fillXML(callback){
   }
 
   newsString += "\n</root>"; //Add closing tag
+  */
+  newsString = JSON.stringify(newsItemsArray);
 
-  fs.writeFileSync('XML/news.xml',newsString); //Write to file
+  fs.writeFileSync('XML/news.JSON',newsString); //Write to file
   console.log("File Written");
 
   callback(); //Call next function
@@ -244,9 +247,9 @@ function fillXML(callback){
 
 function sortNews(){
 //reset global variables
-newsItemsArray = [];
-newsArrayLength = 0;
-newsString;
+  newsItemsArray = [];
+  newsArrayLength = 0;
+  newsString;
 
 //Run stuff in order
   for(var i=0; i<newsSource.length-1; i++){
