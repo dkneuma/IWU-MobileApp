@@ -380,6 +380,7 @@ $base_size: 16px;
 ion-content {
     font-family: $openSans;
     font-size: $base_size;
+    background-color: #5c5a5b;
 }
 ion-content a:visited{
     color: $IWU_white;
@@ -391,12 +392,102 @@ ion-content a:link{
 }
 
 
+/* ---------- Chapel Styles ---------- */
+.chapel-wrapper .card .chapel-color, .chapel-wrapper .card{
+  background: #333333;
+}
+.chapel-wrapper .card .speaker{
+  font-size: ($base_size * 1.25);
+  font-weight: (600);
+  color: #63d739;
+  padding-bottom: ($base_size * 0.25);
+}
+.chapel-wrapper .chapel-date{
+  font-size: ($base_size * 0.75);
+  padding-bottom: ($base_size * 0.75);
+  color: white;
+}
+.chapel-wrapper .chapel-topic{
+  text-align: center;
+  font-style: italic;
+  color: white;
+  border-top: 1px solid white;
+  padding-top: ($base_size * 1.25);
+}
 
+/* ---------- Schedule Styles ---------- */
+.schedule-wrapper .card .schedule-color, .schedule-wrapper .card{
+  background: #333333;
+}
+.schedule-wrapper .card .class-time{
+  font-size: ($base_size *.75);
+  color: white;
+  text-align: center;
+  padding-top: ($base_size * 1);
+}
+/* Schedule Styles for today's next class */
+.schedule-wrapper .card .next-class-title{
+  font-size: ($base_size * 0.75);
+  color: white;
+  padding-bottom: ($base_size * 1);
+  border-bottom: 1px solid white;
+}
+.schedule-wrapper .card .next-class{
+  font-size: ($base_size * 1);
+  color: white;
+  text-align: center;
+  /* padding-top: ($base_size * 1); */
+  padding-bottom: ($base_size * 0.75);
+}
+/* Schedule Styles for today's upcoming classes */
+.schedule-wrapper .card .future-today-classes-title{
+  font-size: ($base_size * 0.75);
+  color: white;
+  padding-bottom: ($base_size * 1);
+  border-bottom: 1px solid white;
+}
+.schedule-wrapper .card .future-today-classes{
+  font-size: ($base_size * 1);
+  color: white;
+  text-align: center;
+  /* padding-top: ($base_size * 1); */
+  padding-bottom: ($base_size * 0.5);
+}
+/* Schedule Styles for tomorrow's classes and beyond */
+.schedule-wrapper .card .tomorrow-beyond-classes-title{
+  font-size: ($base_size * 0.75);
+  color: white;
+  padding-bottom: ($base_size * 1);
+  border-bottom: 1px solid white;
+}
+.schedule-wrapper .card .tomorrow-beyond-classes{
+  font-size: ($base_size * 1);
+  color: white;
+  text-align: center;
+  /* padding-top: ($base_size * 1); */
+  padding-bottom: ($base_size * 0.5);
+}
 
+/* take 2 */
 
-
-
-
+.schedule-wrapper .card .day-name{
+  font-size: ($base_size * 1);
+  color: white;
+  text-align: left;
+  padding-bottom: ($base_size * 0.75);
+  border-bottom: 1px solid white;
+}
+.schedule-wrapper .card .das-time{
+  font-size: ($base_size * 0.75);
+  color: white;
+  text-align: left;
+  padding-top: ($base_size * 0.75);
+}
+.schedule-wrapper .card .daily-classes{
+  font-size: ($base_size * 1);
+  color: white;
+  text-align: left;
+}
 
 // INSERT SCSS ABOVE
 
