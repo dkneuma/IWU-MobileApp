@@ -1,0 +1,413 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// INSERT FONTS BELOW
+@font-face {
+    font-family: 'Climacons-Font';
+    src:url('climacons-webfont.eot');
+    src:url('climacons-webfont.eot?#iefix') format('embedded-opentype'),
+    url('climacons-webfont.svg#Climacons-Font') format('svg'),
+    url('climacons-webfont.woff') format('woff'),
+    url('climacons-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.climacon:before{
+    font-family: 'Climacons-Font';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.climacon.cloud:before {
+    content: "\e000";
+}
+.climacon.cloud.sun:before {
+    content: "\e001";
+}
+.climacon.cloud.moon:before {
+    content: "\e002";
+}
+.climacon.rain:before,
+.climacon.rain.cloud:before {
+    content: "\e003";
+}
+.climacon.rain.sun:before,
+.climacon.rain.cloud.sun:before {
+    content: "\e004";
+}
+.climacon.rain.moon:before,
+.climacon.rain.cloud.moon:before {
+    content: "\e005";
+}
+.climacon.showers:before,
+.climacon.showers.cloud:before {
+    content: "\e006";
+}
+.climacon.showers.sun:before,
+.climacon.showers.cloud.sun:before {
+    content: "\e007";
+}
+.climacon.showers.moon:before,
+.climacon.showers.cloud.moon:before {
+    content: "\e008";
+}
+.climacon.downpour:before,
+.climacon.downpour.cloud:before {
+    content: "\e009";
+}
+.climacon.downpour.sun:before,
+.climacon.downpour.cloud.sun:before {
+    content: "\e00a";
+}
+.climacon.downpour.moon:before,
+.climacon.downpour.cloud.moon:before {
+    content: "\e00b";
+}
+.climacon.drizzle:before,
+.climacon.drizzle.cloud:before {
+    content: "\e00c";
+}
+.climacon.drizzle.sun:before,
+.climacon.drizzle.cloud.sun:before {
+    content: "\e00d";
+}
+.climacon.drizzle.moon:before,
+.climacon.drizzle.cloud.moon:before {
+    content: "\e00e";
+}
+.climacon.sleet:before,
+.climacon.sleet.cloud:before {
+    content: "\e00f";
+}
+.climacon.sleet.sun:before,
+.climacon.sleet.cloud.sun:before {
+    content: "\e010";
+}
+.climacon.sleet.moon:before,
+.climacon.sleet.cloud.moon:before {
+    content: "\e011";
+}
+.climacon.hail:before,
+.climacon.hail.cloud:before {
+    content: "\e012";
+}
+.climacon.hail.sun:before,
+.climacon.hail.cloud.sun:before {
+    content: "\e013";
+}
+.climacon.hail.moon:before,
+.climacon.hail.cloud.moon:before {
+    content: "\e014";
+}
+.climacon.flurries:before,
+.climacon.flurries.cloud:before {
+    content: "\e015";
+}
+.climacon.flurries.sun:before,
+.climacon.flurries.cloud.sun:before {
+    content: "\e016";
+}
+.climacon.flurries.moon:before,
+.climacon.flurries.cloud.moon:before {
+    content: "\e017";
+}
+.climacon.snow:before,
+.climacon.snow.cloud:before {
+    content: "\e018";
+}
+.climacon.snow.sun:before,
+.climacon.snow.cloud.sun:before {
+    content: "\e019";
+}
+.climacon.snow.moon:before,
+.climacon.snow.cloud.moon:before {
+    content: "\e01a";
+}
+.climacon.fog:before,
+.climacon.fog.cloud:before {
+    content: "\e01b";
+}
+.climacon.fog.sun:before,
+.climacon.fog.cloud.sun:before {
+    content: "\e01c";
+}
+.climacon.fog.moon:before,
+.climacon.fog.cloud.moon:before {
+    content: "\e01d";
+}
+.climacon.haze:before {
+    content: "\e01e";
+}
+.climacon.haze.sun:before {
+    content: "\e01f";
+}
+.climacon.haze.moon:before {
+    content: "\e020";
+}
+.climacon.wind:before {
+    content: "\e021";
+}
+.climacon.wind.cloud:before {
+    content: "\e022";
+}
+.climacon.wind.sun:before,
+.climacon.wind.cloud.sun:before {
+    content: "\e023";
+}
+.climacon.wind.moon:before,
+.climacon.wind.cloud.moon:before {
+    content: "\e024";
+}
+.climacon.lightning:before,
+.climacon.lightning.cloud:before {
+    content: "\e025";
+}
+.climacon.lightning.sun:before,
+.climacon.lightning.cloud.sun:before {
+    content: "\e026";
+}
+.climacon.lightning.moon:before,
+.climacon.lightning.cloud.moon:before {
+    content: "\e027";
+}
+.climacon.sun:before {
+    content: "\e028";
+}
+.climacon.sun.set:before,
+.climacon.sunset:before {
+    content: "\e029";
+}
+.climacon.sun.rise:before,
+.climacon.sunrise:before {
+    content: "\e02a";
+}
+.climacon.sun.low:before,
+.climacon.sun-low:before,
+.climacon.low-sun:before {
+    content: "\e02b";
+}
+.climacon.sun.lower:before,
+.climacon.sun-lower:before,
+.climacon.lower-sun:before {
+    content: "\e02c";
+}
+.climacon.moon:before {
+    content: "\e02d";
+}
+.climacon.moon.new:before {
+    content: "\e02e";
+}
+.climacon.moon.waxing.crescent:before,
+.climacon.moon.first-crescent:before {
+    content: "\e02f";
+}
+.climacon.moon.waxing.quarter:before,
+.climacon.moon.first-quarter:before,
+.climacon.moon.waxing.half:before,
+.climacon.moon.first-half:before{
+    content: "\e030";
+}
+.climacon.moon.waxing.gibbous:before,
+.climacon.moon.first-gibbous:before,
+.climacon.moon.waxing.three-quarter:before,
+.climacon.moon.first-three-quarter:before {
+    content: "\e031";
+}
+.climacon.moon.full:before {
+    content: "\e032";
+}
+.climacon.moon.waning.gibbous:before,
+.climacon.moon.last-gibbous:before,
+.climacon.moon.waning.three-quarter:before,
+.climacon.moon.last-three-quarter:before {
+    content: "\e033";
+}
+.climacon.moon.waning.quarter:before,
+.climacon.moon.last-quarter:before,
+.climacon.moon.waning.half:before,
+.climacon.moon.last-half:before {
+    content: "\e034";
+}
+.climacon.moon.waning.crescent:before,
+.climacon.moon.last-crescent:before {
+    content: "\e035";
+}
+.climacon.snowflake:before {
+    content: "\e036";
+}
+.climacon.tornado:before {
+    content: "\e037";
+}
+.climacon.thermometer.empty:before,
+.climacon.thermometer:before {
+    content: "\e038";
+}
+.climacon.thermometer.low:before {
+    content: "\e039";
+}
+.climacon.thermometer.medium-low:before {
+    content: "\e03a";
+}
+.climacon.thermometer.medium-high:before {
+    content: "\e03b";
+}
+.climacon.thermometer.high:before {
+    content: "\e03c";
+}
+.climacon.thermometer.full:before {
+    content: "\e03d";
+}
+.climacon.celcius:before {
+    content: "\e03e";
+}
+.climacon.farenheit:before {
+    content: "\e03f";
+}
+.climacon.compass:before {
+    content: "\e040";
+}
+.climacon.compass.north:before {
+    content: "\e041";
+}
+.climacon.compass.east:before {
+    content: "\e042";
+}
+.climacon.compass.south:before {
+    content: "\e043";
+}
+.climacon.compass.west:before {
+    content: "\e044";
+}
+.climacon.umbrella:before {
+    content: "\e045";
+}
+.climacon.sunglasses:before {
+    content: "\e046";
+}
+.climacon.cloud.cycle:before,
+.climacon.cloud.refresh:before {
+    content: "\e047";
+}
+.climacon.cloud.down:before,
+.climacon.cloud.download:before {
+    content: "\e048";
+}
+.climacon.cloud.up:before,
+.climacon.cloud.upload:before {
+    content: "\e049";
+}
+// INSERT FONTS ABOVE
+// INSERT SCSS BELOW
+
+/* Color Variables */
+$IWU_white: #F5F5F5;
+$IWU_off-white: #EDEAE8;
+$IWU_blue: #6195AE;
+$IWU_red: #980826;
+$IWU_grey: #444444;
+$IWU_light-grey: #E1E1E1;
+
+/* Font Variables */
+$openSans: "Open Sans", georgia, "times new roman", sans-serif;
+
+/* Sizing Variables */
+$base_size: 16px;
+
+/* Main Page Button styles */
+.main-wrapper button{
+    height: 150px;
+    position: relative;
+    border: none;
+    line-height: $base_size;
+}
+.main-wrapper .button.button-block{
+    margin: 0;
+}
+.main-wrapper span{
+    position: absolute;
+    top: ($base_size * 0.5);
+    right: ($base_size * 0.5);
+    font-size: ($base_size * 0.75);
+}
+
+/* Top button row styles */
+.main-wrapper .button-top{
+
+}
+
+/* Individual button styles */
+#votd{
+    background: #5ead7d;
+}
+#news{
+    background: #f0c75e;
+}
+#baldwin{
+    background: #393939;
+}
+#schedule{
+    background: #df3d32;
+}
+#chapel{
+    background: #db724f;
+}
+#settings{
+    background: #417282;
+}
+
+/* Wrapper styles */
+.main-wrapper{
+    position: relative;
+}
+
+/* Global styles */
+ion-content {
+    font-family: $openSans;
+    font-size: $base_size;
+}
+ion-content a:visited{
+    color: $IWU_white;
+    text-decoration: none
+}
+ion-content a:link{
+    color: $IWU_white;
+    text-decoration: none
+}
+
+
+
+
+
+
+
+
+
+// INSERT SCSS ABOVE
+
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+
+
+
