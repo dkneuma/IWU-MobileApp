@@ -312,6 +312,35 @@ $dark:                            #444 !default;
 .climacon.cloud.upload:before {
     content: "\e049";
 }
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/cardicons/flaticon.eot");
+  src: url("../fonts/cardicons/flaticon.eot#iefix") format("embedded-opentype"),
+  url("../fonts/cardicons/flaticon.woff") format("woff"),
+  url("../fonts/cardicons/flaticon.ttf") format("truetype"),
+  url("../fonts/cardicons/flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  /*font-size: 20px;*/
+  font-style: normal;
+  /*margin-left: 20px;*/
+}.flaticon-47:before {    // Chapel Icon
+   content: "\e000";
+ }
+.flaticon-45:before {   // Schedule Icon
+  content: "\e001";
+}
+.flaticon-11:before {   // News Icon
+  content: "\e002";
+}
+.flaticon-1:before {    // Menu Icon
+  content: "\e003";
+}
 // INSERT FONTS ABOVE
 // INSERT SCSS BELOW
 
@@ -322,6 +351,7 @@ $IWU_blue: #6195AE;
 $IWU_red: #980826;
 $IWU_grey: #444444;
 $IWU_light-grey: #E1E1E1;
+$dark: #333333;
 
 /* Font Variables */
 $openSans: "Open Sans", georgia, "times new roman", sans-serif;
@@ -343,31 +373,36 @@ $base_size: 16px;
     position: absolute;
     top: ($base_size * 0.5);
     right: ($base_size * 0.5);
-    font-size: ($base_size * 0.75);
+    font-size: ($base_size * 0.875);
 }
 
 /* Weather card styles */
 .main-wrapper .date{
   font-weight: 300;
+  text-transform: uppercase;
 }
 .main-wrapper .month{
   font-weight: 300;
+  text-transform: uppercase;
 }
 .main-wrapper .day{
   line-height: $base_size;
   font-size: ($base_size * 1.25);
   margin-bottom: ($base_size * 0.75);
   margin-top: ($base_size * 1.5);
+  text-transform: uppercase;
 }
 .main-wrapper .card p{
   font-weight: 400;
   text-align: center;
+  color: $IWU_white;
 }
 .main-wrapper .card i{
   font-size: ($base_size * 4);
   display: block;
   text-align: center;
   line-height: 0.5;
+  color: $IWU_white;
 }
 .main-wrapper .col-right-top{
   margin-top: ($base_size * 1.375);
@@ -386,46 +421,84 @@ $base_size: 16px;
 }
 .main-wrapper .card .city{
   font-size: ($base_size * 0.875);
+  text-transform: uppercase;
+}
+.main-wrapper .weather{
+  background-color: #333333;
 }
 
+/* Verse of the Day styles */
+.main-wrapper .votd .item-text-wrap{
+  font-size: ($base_size * 0.75);
+  text-align: center;
+  font-style: italic;
+  line-height: ($base_size * 0.75);
+  font-weight: 300;
+  padding-top: ($base_size * 0.5);
+  background-color: #5c5a5b;
+  color: $IWU_white;
+}
+.main-wrapper .votd p{
+  float: right;
+  font-style: normal;
+  margin-top: ($base_size * 0.5);
+  font-weight: 300;
+  color: $IWU_white;
+}
+.main-wrapper .votd{
+  box-shadow: none;
+  margin-top: 0;
+  margin-bottom: ($base_size * 0.5);
+}
 
 /* Individual button styles */
-#votd{
-    background: #5ead7d;
+.main-wrapper #news{
+  background: #333333;
+  color: #ff0030;
 }
-#news{
-    background: #f0c75e;
+.main-wrapper .button .button-icon{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin-bottom: ($base_size * 0.5);
+  margin-left: ($base_size * 0.5);
+  font-size: ($base_size * 2.5);
+  line-height: ($base_size * 2.5);
 }
-#baldwin{
-    background: #393939;
+.main-wrapper #baldwin{
+  background: #333333;
+  color: #01A6E4;
 }
-#schedule{
-    background: #df3d32;
+.main-wrapper #schedule{
+  background: #333333;
+  color: #fffb21;
 }
-#chapel{
-    background: #db724f;
+.main-wrapper #chapel{
+  background: #333333;
+  color: #63d739;
 }
-#settings{
-    background: #417282;
-}
+
 
 /* Wrapper styles */
 .main-wrapper{
-    position: relative;
+  position: relative;
 }
 
 /* Global styles */
 ion-content {
-    font-family: $openSans;
-    font-size: $base_size;
+  font-family: $openSans;
+  font-size: $base_size;
+  background-color: #5c5a5b;
 }
 ion-content a:visited{
-    color: $IWU_white;
-    text-decoration: none
+  color: $IWU_white;
+  text-decoration: none
 }
 ion-content a:link{
-    color: $IWU_white;
-    text-decoration: none
+  color: $IWU_white;
+  text-decoration: none
 }
 
 
