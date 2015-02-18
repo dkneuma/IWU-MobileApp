@@ -1,0 +1,39 @@
+{
+  "coord": {
+    "lon": -85.66,
+    "lat": 40.56
+  },
+  "sys": {
+    "type": 3,
+    "id": 56931,
+    "message": 0.0269,
+    "country": "US",
+    "sunrise": 1423226788,
+    "sunset": 1423264018
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "Sky is Clear",
+      "icon": "01n"
+    }
+  ],
+  "base": "cmc stations",
+  "main": {
+    "temp": 5.9,
+    "humidity": 81,
+    "pressure": 1030.068,
+    "temp_min": 5.9,
+    "temp_max": 5.9
+  },
+  "wind": {
+    "speed": 5.62,
+    "deg": 210.002
+  },
+  "clouds": {"all": 0},
+  "dt": 1423183853,
+  "id": 4923210,
+  "name": "Marion",
+  "cod": 200
+}
