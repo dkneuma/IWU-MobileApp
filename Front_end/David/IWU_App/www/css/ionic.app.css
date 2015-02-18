@@ -334,55 +334,6 @@ ion-content a:link {
 .schedule-wrapper .card .schedule-color, .schedule-wrapper .card {
   background: #333333; }
 
-.schedule-wrapper .card .class-time {
-  font-size: 12px;
-  color: white;
-  text-align: center;
-  padding-top: 16px; }
-
-/* Schedule Styles for today's next class */
-.schedule-wrapper .card .next-class-title {
-  font-size: 12px;
-  color: white;
-  padding-bottom: 16px;
-  border-bottom: 1px solid white; }
-
-.schedule-wrapper .card .next-class {
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  /* padding-top: ($base_size * 1); */
-  padding-bottom: 12px; }
-
-/* Schedule Styles for today's upcoming classes */
-.schedule-wrapper .card .future-today-classes-title {
-  font-size: 12px;
-  color: white;
-  padding-bottom: 16px;
-  border-bottom: 1px solid white; }
-
-.schedule-wrapper .card .future-today-classes {
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  /* padding-top: ($base_size * 1); */
-  padding-bottom: 8px; }
-
-/* Schedule Styles for tomorrow's classes and beyond */
-.schedule-wrapper .card .tomorrow-beyond-classes-title {
-  font-size: 12px;
-  color: white;
-  padding-bottom: 16px;
-  border-bottom: 1px solid white; }
-
-.schedule-wrapper .card .tomorrow-beyond-classes {
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  /* padding-top: ($base_size * 1); */
-  padding-bottom: 8px; }
-
-/* take 2 */
 .schedule-wrapper .card .day-name {
   font-size: 16px;
   color: white;
@@ -390,7 +341,7 @@ ion-content a:link {
   padding-bottom: 12px;
   border-bottom: 1px solid white; }
 
-.schedule-wrapper .card .das-time {
+.schedule-wrapper .card .class-time {
   font-size: 12px;
   color: white;
   text-align: left;

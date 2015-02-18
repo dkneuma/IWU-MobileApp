@@ -419,57 +419,6 @@ ion-content a:link{
 .schedule-wrapper .card .schedule-color, .schedule-wrapper .card{
   background: #333333;
 }
-.schedule-wrapper .card .class-time{
-  font-size: ($base_size *.75);
-  color: white;
-  text-align: center;
-  padding-top: ($base_size * 1);
-}
-/* Schedule Styles for today's next class */
-.schedule-wrapper .card .next-class-title{
-  font-size: ($base_size * 0.75);
-  color: white;
-  padding-bottom: ($base_size * 1);
-  border-bottom: 1px solid white;
-}
-.schedule-wrapper .card .next-class{
-  font-size: ($base_size * 1);
-  color: white;
-  text-align: center;
-  /* padding-top: ($base_size * 1); */
-  padding-bottom: ($base_size * 0.75);
-}
-/* Schedule Styles for today's upcoming classes */
-.schedule-wrapper .card .future-today-classes-title{
-  font-size: ($base_size * 0.75);
-  color: white;
-  padding-bottom: ($base_size * 1);
-  border-bottom: 1px solid white;
-}
-.schedule-wrapper .card .future-today-classes{
-  font-size: ($base_size * 1);
-  color: white;
-  text-align: center;
-  /* padding-top: ($base_size * 1); */
-  padding-bottom: ($base_size * 0.5);
-}
-/* Schedule Styles for tomorrow's classes and beyond */
-.schedule-wrapper .card .tomorrow-beyond-classes-title{
-  font-size: ($base_size * 0.75);
-  color: white;
-  padding-bottom: ($base_size * 1);
-  border-bottom: 1px solid white;
-}
-.schedule-wrapper .card .tomorrow-beyond-classes{
-  font-size: ($base_size * 1);
-  color: white;
-  text-align: center;
-  /* padding-top: ($base_size * 1); */
-  padding-bottom: ($base_size * 0.5);
-}
-
-/* take 2 */
-
 .schedule-wrapper .card .day-name{
   font-size: ($base_size * 1);
   color: white;
@@ -477,7 +426,7 @@ ion-content a:link{
   padding-bottom: ($base_size * 0.75);
   border-bottom: 1px solid white;
 }
-.schedule-wrapper .card .das-time{
+.schedule-wrapper .card .class-time{
   font-size: ($base_size * 0.75);
   color: white;
   text-align: left;
@@ -489,8 +438,8 @@ ion-content a:link{
   text-align: left;
 }
 
-// INSERT SCSS ABOVE
 
+// INSERT SCSS ABOVE
 
 
 // The path for our ionicons font files, relative to the built CSS in www/css
