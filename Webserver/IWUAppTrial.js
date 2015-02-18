@@ -237,7 +237,9 @@ function fillXML(callback){
 
   newsString += "\n</root>"; //Add closing tag
   */
-  newsString = JSON.stringify(newsItemsArray);
+  newsString = '{"news":'
+  newsString += JSON.stringify(newsItemsArray);
+  newsString += "}"
 
   fs.writeFileSync('XML/news.JSON',newsString); //Write to file
   console.log("File Written");

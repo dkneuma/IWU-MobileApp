@@ -158,19 +158,19 @@ function parseXML(tempString, callback){
           itemTitle = itemTitle.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
           itemTitle = itemTitle.replace(/\&/g,"&amp;");
           if(itemTitle==""){
-            itemTitle = "";
+            itemTitle = "False";
           }
 
           newsItemsArray[i]['item'] = itemTitle; //Add item to array
 
           if(channelTitle==""){
-            channelTitle = "";
+            channelTitle = "False";
           }
           newsItemsArray[i]['channel'] = channelTitle; //Add channel to array
 
           guid = $(this).children('guid').text(); 
           if(guid ==""){
-            guid = "";
+            guid = "False";
           }
           newsItemsArray[i]['guid'] = guid; //Add guid to array
 
@@ -179,13 +179,13 @@ function parseXML(tempString, callback){
           description = description.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
           description = description.replace(/\&/g,"&amp;");
           if(description==""){
-            description = "";
+            description = "False";
           }
           newsItemsArray[i]['description'] = description; // Add description to array
 
           pubDate = $(this).children('pubDate').text();
           if(pubDate==""){
-            pubDate = "";
+            pubDate = "False";
           }
           newsItemsArray[i]['date'] = pubDate; // Add pubDate to array
 
@@ -194,7 +194,7 @@ function parseXML(tempString, callback){
           content = content.replace(/(\\t0|\\n|\\t|]]>|\uFFFD)/g,"");
           content = content.replace(/\&/g,"&amp;");
           if(content==""){
-            content = "";
+            content = "False";
           }
           newsItemsArray[i]['content'] = content; //Add content to array
 		      
@@ -237,7 +237,9 @@ function fillXML(callback){
 
   newsString += "\n</root>"; //Add closing tag
   */
-  newsString = JSON.stringify(newsItemsArray);
+  newsString = '{"news":'
+  newsString += JSON.stringify(newsItemsArray);
+  newsString += "}"
 
   fs.writeFileSync('XML/news.JSON',newsString); //Write to file
   console.log("File Written");
