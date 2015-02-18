@@ -538,54 +538,6 @@ $base_size: 16px;
   font-weight: 300;
 }
 
-/* *********************************** */
-/* ---------- Chapel Styles ---------- */
-/* *********************************** */
-.chapel-wrapper .card .chapel-color, .chapel-wrapper .card{
-  background: #333333;
-}
-.chapel-wrapper .card .speaker{
-  font-size: ($base_size * 1.25);
-  font-weight: (600);
-  color: #63d739;
-  padding-bottom: ($base_size * 0.25);
-}
-.chapel-wrapper .chapel-date{
-  font-size: ($base_size * 0.75);
-  padding-bottom: ($base_size * 0.75);
-  color: white;
-}
-.chapel-wrapper .chapel-topic{
-  text-align: center;
-  font-style: italic;
-  color: white;
-  border-top: 1px solid white;
-  padding-top: ($base_size * 1.25);
-}
-/* ************************************* */
-/* ---------- Schedule Styles ---------- */
-/* ************************************* */
-.schedule-wrapper .card .schedule-color, .schedule-wrapper .card{
-  background: #333333;
-}
-.schedule-wrapper .card .day-name{
-  font-size: ($base_size * 1);
-  color: white;
-  text-align: left;
-  padding-bottom: ($base_size * 0.75);
-  border-bottom: 1px solid white;
-}
-.schedule-wrapper .card .class-time{
-  font-size: ($base_size * 0.75);
-  color: white;
-  text-align: left;
-  padding-top: ($base_size * 0.75);
-}
-.schedule-wrapper .card .daily-classes{
-  font-size: ($base_size * 1);
-  color: white;
-  text-align: left;
-}
 
 
 /* Global styles */

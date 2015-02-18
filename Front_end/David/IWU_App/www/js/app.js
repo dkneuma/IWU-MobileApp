@@ -100,7 +100,62 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                         controller: 'SettingsCtrl'
                     }
                 }
+            })
+            .state('app.news-athletics', {
+                url: "/news/athletics",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/athletics.html",
+                        controller: 'AthleticsCtrl'
+                    }
+                }
+            })
+            .state('app.news-latest', {
+                url: "/news/latest",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/latest.html",
+                        controller: 'LatestCtrl'
+                    }
+                }
+            })
+            .state('app.news-president', {
+                url: "/news/president",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/president.html",
+                        controller: 'PresidentCtrl'
+                    }
+                }
+            })
+            .state('app.news-sga', {
+                url: "/news/sga",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/sga.html",
+                        controller: 'SGACtrl'
+                    }
+                }
+            })
+            .state('app.news-sojourn', {
+                url: "/news/sojourn",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/sojourn.html",
+                        controller: 'SojournCtrl'
+                    }
+                }
+            })
+            .state('app.news-spectrum', {
+                url: "/news/spectrum",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/spectrum.html",
+                        controller: 'SpectrumCtrl'
+                    }
+                }
             });
+
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/main');
     });

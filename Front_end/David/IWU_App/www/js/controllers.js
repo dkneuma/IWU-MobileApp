@@ -126,4 +126,28 @@ angular.module('iwuApp.controllers', [])
 
     .controller('SettingsCtrl', function ($scope){
         $scope.navTitle = 'Settings';
+    })
+
+    .controller('AthleticsCtrl', function ($scope){
+        $scope.navTitle = 'Athletics';
+    })
+
+    .controller('LatestCtrl', function ($scope){
+        $scope.navTitle = 'Latest';
+    })
+
+    .controller('PresidentCtrl', function ($scope){
+        $scope.navTitle = 'The President&#39;s Blog';
+    })
+
+    .controller('SGACtrl', function ($scope){
+        $scope.navTitle = 'SGA Blog';
+    })
+
+    .controller('SojournCtrl', function ($scope){
+        $scope.navTitle = 'The Sojourn';
+    })
+
+    .controller('SpectrumCtrl', function ($scope){
+        $scope.navTitle = 'IWU Spectrum';
     });
