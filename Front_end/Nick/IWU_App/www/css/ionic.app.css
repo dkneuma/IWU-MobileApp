@@ -406,7 +406,7 @@ $dark:                            #444 !default;
 /* ------------ NEWS PAGE styles ------------ */
 /* ****************************************** */
 /* All News Pages wrapper styles */
-.news-wrapper, .athletics-wrapper, .president-wrapper {
+.news-wrapper, .athletics-wrapper, .president-wrapper, .sga-wrapper, .spectrum-wrapper, .sojourn-wrapper, .latest-wrapper {
   position: relative;
   z-index: 0; }
 
@@ -444,26 +444,42 @@ $dark:                            #444 !default;
 .news-wrapper .card .col p {
   padding: 0; }
 
-\ .chapel-wrapper .card .chapel-color, .chapel-wrapper .card {
+/* *********************************** */
+/* ---------- Chapel Styles ---------- */
+/* *********************************** */
+.chapel-wrapper .card .chapel-color, .chapel-wrapper .card {
   background: #333333; }
 
 .chapel-wrapper .card .speaker {
   font-size: 20px;
   font-weight: 600;
-  color: #63d739;
+  color: #F5F5F5;
   padding-bottom: 4px; }
 
 .chapel-wrapper .chapel-date {
   font-size: 12px;
   padding-bottom: 12px;
-  color: white; }
+  color: #F5F5F5; }
 
 .chapel-wrapper .chapel-topic {
   text-align: center;
   font-style: italic;
-  color: white;
+  color: #F5F5F5;
   border-top: 1px solid white;
   padding-top: 20px; }
+
+.chapel-wrapper .card-1 {
+  z-index: 1;
+  margin-top: -25px;
+  position: relative; }
+
+.chapel-wrapper .chapel-header img {
+  width: 100%;
+  height: 30%; }
+
+.chapel-wrapper {
+  position: relative;
+  z-index: 0; }
 
 /* ************************************* */
 /* ---------- Schedule Styles ---------- */
@@ -473,20 +489,20 @@ $dark:                            #444 !default;
 
 .schedule-wrapper .card .day-name {
   font-size: 16px;
-  color: white;
+  color: #F5F5F5;
   text-align: left;
   padding-bottom: 12px;
   border-bottom: 1px solid white; }
 
 .schedule-wrapper .card .class-time {
   font-size: 12px;
-  color: white;
+  color: #F5F5F5;
   text-align: left;
   padding-top: 12px; }
 
 .schedule-wrapper .card .daily-classes {
   font-size: 16px;
-  color: white;
+  color: #F5F5F5;
   text-align: left; }
 
 /* Global styles */
