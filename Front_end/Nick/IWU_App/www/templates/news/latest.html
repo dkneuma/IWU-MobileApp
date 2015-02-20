@@ -4,7 +4,7 @@
             <div class="latest-header">
                 <img src="img/library.jpg" class="latest-image">
             </div>
-            <!--<a href="http://www.iwuwildcats.com/article/4112.php" target="_blank">-->
+            <!--<a href="http://www.iwuwildcats.com/article/4112.php" target="_blank">
             <div class="card card-1">
                 <div class="row">
                     <div class="col col-33">
@@ -20,63 +20,18 @@
                     </div>
                 </div>
             </div>
-            <!--</a>-->
-            <div class="card">
+            </a>-->
+            <div class="card" ng-repeat="newsArticle in news.newsInfo.data.article">
                 <div class="row">
                     <div class="col col-33">
                         <img src="img/head_two.png">
                     </div>
                     <div class="col">
                         <p class="article-title">
-                            Bowman House alumni uncover time capsule
+                            {{newsArticle.title}}
                         </p>
                         <p class="article-date">
-                            18 Feb 2015 3:17am
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="row">
-                    <div class="col col-33">
-                        <img src="img/head_two.png">
-                    </div>
-                    <div class="col">
-                        <p class="article-title">
-                            Men's basketball goes on run to beat Spring Arbor
-                        </p>
-                        <p class="article-date">
-                            15 Feb 2015 12:17am
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="row">
-                    <div class="col col-33">
-                        <img src="img/head_two.png">
-                    </div>
-                    <div class="col">
-                        <p class="article-title">
-                            Women's basketball team fights human trafficking
-                        </p>
-                        <p class="article-date">
-                            14 Feb 2015 10:01pm
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="row">
-                    <div class="col col-33">
-                        <img src="img/head_two.png">
-                    </div>
-                    <div class="col">
-                        <p class="article-title">
-                            'South Pacific' explores cross-cultural relationships
-                        </p>
-                        <p class="article-date">
-                            14 Feb 2015 8:45pm
+                            {{newsArticle.date}}
                         </p>
                     </div>
                 </div>

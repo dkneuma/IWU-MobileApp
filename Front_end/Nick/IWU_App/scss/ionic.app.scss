@@ -510,7 +510,7 @@ $base_size: 16px;
 }
 .news-wrapper .card-1, .athletics-wrapper .card-1, .president-wrapper .card-1, .sga-wrapper .card-1, .spectrum-wrapper .card-1, .sojourn-wrapper .card-1, .latest-wrapper .card-1{
   z-index: 1;
-  margin-top: -25px;
+  margin-top: -($base_size * 1.5);
   position: relative;
 }
 .athletics-wrapper .card .col img, .news-wrapper .card .col img, .president-wrapper .card .col img, .sga-wrapper .card .col img, .spectrum-wrapper .card .col img, .sojourn-wrapper .card .col img, .latest-wrapper .card .col img{
@@ -546,7 +546,7 @@ $base_size: 16px;
   background: #333333;
 }
 .chapel-wrapper .card .speaker{
-  font-size: ($base_size * 1.25);
+  font-size: ($base_size);
   font-weight: (600);
   color: $IWU_white;
   padding-bottom: ($base_size * 0.25);
@@ -563,9 +563,9 @@ $base_size: 16px;
   border-top: 1px solid white;
   padding-top: ($base_size * 1.25);
 }
-.chapel-wrapper .card-1{
+.chapel-wrapper .card:first-of-type{
   z-index: 1;
-  margin-top: -25px;
+  margin-top: -($base_size * 1.5);
   position: relative;
 }
 .chapel-wrapper .chapel-header img{
