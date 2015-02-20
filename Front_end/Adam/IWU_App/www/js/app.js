@@ -4,7 +4,10 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
+angular.module('iwuApp',
+    ['ionic',
+    'iwuApp.services',
+    'iwuApp.controllers'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -23,12 +26,15 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
 
+            /* Global App */
             .state('app', {
                 url: "/app",
                 abstract: true,
                 templateUrl: "templates/menu.html",
                 controller: 'AppCtrl'
             })
+
+            /* Login */
             .state('app.login', {
                 url: "/login",
                 views: {
@@ -38,21 +44,14 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                     }
                 }
             })
+
+            /* Root Level Pages */
             .state('app.main', {
                 url: "/main",
                 views: {
                     'menuContent': {
                         templateUrl: "templates/main.html",
                         controller: 'MainCtrl'
-                    }
-                }
-            })
-            .state('app.votd', {
-                url: "/votd",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/votd.html",
-                        controller: 'VotdCtrl'
                     }
                 }
             })
@@ -98,6 +97,62 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                     'menuContent': {
                         templateUrl: "templates/settings.html",
                         controller: 'SettingsCtrl'
+                    }
+                }
+            })
+
+            /* News Sub-Pages */
+            .state('app.news-athletics', {
+                url: "/news/athletics",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/athletics.html",
+                        controller: 'AthleticsCtrl'
+                    }
+                }
+            })
+            .state('app.news-latest', {
+                url: "/news/latest",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/latest.html",
+                        controller: 'LatestCtrl'
+                    }
+                }
+            })
+            .state('app.news-president', {
+                url: "/news/president",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/president.html",
+                        controller: 'PresidentCtrl'
+                    }
+                }
+            })
+            .state('app.news-sga', {
+                url: "/news/sga",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/sga.html",
+                        controller: 'SGACtrl'
+                    }
+                }
+            })
+            .state('app.news-sojourn', {
+                url: "/news/sojourn",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/sojourn.html",
+                        controller: 'SojournCtrl'
+                    }
+                }
+            })
+            .state('app.news-spectrum', {
+                url: "/news/spectrum",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/news/spectrum.html",
+                        controller: 'SpectrumCtrl'
                     }
                 }
             });

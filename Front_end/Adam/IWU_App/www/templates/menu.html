@@ -6,22 +6,10 @@
             </ion-nav-back-button>
 
             <ion-nav-buttons side="left">
-                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-                </button>
             </ion-nav-buttons>
         </ion-nav-bar>
-        <ion-nav-view name="menuContent"></ion-nav-view>
-    </ion-side-menu-content>
+        <ion-nav-view name="menuContent">
 
-    <ion-side-menu side="left">
-        <!-- Add class here to target bar -->
-        <ion-header-bar class="bar-dark"></ion-header-bar>
-        <ion-content>
-            <ion-list>
-                <ion-item nav-clear menu-close ng-repeat="menuItem in menuItems" href="{{menuItem.url}}">
-                    {{menuItem.title}}
-                </ion-item>
-            </ion-list>
-        </ion-content>
-    </ion-side-menu>
+        </ion-nav-view>
+    </ion-side-menu-content>
 </ion-side-menus>

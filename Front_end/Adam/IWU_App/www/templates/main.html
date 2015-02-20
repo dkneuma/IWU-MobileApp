@@ -1,58 +1,49 @@
 <ion-view view-title="{{navTitle}}">
     <ion-content>
         <div class="main-wrapper">
-            <div class="card weather">
+            <div class="card">
                 <div class="row">
                     <div class="col">
-                        <p class="day">SAT</p>
+                        <p class="day">{{weather.dateWeather.data.dayWeek}}</p>
                         <p>
-                            <span class="date">07</span>
-                            <span class="month">FEB</span>
+                            <span class="date">{{weather.dateWeather.data.dayMonth}}</span>
+                            <span class="month">{{weather.dateWeather.data.monthYear}}</span>
                         </p>
-                        <!--day, date-->
                     </div>
                     <div class="col">
-                        <i class="climacon sunglasses"></i>
+                        <i class="{{weather.currentWeather.data.icon}}"></i>
                         <p>
-                            <span class="city">MARION</span>
+                            <span class="city">{{weather.todaysWeather.data.city}}</span>
                         </p>
-                        <!--icon, city-->
                     </div>
                     <div class="col">
                         <p class="col-right-top">
-                            <span class="currentTemp">40°</span>
+                            <span class="currentTemp">{{weather.currentWeather.data.temperature}}&deg;</span>
                         </p>
                         <p class="forecast">
-                            41° <span>|</span> 39°
+                            {{weather.todaysWeather.data.tempMax}}&deg; <span>|</span> {{weather.todaysWeather.data.tempMin}}&deg;
                         </p>
-                        <!--temp, high, low-->
                     </div>
-                    <!--<p>City: {{city}}</p>
-                    <p>Temp: {{temp}}</p>
-                    <p>Min Temp: {{tempMin}}</p>
-                    <p>Max Temp: {{tempMax}}</p>-->
                 </div>
             </div>
             <div class="card votd">
                 <div class="item item-text-wrap">
-                    At once the royal secretaries were summoned—on the twenty-third day of the third month, the month of Sivan. They wrote out all Mordecai’s orders to the Jews, and to the satraps, governors and nobles of the 127 provinces stretching from India to Cush. These orders were written in the script of each province and the language of each people and also to the Jews in their own script and language.
-                    <p>- Esther 8:9</p>
+                    {{votd.votdInfo.data.verse}}
+                    <p>{{votd.votdInfo.data.reference}}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <a href="#/app/news">
-                        <button class="button button-block button-positive" id="news">
-                            <span class="button-title">Campus News</span>
-                            <i class="button-icon flaticon-11"></i>
+                    <a href="#/app/chapel">
+                        <button class="button button-block button-positive" id="chapel">
+                            <span class="button-title">Chapel Info</span>
                         </button>
                     </a>
                 </div>
                 <div class="col">
-                    <a href="#/app/chapel">
-                        <button class="button button-block button-positive" id="chapel">
-                            <span class="button-title">Chapel Info</span>
-                            <i class="button-icon flaticon-47"></i>
+                    <a href="#/app/news">
+                        <button class="button button-block button-positive" id="news">
+                            <span class="button-title">Campus News</span>
                         </button>
                     </a>
                 </div>
@@ -62,7 +53,6 @@
                     <a href="#/app/baldwin">
                         <button class="button button-block button-positive" id="baldwin">
                             <span class="button-title">Baldwin Menu</span>
-                            <i class="button-icon flaticon-1"></i>
                         </button>
                     </a>
                 </div>
@@ -70,7 +60,6 @@
                     <a href="#/app/schedule">
                         <button class="button button-block button-positive" id="schedule">
                             <span class="button-title">Class Schedule</span>
-                            <i class="button-icon flaticon-45"></i>
                         </button>
                     </a>
                 </div>

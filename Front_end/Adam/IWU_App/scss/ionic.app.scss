@@ -359,7 +359,14 @@ $openSans: "Open Sans", georgia, "times new roman", sans-serif;
 /* Sizing Variables */
 $base_size: 16px;
 
-/* MAIN PAGE styles */
+/* ****************************************** */
+/* ------------ MAIN PAGE styles ------------ */
+/* ****************************************** */
+
+/* Main-wrapper styles */
+.main-wrapper{
+  position: relative;
+}
 
 /* Main Page Button styles */
 .main-wrapper button{
@@ -480,43 +487,113 @@ $base_size: 16px;
   margin-bottom: ($base_size * 0.5);
 }
 
-/* Main-wrapper styles */
-.main-wrapper{
-  position: relative;
-}
+/* ****************************************** */
+/* ------------ NEWS PAGE styles ------------ */
+/* ****************************************** */
 
-/* NEWS PAGE styles */
+/* All News Pages wrapper styles */
 
-/* News-wrapper styles */
-.news-wrapper{
+.news-wrapper, .athletics-wrapper, .president-wrapper{
   position: relative;
-}
-.news-wrapper{
   z-index: 0;
 }
 
-/* Card styles */
-.news-wrapper .card{
+/* All News Cards styles */
+
+.news-wrapper .card, .athletics-wrapper .card, .president-wrapper .card, .sga-wrapper .card, .spectrum-wrapper .card, .sojourn-wrapper .card, .latest-wrapper .card{
   background-color: #333333;
-  height: 120px;
+  min-height: 120px;
 }
-.news-wrapper .card p{
-  color: $IWU_white;
-  text-align: center;
-  padding: $base_size;
-}
-.news-wrapper .news-header{
-  z-index: 0;
-}
-.news-wrapper .news-header img{
+.news-wrapper .news-header img, .athletics-wrapper .athletics-header img, .president-wrapper .president-header img, .sga-wrapper .sga-header img, .spectrum-wrapper .spectrum-header img, .sojourn-wrapper .sojourn-header img, .latest-wrapper .latest-header img{
   width: 100%;
-  height: 50%;
+  height: 30%;
 }
-.news-wrapper .card-1{
+.news-wrapper .card-1, .athletics-wrapper .card-1, .president-wrapper .card-1, .sga-wrapper .card-1, .spectrum-wrapper .card-1, .sojourn-wrapper .card-1, .latest-wrapper .card-1{
   z-index: 1;
   margin-top: -25px;
   position: relative;
 }
+.athletics-wrapper .card .col img, .news-wrapper .card .col img, .president-wrapper .card .col img, .sga-wrapper .card .col img, .spectrum-wrapper .card .col img, .sojourn-wrapper .card .col img, .latest-wrapper .card .col img{
+  height: 80px;
+  margin: ($base_size * 0.625);
+}
+
+.athletics-wrapper .card .article-date, .news-wrapper .card .article-date, .president-wrapper .card .article-date, .sga-wrapper .card .article-date, .spectrum-wrapper .card .article-date, .sojourn-wrapper .card .article-date, .latest-wrapper .card .article-date{
+  font-size: ($base_size * 0.75);
+  font-weight: 300;
+}
+.athletics-wrapper .card p, .president-wrapper .card p, .sga-wrapper .card p, .spectrum-wrapper .card p, .sojourn-wrapper .card p, .latest-wrapper .card p{
+  color: $IWU_white;
+}
+
+/* News Page only styles */
+
+.news-wrapper .card .source{
+  color: $IWU_white;
+  text-align: center;
+  padding: $base_size;
+}
+.news-wrapper .card .col p{
+  padding: 0;
+}
+
+\
+
+
+
+
+/* *********************************** */
+/* ---------- Chapel Styles ---------- */
+/* *********************************** */
+
+.chapel-wrapper .card .chapel-color, .chapel-wrapper .card{
+  background: #333333;
+}
+.chapel-wrapper .card .speaker{
+  font-size: ($base_size * 1.25);
+  font-weight: (600);
+  color: #63d739;
+  padding-bottom: ($base_size * 0.25);
+}
+.chapel-wrapper .chapel-date{
+  font-size: ($base_size * 0.75);
+  padding-bottom: ($base_size * 0.75);
+  color: white;
+}
+.chapel-wrapper .chapel-topic{
+  text-align: center;
+  font-style: italic;
+  color: white;
+  border-top: 1px solid white;
+  padding-top: ($base_size * 1.25);
+}
+/* ************************************* */
+/* ---------- Schedule Styles ---------- */
+/* ************************************* */
+
+.schedule-wrapper .card .schedule-color, .schedule-wrapper .card{
+  background: #333333;
+}
+.schedule-wrapper .card .day-name{
+  font-size: ($base_size * 1);
+  color: white;
+  text-align: left;
+  padding-bottom: ($base_size * 0.75);
+  border-bottom: 1px solid white;
+}
+.schedule-wrapper .card .class-time{
+  font-size: ($base_size * 0.75);
+  color: white;
+  text-align: left;
+  padding-top: ($base_size * 0.75);
+}
+.schedule-wrapper .card .daily-classes{
+  font-size: ($base_size * 1);
+  color: white;
+  text-align: left;
+}
+
+
 
 /* Global styles */
 ion-content {
@@ -532,12 +609,6 @@ ion-content a:link{
   color: $IWU_white;
   text-decoration: none
 }
-
-
-
-
-
-
 
 
 

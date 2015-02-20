@@ -1,5 +1,11 @@
 <ion-view view-title="{{navTitle}}">
     <ion-content>
-        <h1>Chapel</h1>
+        <div class="card" ng-repeat="chapelItem in chapel.chapelInfo.data.chapelSermons">
+            <div class="item item-text-wrap">
+                <p class="article-title">{{chapelItem.date}}</p>
+                <p class="article-date">{{chapelItem.speaker}}</p>
+                <p class="article-date">{{chapelItem.description}}</p>
+            </div>
+        </div>
     </ion-content>
 </ion-view>
