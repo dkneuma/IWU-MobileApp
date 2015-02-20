@@ -1,0 +1,46 @@
+{
+  "root": {
+    "chapel": [
+      {
+        "date": "November 14, 2014, 10:05 AM",
+        "speaker": "Umfundisi Jim Lo",
+        "description": "No Description"
+      },
+      {
+        "date": "November 17, 2014, 10:05 AM",
+        "speaker": "Reverend Joanne Solis-Walker, PHD, Director of Latino/Latina Education, Indiana Wesleyan University",
+        "description": "International Education Week"
+      },
+      {
+        "date": "November 19, 2014, 10:05 AM",
+        "speaker": "Dr. David Vardaman and Dr. Steve Horst, School of Theology & Ministry",
+        "description": "World Religions Speakers"
+      },
+      {
+        "date": "November 21, 2014, 10:05AM",
+        "speaker": "Troy Evans, Pastor of The Edge Urban Fellowship, Grand Rapids, MI",
+        "description": "A Conversion from the Islamic Faith"
+      },
+      {
+        "date": "November 24, 2014, 10:05AM",
+        "speaker": "Praise & Worship",
+        "description": "Praise & Worship"
+      },
+      {
+        "date": "December 1, 2014, 10:05AM",
+        "speaker": "Megan Swan and Jacob Thurstion, Student Body Chaplains",
+        "description": "Advent Chapel"
+      },
+      {
+        "date": "December 3, 2014, 10:05AM",
+        "speaker": "Study Abroad Students",
+        "description": "School of Nursing, Zambia Study Abroad Students"
+      },
+      {
+        "date": "December 5, 2014, 10:05AM",
+        "speaker": "Umfundisi Jim Lo",
+        "description": "Christmas Chapel"
+      }
+    ]
+  }
+}
