@@ -12,18 +12,18 @@
                         <!--day, date-->
                     </div>
                     <div class="col">
-                        <i class="{{weather.dateWeather.data.icon}}"></i>
+                        <i class="{{weather.currentWeather.data.icon}}"></i>
                         <p>
-                            <span class="city">{{weather.dateWeather.data.city}}</span>
+                            <span class="city">{{weather.todaysWeather.data.city}}</span>
                         </p>
                         <!--icon, city-->
                     </div>
                     <div class="col">
                         <p class="col-right-top">
-                            <span class="currentTemp">{{weather.dateWeather.data.tempurate}}°</span>
+                            <span class="currentTemp">{{weather.currentWeather.data.temperature}}°</span>
                         </p>
                         <p class="forecast">
-                            {{weather.dateWeather.data.tempMax}}° <span>|</span> {{weather.dateWeather.data.tempMin}}°
+                            {{weather.todaysWeather.data.tempMax}}° <span>|</span> {{weather.todaysWeather.data.tempMin}}°
                         </p>
                     </div>
                 </div>
