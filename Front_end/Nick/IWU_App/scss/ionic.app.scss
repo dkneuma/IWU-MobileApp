@@ -502,13 +502,16 @@ $base_size: 16px;
 
 .news-wrapper .card, .athletics-wrapper .card, .president-wrapper .card, .sga-wrapper .card, .spectrum-wrapper .card, .sojourn-wrapper .card, .latest-wrapper .card{
   background-color: #333333;
-  min-height: 120px;
+  min-height: ($base_size * 7.5);
+  position: relative;
 }
 .news-wrapper .news-header img, .athletics-wrapper .athletics-header img, .president-wrapper .president-header img, .sga-wrapper .sga-header img, .spectrum-wrapper .spectrum-header img, .sojourn-wrapper .sojourn-header img, .latest-wrapper .latest-header img{
   width: 100%;
   height: 30%;
+  position: relative;
+  opacity: 0.7;
 }
-.news-wrapper .card-1, .athletics-wrapper .card-1, .president-wrapper .card-1, .sga-wrapper .card-1, .spectrum-wrapper .card-1, .sojourn-wrapper .card-1, .latest-wrapper .card-1{
+.news-wrapper .card-1, .athletics-wrapper .card-1, .president-wrapper .card-1, .sga-wrapper .card-1, .spectrum-wrapper .card-1, .sojourn-wrapper .card-1, .latest-wrapper .card:nth-child(2){
   z-index: 1;
   margin-top: -($base_size * 1.5);
   position: relative;
@@ -526,17 +529,51 @@ $base_size: 16px;
   color: $IWU_white;
 }
 
+
 /* News Page only styles */
 
 .news-wrapper .card .source{
   color: $IWU_white;
   text-align: center;
-  padding: $base_size;
+  padding: ($base_size * 0.5);
+  background-color: #333333;
 }
 .news-wrapper .card .col p{
   padding: 0;
 }
-
+.news-wrapper .card{
+  padding-top: 0;
+}
+.news-wrapper .card .latest-image{
+  background: url("../img/latest-header-temp.jpg");
+  background-size: 100% 100%;
+  min-height: ($base_size * 7.5);
+}
+.news-wrapper .card .sojourn-image{
+  background: url("../img/sojourn-header-temp.jpg");
+  background-size: 100% 100%;
+  min-height: ($base_size * 7.5);
+}
+.news-wrapper .card .athletics-image{
+  background: url("../img/athletics-header-temp.jpg");
+  background-size: 100% 100%;
+  min-height: ($base_size * 7.5);
+}
+.news-wrapper .card .sga-image{
+  background: url("../img/sga-header-temp.png");
+  background-size: 100% 100%;
+  min-height: ($base_size * 7.5);
+}
+.news-wrapper .card .president-image{
+  background: url("../img/presidents-header-temp.jpeg");
+  background-size: 100% 100%;
+  min-height: ($base_size * 7.5);
+}
+.news-wrapper .card .spectrum-image{
+  background: url("../img/spectrum-header-temp.jpg");
+  background-size: 100% 100%;
+  min-height: ($base_size * 7.5);
+}
 
 /* *********************************** */
 /* ---------- Chapel Styles ---------- */
@@ -546,24 +583,26 @@ $base_size: 16px;
   background: #333333;
 }
 .chapel-wrapper .card .speaker{
-  font-size: ($base_size);
-  font-weight: (600);
+  font-size: $base_size;
   color: $IWU_white;
   padding-bottom: ($base_size * 0.25);
 }
 .chapel-wrapper .chapel-date{
   font-size: ($base_size * 0.75);
+  font-weight: 300;
   padding-bottom: ($base_size * 0.75);
   color: $IWU_white;
 }
 .chapel-wrapper .chapel-topic{
   text-align: center;
   font-style: italic;
+  font-weight: 300;
+  font-size: ($base_size * 1.125);
   color: $IWU_white;
   border-top: 1px solid white;
   padding-top: ($base_size * 1.25);
 }
-.chapel-wrapper .card:first-of-type{
+.chapel-wrapper .card:nth-child(2){
   z-index: 1;
   margin-top: -($base_size * 1.5);
   position: relative;

@@ -82,12 +82,12 @@ angular.module('iwuApp',
                     }
                 }
             })
-            .state('app.baldwin', {
-                url: "/baldwin",
+            .state('app.food', {
+                url: "/food",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/baldwin.html",
-                        controller: 'BaldwinCtrl'
+                        templateUrl: "templates/food.html",
+                        controller: 'FoodCtrl'
                     }
                 }
             })
