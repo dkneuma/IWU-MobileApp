@@ -13,6 +13,7 @@ var jsdom = require("jsdom");             //Allows use of jsdom
 var window = jsdom.jsdom().parentWindow;  //creates windows for jquery
 var port = 8080;                          //port for server
 var Promise = require('promise');
+var votdApi = require('./votd-api');
 app.listen(port);                         //event listener on port
 console.log('Port: ' + port);             //Outputs current port
 
@@ -246,8 +247,9 @@ function sortNews(){
       newsRequest(newsSource[i],destination[i]);
   }
 
-  newsRequest("https://www.biblegateway.com/votd/get/?format=json","XML/tempvotd.json");
-
+votdApi.request()
+    .then(votdApi.writeToFile, votdApi.handleThenableRejection)
+    .then(function() {console.log('complete');}, votdApi.handleThenableRejection);
 
 //Runs functions one after another, beginning with UpdateLocalData and ending in closeXML. Currently does not run properly. 
   updateLocalData(function(tempString){

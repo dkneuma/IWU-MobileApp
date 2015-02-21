@@ -1,0 +1,57 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'C:\\Users\\Tyler Oliver\\Downloads\\votd-api.js.tar' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 warn package.json IWUAppServer@0.0.1 No description
+6 warn package.json IWUAppServer@0.0.1 No repository field.
+7 warn package.json IWUAppServer@0.0.1 No README data
+8 verbose readDependencies using package.json deps
+9 verbose cache add [ 'C:\\Users\\Tyler Oliver\\Downloads\\votd-api.js.tar', null ]
+10 verbose cache add name=undefined spec="C:\\Users\\Tyler Oliver\\Downloads\\votd-api.js.tar" args=["C:\\Users\\Tyler Oliver\\Downloads\\votd-api.js.tar",null]
+11 verbose parsed url { protocol: 'c:',
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: '',
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: '',
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: '/Users/Tyler%20Oliver/Downloads/votd-api.js.tar',
+11 verbose parsed url   path: '/Users/Tyler%20Oliver/Downloads/votd-api.js.tar',
+11 verbose parsed url   href: 'c:/Users/Tyler%20Oliver/Downloads/votd-api.js.tar' }
+12 silly lockFile 858c8992-Oliver-Downloads-votd-api-js-tar C:\Users\Tyler Oliver\Downloads\votd-api.js.tar
+13 verbose lock C:\Users\Tyler Oliver\Downloads\votd-api.js.tar C:\Users\Tyler Oliver\AppData\Roaming\npm-cache\858c8992-Oliver-Downloads-votd-api-js-tar.lock
+14 verbose chmod C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz 666
+15 verbose tar unpack C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz
+16 silly lockFile c9e6bd40--5116217227187008-tmp-tgz-unpack tar://C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz-unpack
+17 verbose lock tar://C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz-unpack C:\Users\Tyler Oliver\AppData\Roaming\npm-cache\c9e6bd40--5116217227187008-tmp-tgz-unpack.lock
+18 silly lockFile 07be91f9-01388-0-5116217227187008-tmp-tgz tar://C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz
+19 verbose lock tar://C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz C:\Users\Tyler Oliver\AppData\Roaming\npm-cache\07be91f9-01388-0-5116217227187008-tmp-tgz.lock
+20 silly gunzTarPerm modes [ '777', '666' ]
+21 silly gunzTarPerm extractEntry
+22 silly gunzTarPerm modified mode [ '', 420, 438 ]
+23 silly lockFile c9e6bd40--5116217227187008-tmp-tgz-unpack tar://C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz-unpack
+24 silly lockFile c9e6bd40--5116217227187008-tmp-tgz-unpack tar://C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz-unpack
+25 silly lockFile 07be91f9-01388-0-5116217227187008-tmp-tgz tar://C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz
+26 silly lockFile 07be91f9-01388-0-5116217227187008-tmp-tgz tar://C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz
+27 silly lockFile 858c8992-Oliver-Downloads-votd-api-js-tar C:\Users\Tyler Oliver\Downloads\votd-api.js.tar
+28 silly lockFile 858c8992-Oliver-Downloads-votd-api-js-tar C:\Users\Tyler Oliver\Downloads\votd-api.js.tar
+29 error addLocal Could not install C:\Users\Tyler Oliver\Downloads\votd-api.js.tar
+30 error Error: ENOENT, open 'C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz-unpack\package.json'
+31 error If you need help, you may report this *entire* log,
+31 error including the npm and node versions, at:
+31 error     <http://github.com/npm/npm/issues>
+32 error System Windows_NT 6.2.9200
+33 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "C:\\Users\\Tyler Oliver\\Downloads\\votd-api.js.tar"
+34 error cwd C:\Users\Tyler Oliver\Documents\GitHub\Indwes-App\Webserver
+35 error node -v v0.10.36
+36 error npm -v 1.4.28
+37 error path C:\Users\TYLERO~1\AppData\Local\Temp\npm-7352-R05s4_iS\1424525401388-0.5116217227187008\tmp.tgz-unpack\package.json
+38 error code ENOENT
+39 error errno 34
+40 verbose exit [ 34, true ]
