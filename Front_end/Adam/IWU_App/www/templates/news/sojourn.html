@@ -4,53 +4,25 @@
             <div class="sojourn-header">
                 <img src="img/sojourn-header-temp.jpg" class="sojourn-image">
             </div>
-            <!--<a href="http://www.iwuwildcats.com/article/4112.php" target="_blank">-->
-            <div class="card card-1">
+            <div class="card" ng-repeat="newsArticle in news.newsInfo.data.article | filter: filterFunction | limitTo:quantity">
                 <div class="row">
                     <div class="col col-33">
                         <img src="img/head_two.png">
                     </div>
                     <div class="col">
                         <p class="article-title">
-                            No regrets: advice from recent alumni
+                            {{newsArticle.title}}
                         </p>
                         <p class="article-date">
-                            18 Feb 2015 4:24am
+                            {{newsArticle.date}}
+                        </p>
+                        <p class="article-date">
+                            {{newsArticle.source}}
                         </p>
                     </div>
                 </div>
             </div>
-            <!--</a>-->
-            <div class="card">
-                <div class="row">
-                    <div class="col col-33">
-                        <img src="img/head_two.png">
-                    </div>
-                    <div class="col">
-                        <p class="article-title">
-                            Bowman House alumni uncover time capsule
-                        </p>
-                        <p class="article-date">
-                            18 Feb 2015 3:17am
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="row">
-                    <div class="col col-33">
-                        <img src="img/head_two.png">
-                    </div>
-                    <div class="col">
-                        <p class="article-title">
-                            Men's basketball goes on run to beat Spring Arbor
-                        </p>
-                        <p class="article-date">
-                            15 Feb 2015 12:17am
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <button class="button button-full button-dark" ng-click="incrementLimit()">More News Articles</button>
         </div>
     </ion-content>
 </ion-view>
