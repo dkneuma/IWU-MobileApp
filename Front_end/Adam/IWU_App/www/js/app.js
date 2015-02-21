@@ -82,12 +82,12 @@ angular.module('iwuApp',
                     }
                 }
             })
-            .state('app.baldwin', {
-                url: "/baldwin",
+            .state('app.food', {
+                url: "/food",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/baldwin.html",
-                        controller: 'BaldwinCtrl'
+                        templateUrl: "templates/food.html",
+                        controller: 'FoodCtrl'
                     }
                 }
             })
@@ -107,7 +107,7 @@ angular.module('iwuApp',
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/athletics.html",
-                        controller: 'AthleticsCtrl'
+                        controller: 'NewsAthleticsCtrl'
                     }
                 }
             })
@@ -116,7 +116,7 @@ angular.module('iwuApp',
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/latest.html",
-                        controller: 'LatestCtrl'
+                        controller: 'NewsLatestCtrl'
                     }
                 }
             })
@@ -125,7 +125,7 @@ angular.module('iwuApp',
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/president.html",
-                        controller: 'PresidentCtrl'
+                        controller: 'NewsPresidentCtrl'
                     }
                 }
             })
@@ -134,7 +134,7 @@ angular.module('iwuApp',
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/sga.html",
-                        controller: 'SGACtrl'
+                        controller: 'NewsSGACtrl'
                     }
                 }
             })
@@ -143,7 +143,7 @@ angular.module('iwuApp',
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/sojourn.html",
-                        controller: 'SojournCtrl'
+                        controller: 'NewsSojournCtrl'
                     }
                 }
             })
@@ -152,7 +152,7 @@ angular.module('iwuApp',
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/spectrum.html",
-                        controller: 'SpectrumCtrl'
+                        controller: 'NewsSpectrumCtrl'
                     }
                 }
             });

@@ -493,7 +493,7 @@ $base_size: 16px;
 
 /* All News Pages wrapper styles */
 
-.news-wrapper, .athletics-wrapper, .president-wrapper{
+.news-wrapper, .athletics-wrapper, .president-wrapper, .sga-wrapper, .spectrum-wrapper, .sojourn-wrapper, .latest-wrapper{
   position: relative;
   z-index: 0;
 }
@@ -510,7 +510,7 @@ $base_size: 16px;
 }
 .news-wrapper .card-1, .athletics-wrapper .card-1, .president-wrapper .card-1, .sga-wrapper .card-1, .spectrum-wrapper .card-1, .sojourn-wrapper .card-1, .latest-wrapper .card-1{
   z-index: 1;
-  margin-top: -25px;
+  margin-top: -($base_size * 1.5);
   position: relative;
 }
 .athletics-wrapper .card .col img, .news-wrapper .card .col img, .president-wrapper .card .col img, .sga-wrapper .card .col img, .spectrum-wrapper .card .col img, .sojourn-wrapper .card .col img, .latest-wrapper .card .col img{
@@ -537,10 +537,6 @@ $base_size: 16px;
   padding: 0;
 }
 
-\
-
-
-
 
 /* *********************************** */
 /* ---------- Chapel Styles ---------- */
@@ -550,23 +546,37 @@ $base_size: 16px;
   background: #333333;
 }
 .chapel-wrapper .card .speaker{
-  font-size: ($base_size * 1.25);
+  font-size: ($base_size);
   font-weight: (600);
-  color: #63d739;
+  color: $IWU_white;
   padding-bottom: ($base_size * 0.25);
 }
 .chapel-wrapper .chapel-date{
   font-size: ($base_size * 0.75);
   padding-bottom: ($base_size * 0.75);
-  color: white;
+  color: $IWU_white;
 }
 .chapel-wrapper .chapel-topic{
   text-align: center;
   font-style: italic;
-  color: white;
+  color: $IWU_white;
   border-top: 1px solid white;
   padding-top: ($base_size * 1.25);
 }
+.chapel-wrapper .card:first-of-type{
+  z-index: 1;
+  margin-top: -($base_size * 1.5);
+  position: relative;
+}
+.chapel-wrapper .chapel-header img{
+  width: 100%;
+  height: 30%;
+}
+.chapel-wrapper{
+  position: relative;
+  z-index: 0;
+}
+
 /* ************************************* */
 /* ---------- Schedule Styles ---------- */
 /* ************************************* */
@@ -576,20 +586,20 @@ $base_size: 16px;
 }
 .schedule-wrapper .card .day-name{
   font-size: ($base_size * 1);
-  color: white;
+  color: $IWU_white;
   text-align: left;
   padding-bottom: ($base_size * 0.75);
   border-bottom: 1px solid white;
 }
 .schedule-wrapper .card .class-time{
   font-size: ($base_size * 0.75);
-  color: white;
+  color: $IWU_white;
   text-align: left;
   padding-top: ($base_size * 0.75);
 }
 .schedule-wrapper .card .daily-classes{
   font-size: ($base_size * 1);
-  color: white;
+  color: $IWU_white;
   text-align: left;
 }
 

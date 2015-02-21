@@ -1,10 +1,15 @@
 <ion-view view-title="{{navTitle}}">
     <ion-content>
-        <div class="card" ng-repeat="chapelItem in chapel.chapelInfo.data.chapelSermons">
-            <div class="item item-text-wrap">
-                <p class="article-title">{{chapelItem.date}}</p>
-                <p class="article-date">{{chapelItem.speaker}}</p>
-                <p class="article-date">{{chapelItem.description}}</p>
+        <div class="chapel-wrapper">
+            <div class="chapel-header">
+                <img src="img/library.jpg" class="latest-image">
+            </div>
+            <div class="card" ng-repeat="chapelItem in chapel.chapelInfo.data.chapelSermons">
+                <div class="item item-text-wrap chapel-color">
+                    <p class="speaker">{{chapelItem.speaker}}</p>
+                    <p class="chapel-date">{{chapelItem.date}}</p>
+                    <p class="chapel-topic">{{chapelItem.description}}</p>
+                </div>
             </div>
         </div>
     </ion-content>

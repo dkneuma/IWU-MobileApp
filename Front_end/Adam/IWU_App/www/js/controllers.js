@@ -61,23 +61,10 @@ angular.module('iwuApp.controllers', [])
         });
     })
 
-    .controller('NewsCtrl', function ($scope, newsData){
+    .controller('NewsCtrl', function ($scope){
         // Title
         $scope.navTitle = 'News';
 
-        // News Data
-        $scope.news = newsData;
-
-        newsData.newsInfo.getData().then(function(asyncSendData){
-            $scope.news.newsInfo.data = asyncSendData;
-        });
-
-        $scope.$watch('news.newsInfo.data', function(data){
-
-            if(angular.isDefined(data)){
-                console.log('$scope.news.newsInfo.data has data');
-            }
-        });
     })
 
     .controller('ChapelCtrl', function ($scope, chapelData){
@@ -103,8 +90,8 @@ angular.module('iwuApp.controllers', [])
         $scope.navTitle = 'Schedule';
     })
 
-    .controller('BaldwinCtrl', function ($scope){
-        $scope.navTitle = 'Baldwin';
+    .controller('FoodCtrl', function ($scope){
+        $scope.navTitle = 'Food Service';
     })
 
     .controller('SettingsCtrl', function ($scope){
@@ -116,8 +103,30 @@ angular.module('iwuApp.controllers', [])
         $scope.navTitle = 'Athletics';
     })
 
-    .controller('NewsLatestCtrl', function ($scope){
+    .controller('NewsLatestCtrl', function ($scope, newsData){
+        // Title
         $scope.navTitle = 'Latest';
+
+        // News Article Limiter
+        var quantityLimit = 10;
+        $scope.quantity = quantityLimit;
+        $scope.incrementLimit = function() {
+            $scope.quantity += quantityLimit;
+        };
+
+        // News Data
+        $scope.news = newsData;
+
+        newsData.newsInfo.getData().then(function(asyncSendData){
+            $scope.news.newsInfo.data = asyncSendData;
+        });
+
+        $scope.$watch('news.newsInfo.data', function(data){
+
+            if(angular.isDefined(data)){
+                console.log('$scope.news.newsInfo.data has data');
+            }
+        });
     })
 
     .controller('NewsPresidentCtrl', function ($scope){
