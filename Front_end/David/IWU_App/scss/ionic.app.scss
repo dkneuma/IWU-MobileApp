@@ -562,6 +562,7 @@ $base_size: 16px;
   border-top: 1px solid white;
   padding-top: ($base_size * 1.25);
 }
+
 /* ************************************* */
 /* ---------- Schedule Styles ---------- */
 /* ************************************* */
@@ -587,6 +588,50 @@ $base_size: 16px;
   text-align: left;
 }
 
+/* ********************************* */
+/* ---------- Food Styles ---------- */
+/* ********************************* */
+.food-wrapper .card .food-color, .food-wrapper .card{
+  background: #333333;
+}
+.food-wrapper .card .eatery{
+  font-size: ($base_size * 1);
+  color: $IWU_white;
+  text-align: center;
+  padding-top: ($base_size * 1);
+  padding-bottom: ($base_size * 1);
+}
+.baldwin-wrapper .card .food-headers {
+  font-size: ($base_size * 1);
+  color: $IWU_white;
+  text-align: left;
+  padding-top: ($base_size * 0.75);
+  padding-bottom: ($base_size * 0.75);
+  border-bottom: 1px solid white;
+}
+.baldwin-wrapper .card .food-headers2 {
+  font-size: ($base_size * 1);
+  color: $IWU_white;
+  text-align: left;
+  padding-top: ($base_size * 0.75);
+  padding-bottom: ($base_size * 0.75);
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+}
+/* Baldwin only styles */
+.baldwin-wrapper .card .baldwin-color{
+  background: #333333;
+}
+.baldwin-wrapper .card .baldwin-hours-titles{
+  color: $IWU_white;
+  font-size: ($base_size * 0.85);
+}
+.baldwin-wrapper .card .baldwin-hours-times{
+  color: $IWU_white;
+  font-size: ($base_size * 0.85);
+}
+
+
 /* Global styles */
 ion-content {
     font-family: $openSans;
@@ -605,7 +650,6 @@ ion-content a:link{
 
 
 // INSERT SCSS ABOVE
-
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;

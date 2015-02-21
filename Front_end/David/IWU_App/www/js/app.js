@@ -4,7 +4,10 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
+angular.module('iwuApp',
+    ['ionic',
+    'iwuApp.services',
+    'iwuApp.controllers'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -23,12 +26,15 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
 
+            /* Global App */
             .state('app', {
                 url: "/app",
                 abstract: true,
                 templateUrl: "templates/menu.html",
                 controller: 'AppCtrl'
             })
+
+            /* Login */
             .state('app.login', {
                 url: "/login",
                 views: {
@@ -38,21 +44,14 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                     }
                 }
             })
+
+            /* Root Level Pages */
             .state('app.main', {
                 url: "/main",
                 views: {
                     'menuContent': {
                         templateUrl: "templates/main.html",
                         controller: 'MainCtrl'
-                    }
-                }
-            })
-            .state('app.votd', {
-                url: "/votd",
-                views: {
-                    'menuContent': {
-                        templateUrl: "templates/votd.html",
-                        controller: 'VotdCtrl'
                     }
                 }
             })
@@ -83,12 +82,12 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                     }
                 }
             })
-            .state('app.baldwin', {
-                url: "/baldwin",
+            .state('app.food', {
+                url: "/food",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/baldwin.html",
-                        controller: 'BaldwinCtrl'
+                        templateUrl: "templates/food.html",
+                        controller: 'FoodCtrl'
                     }
                 }
             })
@@ -101,12 +100,14 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                     }
                 }
             })
+
+            /* News Sub-Pages */
             .state('app.news-athletics', {
                 url: "/news/athletics",
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/athletics.html",
-                        controller: 'AthleticsCtrl'
+                        controller: 'NewsAthleticsCtrl'
                     }
                 }
             })
@@ -115,7 +116,7 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/latest.html",
-                        controller: 'LatestCtrl'
+                        controller: 'NewsLatestCtrl'
                     }
                 }
             })
@@ -124,7 +125,7 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/president.html",
-                        controller: 'PresidentCtrl'
+                        controller: 'NewsPresidentCtrl'
                     }
                 }
             })
@@ -133,7 +134,7 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/sga.html",
-                        controller: 'SGACtrl'
+                        controller: 'NewsSGACtrl'
                     }
                 }
             })
@@ -142,7 +143,7 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/sojourn.html",
-                        controller: 'SojournCtrl'
+                        controller: 'NewsSojournCtrl'
                     }
                 }
             })
@@ -151,10 +152,40 @@ angular.module('iwuApp', ['ionic', 'iwuApp.controllers'])
                 views: {
                     'menuContent': {
                         templateUrl: "templates/news/spectrum.html",
-                        controller: 'SpectrumCtrl'
+                        controller: 'NewsSpectrumCtrl'
                     }
                 }
-            });
+            })
+
+            /* Food Sub-Pages */
+        .state('app.food-baldwin', {
+            url: "/food/baldwin",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/food/baldwin.html",
+                    controller: 'FoodBaldwinCtrl'
+                }
+            }
+        })
+        .state('app.food-marios', {
+            url: "/food/marios",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/food/marios.html",
+                    controller: 'FoodMariosCtrl'
+                }
+            }
+        })
+        .state('app.food-chickfila', {
+            url: "/food/chickfila",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/food/chickfila.html",
+                    controller: 'FoodChickfilaCtrl'
+                }
+            }
+        });
+
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/main');
