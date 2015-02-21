@@ -90,8 +90,8 @@ angular.module('iwuApp.controllers', [])
         $scope.navTitle = 'Schedule';
     })
 
-    .controller('BaldwinCtrl', function ($scope){
-        $scope.navTitle = 'Baldwin';
+    .controller('FoodCtrl', function ($scope){
+        $scope.navTitle = 'Food Service';
     })
 
     .controller('SettingsCtrl', function ($scope){
