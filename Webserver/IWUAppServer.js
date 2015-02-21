@@ -248,6 +248,7 @@ function sortNews(){
   }
 
 votdApi.request()
+    .then(votdApi.replaceAsciiCodes, votdApi.handleThenableRejection)
     .then(votdApi.writeToFile, votdApi.handleThenableRejection)
     .then(function() {console.log('complete');}, votdApi.handleThenableRejection);
 

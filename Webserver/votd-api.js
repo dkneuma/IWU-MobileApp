@@ -61,10 +61,13 @@ self.handleThenableRejection = function(reason) {
  * @param {string} bodyText A string containing the response body of the verse API response.
  * @return {Promise} Fulfilled upon successful parsing of response body. Value is a string ready for writing to file.  
  */
-self.parseResponse = function(bodyText) {
+self.replaceAsciiCodes = function(bodyText) {
   return new depnds.Promise(function(fulfill, reject) {
     try {
-      var parsedResponse = JSON.parse(bodyText).votd.content;
+      var parsedResponse = bodyText
+      parsedResponse = parsedResponse.replace(/(&*\w+quo+;|&#82*\w+;)/g,"");
+      parsedResponse = parsedResponse.replace(/&amp;/g,"&");
+      parsedResponse = parsedResponse.replace(/&#169/g,"©");
       fulfill(parsedResponse);
     }
     catch (errorObject) {
