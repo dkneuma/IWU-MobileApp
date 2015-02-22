@@ -601,34 +601,76 @@ $base_size: 16px;
   padding-top: ($base_size * 1);
   padding-bottom: ($base_size * 1);
 }
-.baldwin-wrapper .card .food-headers {
-  font-size: ($base_size * 1);
+.baldwin-wrapper .card .food-headers-top, .marios-wrapper .card .food-headers-top,
+.chickfila-wrapper .card .food-headers-top, .collegeStore-wrapper .card .food-headers-top{
+  font-size: ($base_size * 1.50);
+  font-weight: (600);
   color: $IWU_white;
-  text-align: left;
-  padding-top: ($base_size * 0.75);
-  padding-bottom: ($base_size * 0.75);
-  border-bottom: 1px solid white;
+  text-align: center;
+  padding-bottom: ($base_size * 1);
 }
-.baldwin-wrapper .card .food-headers2 {
+.baldwin-wrapper .card .food-headers, .marios-wrapper .card .food-headers,
+.chickfila-wrapper .card .food-headers, .collegeStore-wrapper .card .food-headers{
   font-size: ($base_size * 1);
   color: $IWU_white;
   text-align: left;
   padding-top: ($base_size * 0.75);
   padding-bottom: ($base_size * 0.75);
-  border-bottom: 1px solid white;
   border-top: 1px solid white;
+  border-bottom: 1px solid white;
 }
+
 /* Baldwin only styles */
 .baldwin-wrapper .card .baldwin-color{
   background: #333333;
 }
 .baldwin-wrapper .card .baldwin-hours-titles{
   color: $IWU_white;
-  font-size: ($base_size * 0.85);
+  font-size: ($base_size * 1);
+  padding-top: ($base_size * 0.25);
+  padding-bottom: ($base_size * 0.50);
 }
 .baldwin-wrapper .card .baldwin-hours-times{
   color: $IWU_white;
   font-size: ($base_size * 0.85);
+  padding-left: ($base_size * 2);
+  padding-bottom: ($base_size * 0.50);
+}
+
+/* Mario's only Styles */
+.marios-wrapper .card .marios-color{
+  background: #333333;
+}
+.marios-wrapper .card .marios-hours-times{
+  color: $IWU_white;
+  font-size: ($base_size * 0.85);
+  padding-top: ($base_size * 1);
+  padding-bottom: ($base_size * 1);
+  padding-left: ($base_size * 2);
+}
+
+/* Chick-fil-A only Styles */
+.chickfila-wrapper .card .chickfila-color{
+  background: #333333;
+}
+.chickfila-wrapper .card .chickfila-hours-times{
+  color: $IWU_white;
+  font-size: ($base_size * 0.85);
+  padding-top: ($base_size * 1);
+  padding-bottom: ($base_size * 1);
+  padding-left: ($base_size * 2);
+}
+
+/* C-Store only Styles */
+.collegeStore-wrapper .card .collegeStore-color{
+  background: #333333;
+}
+.collegeStore-wrapper .card .collegeStore-hours-times{
+  color: $IWU_white;
+  font-size: ($base_size * 0.85);
+  padding-top: ($base_size * 1);
+  padding-bottom: ($base_size * 1);
+  padding-left: ($base_size * 2);
 }
 
 

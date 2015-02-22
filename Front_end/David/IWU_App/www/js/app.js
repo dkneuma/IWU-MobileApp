@@ -184,6 +184,15 @@ angular.module('iwuApp',
                     controller: 'FoodChickfilaCtrl'
                 }
             }
+        })
+        .state('app.food-collegeStore', {
+            url: "/food/collegeStore",
+            views: {
+                'menuContent': {
+                    templateUrl: "templates/food/collegeStore.html",
+                    controller: 'FoodCollegeStoreCtrl'
+                }
+            }
         });
 
 

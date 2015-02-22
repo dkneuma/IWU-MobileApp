@@ -153,5 +153,8 @@ angular.module('iwuApp.controllers', [])
     $scope.navTitle = 'Mario\'s';
     })
     .controller('FoodChickfilaCtrl', function ($scope){
-        $scope.navTitle = 'Chick-fil-A';
+        $scope.navTitle = 'Wildcat Express & Chick-fil-A';
+    })
+    .controller('FoodCollegeStoreCtrl', function ($scope){
+        $scope.navTitle = 'C-Store';
     });

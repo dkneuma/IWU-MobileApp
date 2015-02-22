@@ -507,22 +507,21 @@ $dark:                            #444 !default;
   padding-top: 16px;
   padding-bottom: 16px; }
 
-.baldwin-wrapper .card .food-headers {
-  font-size: 16px;
+.baldwin-wrapper .card .food-headers-top, .marios-wrapper .card .food-headers-top, .chickfila-wrapper .card .food-headers-top, .collegeStore-wrapper .card .food-headers-top {
+  font-size: 24px;
+  font-weight: 600;
   color: #F5F5F5;
-  text-align: left;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid white; }
+  text-align: center;
+  padding-bottom: 16px; }
 
-.baldwin-wrapper .card .food-headers2 {
+.baldwin-wrapper .card .food-headers, .marios-wrapper .card .food-headers, .chickfila-wrapper .card .food-headers, .collegeStore-wrapper .card .food-headers {
   font-size: 16px;
   color: #F5F5F5;
   text-align: left;
   padding-top: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid white;
-  border-top: 1px solid white; }
+  border-top: 1px solid white;
+  border-bottom: 1px solid white; }
 
 /* Baldwin only styles */
 .baldwin-wrapper .card .baldwin-color {
@@ -530,11 +529,48 @@ $dark:                            #444 !default;
 
 .baldwin-wrapper .card .baldwin-hours-titles {
   color: #F5F5F5;
-  font-size: 13.6px; }
+  font-size: 16px;
+  padding-top: 4px;
+  padding-bottom: 8px; }
 
 .baldwin-wrapper .card .baldwin-hours-times {
   color: #F5F5F5;
-  font-size: 13.6px; }
+  font-size: 13.6px;
+  padding-left: 32px;
+  padding-bottom: 8px; }
+
+/* Mario's only Styles */
+.marios-wrapper .card .marios-color {
+  background: #333333; }
+
+.marios-wrapper .card .marios-hours-times {
+  color: #F5F5F5;
+  font-size: 13.6px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px; }
+
+/* Chick-fil-A only Styles */
+.chickfila-wrapper .card .chickfila-color {
+  background: #333333; }
+
+.chickfila-wrapper .card .chickfila-hours-times {
+  color: #F5F5F5;
+  font-size: 13.6px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px; }
+
+/* C-Store only Styles */
+.collegeStore-wrapper .card .collegeStore-color {
+  background: #333333; }
+
+.collegeStore-wrapper .card .collegeStore-hours-times {
+  color: #F5F5F5;
+  font-size: 13.6px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px; }
 
 /* Global styles */
 ion-content {
