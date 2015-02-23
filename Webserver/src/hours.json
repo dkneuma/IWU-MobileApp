@@ -1,0 +1,47 @@
+{
+	"hours": 
+	{
+		"baldwin": 
+		{
+			"weekday": {
+				"hotbreakfast": "7:00am - 8:30am",
+				"coldbreakfast": "8:30am - 10:00am",
+				"lunch": "11:00am - 2:00pm",
+				"dinner": "5:00pm - 6:30pm",
+				"fatmeal": "10:30pm - 11:30pm"
+			},
+			"friday": {
+				"hotbreakfast": "7:00am - 8:30am",
+				"coldbreakfast": "8:30am - 10:00am",
+				"lunch": "11:00am - 2:00pm",
+				"dinner": "5:00pm - 6:30pm"
+			},
+			"saturday":{
+				"lunch": "11:30am - 12:30pm",
+				"dinner": "5:00pm - 6:00pm"
+			},
+			"sunday" : {
+				"lunch": "11:30am - 1:15pm",
+				"dinner": "5:00pm - 6:00pm"
+			}
+		},
+		"wildcat":{
+			"weekday":"8:30am - 9:00pm",
+			"friday" :"8:30am - 9:00pm",
+			"saturday" : "12:30 pm - 5:00pm",
+			"sunday" : "6:00pm - 12:00am"
+		},
+		"marios":{
+			"weekday":"10:00am - 12:00am",
+			"friday" :"10:00am - 12:00am",
+			"saturday" : "12:30 pm - 12:00am",
+			"sunday" : "6:00pm - 12:00am"
+		},
+		"cstore":{
+			"weekday":"10:00am - 12:00am",
+			"friday" :"10:00am - 12:00am",
+			"saturday" : "2:00 pm - 12:00am",
+			"sunday" : "7:00pm - 12:00am"
+		}
+	}
+}

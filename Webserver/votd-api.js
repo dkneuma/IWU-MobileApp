@@ -6,7 +6,7 @@
  * @example
  * var votdApi = require('./votd-api');
  * votdApi.request()
- *   .then(votdApi.parseResponse, votdApi.handleThenableRejection)
+ *   .then(votdApi.replaceAsciiCodes, votdApi.handleThenableRejection)
  *   .then(votdApi.writeToFile, votdApi.handleThenableRejection)
  *   .then(function() {console.log('complete');}, votdApi.handleThenableRejection);
  */
@@ -16,7 +16,6 @@ var depnds = {
   Promise: require('promise'),
   request: require('request')
 };
-
 var self = module.exports = {};
 
 /**
@@ -31,7 +30,7 @@ Object.defineProperty(self, 'apiEndpointUrl', {
 Object.defineProperty(self, 'fileWritePath', {
   configurable: false,
   enumerable: true,
-  value: 'XML/votd.json',
+  value: 'src/votd.json',
   writable: true
 });
 
