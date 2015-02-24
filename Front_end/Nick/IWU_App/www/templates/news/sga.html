@@ -4,53 +4,25 @@
             <div class="sga-header">
                 <img src="img/sga-header-temp.png" class="sga-image">
             </div>
-            <!--<a href="http://www.iwuwildcats.com/article/4112.php" target="_blank">-->
-            <div class="card card-1">
+            <div class="card" ng-repeat="newsArticle in news.newsInfo.data.article | filter: filterFunction | limitTo:quantity">
                 <div class="row">
                     <div class="col col-33">
                         <img src="img/head_two.png">
                     </div>
                     <div class="col">
                         <p class="article-title">
-                            Cycle &amp; Repeat
+                            {{newsArticle.title}}
                         </p>
                         <p class="article-date">
-                            05 Dec 2014 11:30am
+                            {{newsArticle.date}}
+                        </p>
+                        <p class="article-date">
+                            {{newsArticle.source}}
                         </p>
                     </div>
                 </div>
             </div>
-            <!--</a>-->
-            <div class="card">
-                <div class="row">
-                    <div class="col col-33">
-                        <img src="img/head_two.png">
-                    </div>
-                    <div class="col">
-                        <p class="article-title">
-                            &quot;Do I Have What It Takes?&quot;
-                        </p>
-                        <p class="article-date">
-                            04 Nov 2014 11:30am
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="row">
-                    <div class="col col-33">
-                        <img src="img/head_two.png">
-                    </div>
-                    <div class="col">
-                        <p class="article-title">
-                            Behind the Scenes
-                        </p>
-                        <p class="article-date">
-                            24 Oct 2014 11:30am
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <button class="button button-full button-dark" ng-click="incrementLimit()">More News Articles</button>
         </div>
     </ion-content>
 </ion-view>

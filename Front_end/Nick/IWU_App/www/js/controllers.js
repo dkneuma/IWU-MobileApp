@@ -99,12 +99,26 @@ angular.module('iwuApp.controllers', [])
     })
 
     /* News Sub-Pages */
-    .controller('NewsAthleticsCtrl', function ($scope){
+    .controller('NewsAthleticsCtrl', function ($scope, newsData){
+        // Title
         $scope.navTitle = 'Athletics';
-    })
 
-    .controller('NewsLatestCtrl', function ($scope, newsData){
-        $scope.navTitle = 'Latest';
+        // News Limiter
+        var quantityLimit = 10;
+        $scope.quantity = quantityLimit;
+        $scope.incrementLimit = function() {
+            $scope.quantity += quantityLimit;
+        };
+
+        // News Filter
+        $scope.filterFunction = function(element) {
+            if(element.source == 'Indiana Wesleyan University Athletic Department - News'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        };
 
         // News Data
         $scope.news = newsData;
@@ -121,18 +135,172 @@ angular.module('iwuApp.controllers', [])
         });
     })
 
-    .controller('NewsPresidentCtrl', function ($scope){
+    .controller('NewsLatestCtrl', function ($scope, newsData){
+        // Title
+        $scope.navTitle = 'Latest';
+
+        // News Limiter
+        var quantityLimit = 10;
+        $scope.quantity = quantityLimit;
+        $scope.incrementLimit = function() {
+            $scope.quantity += quantityLimit;
+        };
+
+        // News Data
+        $scope.news = newsData;
+
+        newsData.newsInfo.getData().then(function(asyncSendData){
+            $scope.news.newsInfo.data = asyncSendData;
+        });
+
+        $scope.$watch('news.newsInfo.data', function(data){
+
+            if(angular.isDefined(data)){
+                console.log('$scope.news.newsInfo.data has data');
+            }
+        });
+    })
+
+    .controller('NewsPresidentCtrl', function ($scope, newsData){
+        // Title
         $scope.navTitle = 'The President&#39;s Blog';
+
+        // News Limiter
+        var quantityLimit = 10;
+        $scope.quantity = quantityLimit;
+        $scope.incrementLimit = function() {
+            $scope.quantity += quantityLimit;
+        };
+
+        // News Filter
+        $scope.filterFunction = function(element) {
+            if(element.source == 'IWU President'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        };
+
+        // News Data
+        $scope.news = newsData;
+
+        newsData.newsInfo.getData().then(function(asyncSendData){
+            $scope.news.newsInfo.data = asyncSendData;
+        });
+
+        $scope.$watch('news.newsInfo.data', function(data){
+
+            if(angular.isDefined(data)){
+                console.log('$scope.news.newsInfo.data has data');
+            }
+        });
     })
 
-    .controller('NewsSGACtrl', function ($scope){
-        $scope.navTitle = 'SGA Blog';
+    .controller('NewsSGACtrl', function ($scope, newsData){
+        // Title
+        $scope.navTitle = 'The SGA Blog';
+
+        // News Limiter
+        var quantityLimit = 10;
+        $scope.quantity = quantityLimit;
+        $scope.incrementLimit = function() {
+            $scope.quantity += quantityLimit;
+        };
+
+        // News Filter
+        $scope.filterFunction = function(element) {
+            if(element.source == 'SGA'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        };
+
+        // News Data
+        $scope.news = newsData;
+
+        newsData.newsInfo.getData().then(function(asyncSendData){
+            $scope.news.newsInfo.data = asyncSendData;
+        });
+
+        $scope.$watch('news.newsInfo.data', function(data){
+
+            if(angular.isDefined(data)){
+                console.log('$scope.news.newsInfo.data has data');
+            }
+        });
     })
 
-    .controller('NewsSojournCtrl', function ($scope){
+    .controller('NewsSojournCtrl', function ($scope, newsData){
+        // Title
         $scope.navTitle = 'The Sojourn';
+
+        // News Limiter
+        var quantityLimit = 10;
+        $scope.quantity = quantityLimit;
+        $scope.incrementLimit = function() {
+            $scope.quantity += quantityLimit;
+        };
+
+        // News Filter
+        $scope.filterFunction = function(element) {
+            if(element.source == 'The Sojourn'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        };
+
+        // News Data
+        $scope.news = newsData;
+
+        newsData.newsInfo.getData().then(function(asyncSendData){
+            $scope.news.newsInfo.data = asyncSendData;
+        });
+
+        $scope.$watch('news.newsInfo.data', function(data){
+
+            if(angular.isDefined(data)){
+                console.log('$scope.news.newsInfo.data has data');
+            }
+        });
     })
 
-    .controller('NewsSpectrumCtrl', function ($scope){
+    .controller('NewsSpectrumCtrl', function ($scope, newsData){
+        // Title
         $scope.navTitle = 'IWU Spectrum';
+
+        // News Limiter
+        var quantityLimit = 10;
+        $scope.quantity = quantityLimit;
+        $scope.incrementLimit = function() {
+            $scope.quantity += quantityLimit;
+        };
+
+        // News Filter
+        $scope.filterFunction = function(element) {
+            if(element.source == 'IWU Spectrum'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        };
+
+        // News Data
+        $scope.news = newsData;
+
+        newsData.newsInfo.getData().then(function(asyncSendData){
+            $scope.news.newsInfo.data = asyncSendData;
+        });
+
+        $scope.$watch('news.newsInfo.data', function(data){
+
+            if(angular.isDefined(data)){
+                console.log('$scope.news.newsInfo.data has data');
+            }
+        });
     });

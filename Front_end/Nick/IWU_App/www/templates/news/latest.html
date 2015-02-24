@@ -4,24 +4,7 @@
             <div class="latest-header">
                 <img src="img/library.jpg" class="latest-image">
             </div>
-            <!--<a href="http://www.iwuwildcats.com/article/4112.php" target="_blank">
-            <div class="card card-1">
-                <div class="row">
-                    <div class="col col-33">
-                        <img src="img/head_two.png">
-                    </div>
-                    <div class="col">
-                        <p class="article-title">
-                            No regrets: advice from recent alumni
-                        </p>
-                        <p class="article-date">
-                            18 Feb 2015 4:24am
-                        </p>
-                    </div>
-                </div>
-            </div>
-            </a>-->
-            <div class="card" ng-repeat="newsArticle in news.newsInfo.data.article">
+            <div class="card" ng-repeat="newsArticle in news.newsInfo.data.article | limitTo:quantity">
                 <div class="row">
                     <div class="col col-33">
                         <img src="img/head_two.png">
@@ -33,9 +16,19 @@
                         <p class="article-date">
                             {{newsArticle.date}}
                         </p>
+                        <p class="article-date">
+                            {{newsArticle.source}}
+                        </p>
                     </div>
                 </div>
             </div>
+            <button class="button button-full button-dark" ng-click="incrementLimit()">More News Articles</button>
+
+            <!-- TODO: Change "more news" button to infinite scroll -->
+            <!--<ion-infinite-scroll
+                distance="10%"
+                on-infinite="incrementLimit()">
+            </ion-infinite-scroll>-->
         </div>
     </ion-content>
 </ion-view>
