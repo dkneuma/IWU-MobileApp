@@ -1,11 +1,16 @@
 angular.module('iwuApp.services', [])
 
-    .factory('weatherData', function($http){
+    .factory('weatherData', function($http, DSCacheFactory){
         var dataToBeReturned = {};
+        var weatherCache = DSCacheFactory('weatherCache', {
+            maxAge: 900000,
+            cacheFlushInterval: 6000000,
+            deleteOnExpire: 'aggressive'
+        });
 
-        var todaysWeather = {
-            getData: function(){
-
+        var weather = {
+            getTodaysWeatherData: function(){
+                console.log('TodaysWeather Ajax Start');
                 return $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?id=4923210&mode=json&units=imperial&cnt=1&APPID=82459d090e8552ff5ef308f72a1a5642')
                     .then(function(response){
                         var jsonObj = response.data;
@@ -14,18 +19,16 @@ angular.module('iwuApp.services', [])
                         var tempMin = Math.round(jsonObj.list[0].temp.min);
                         var tempMax = Math.round(jsonObj.list[0].temp.max);
 
+                        console.log('TodaysWeather Ajax End');
                         return returnTodaysWeather = {
                             'city':city,
                             'tempMin':tempMin,
                             'tempMax':tempMax
                         };
                     })
-            }
-        };
-
-        var currentWeather = {
-            getData: function(){
-
+            },
+            getCurrentWeatherData: function(){
+                console.log('CurrentWeather Ajax Start');
                 return $http.get('http://api.openweathermap.org/data/2.5/weather?id=4923210&units=imperial&mode=json&APPID=82459d090e8552ff5ef308f72a1a5642')
                     .then(function(response){
                         var jsonObj = response.data;
@@ -82,17 +85,15 @@ angular.module('iwuApp.services', [])
                             icon = climacons[iconCodesPosition];
                         }
 
+                        console.log('CurrentWeather Ajax End');
                         return returnCurrentWeather = {
                             'temperature':temperature,
                             'icon':icon
                         };
                     })
-            }
-        };
-
-        var dateWeather = {
-            getData: function(){
-
+            },
+            getDateWeatherData: function(){
+                console.log('DateWeather Ajax Start');
                 var date = new Date();
                 var dayMonth = date.getDate();
                 var dayWeek = [];
@@ -117,27 +118,50 @@ angular.module('iwuApp.services', [])
                 monthYear[10] = 'nov';
                 monthYear[11] = 'dec';
 
+                console.log('DateWeather Ajax End');
                 return returnDateWeather = {
                     'dayMonth':dayMonth,
                     'dayWeek':dayWeek[date.getDay()],
                     'monthYear':monthYear[date.getMonth()]
                 };
+            },
+            cacheData: function(){
+                if(weatherCache.info().size == 0){
+                    var todaysWeatherData = weather.getTodaysWeatherData();
+                    var currentWeatherData = weather.getCurrentWeatherData();
+                    var dateWeatherData = weather.getDateWeatherData();
+                    var weatherData = {
+                        todaysWeather: todaysWeatherData,
+                        currentWeather: currentWeatherData,
+                        dateWeather: dateWeatherData
+                    };
+
+                    weatherCache.put('1', weatherData);
+
+                    return weatherCache.get('1');
+                }
+                else{
+                    return weatherCache.get('1');
+                }
             }
         };
 
-        dataToBeReturned.todaysWeather = todaysWeather;
-        dataToBeReturned.currentWeather = currentWeather;
-        dataToBeReturned.dateWeather = dateWeather;
+        dataToBeReturned.weatherInfo = weather;
         return dataToBeReturned;
     })
 
-    .factory('newsData', function($http){
+    .factory('newsData', function($http, DSCacheFactory){
         var dataToBeReturned = {};
+        var newsCache = DSCacheFactory('newsCache', {
+            maxAge: 900000,
+            cacheFlushInterval: 6000000,
+            deleteOnExpire: 'aggressive'
+        });
 
         /* TODO: Add sources subcategories */
         var newsJson = {
             getData: function(){
-
+                console.log('News Ajax Start');
                 return $http.get('http://levi.cis.indwes.edu:8080/news')
                     .then(function(response){
                         var jsonObj = response.data;
@@ -152,8 +176,25 @@ angular.module('iwuApp.services', [])
                             var source = jsonObj.news[i].channel;
                             var link = jsonObj.news[i].guid;
                             var description = jsonObj.news[i].description;
-                            var date = jsonObj.news[i].date;
                             var content = jsonObj.news[i].content;
+                            var pubDate = jsonObj.news[i].date;
+
+                            var dateBase = new Date(pubDate);
+                            var months = [];
+                            months[0] = 'Jan';
+                            months[1] = 'Feb';
+                            months[2] = 'Mar';
+                            months[3] = 'Apr';
+                            months[4] = 'May';
+                            months[5] = 'Jun';
+                            months[6] = 'Jul';
+                            months[7] = 'Aug';
+                            months[8] = 'Sep';
+                            months[9] = 'Oct';
+                            months[10] = 'Nov';
+                            months[11] = 'Dec';
+
+                            var date = months[dateBase.getMonth()] + " " + dateBase.getDate() + " " + dateBase.getFullYear();
 
                             newsItems.article[i] = {
                                 'title':title,
@@ -165,8 +206,20 @@ angular.module('iwuApp.services', [])
                             }
                         }
 
+                        console.log('News Ajax End');
                         return newsItems;
                     })
+
+            },
+            cacheData: function(){
+                if(newsCache.info().size == 0){
+                    var data = newsJson.getData();
+                    newsCache.put('1', data);
+                    return newsCache.get('1');
+                }
+                else{
+                    return newsCache.get('1');
+                }
             }
         };
 
@@ -174,12 +227,17 @@ angular.module('iwuApp.services', [])
         return dataToBeReturned;
     })
 
-    .factory('chapelData', function($http){
+    .factory('chapelData', function($http, DSCacheFactory){
         var dataToBeReturned = {};
+        var chapelCache = DSCacheFactory('chapelCache', {
+            maxAge: 900000,
+            cacheFlushInterval: 6000000,
+            deleteOnExpire: 'aggressive'
+        });
 
         var chapelJson = {
             getData: function () {
-
+                console.log('Chapel Ajax Start');
                 return $http.get('http://levi.cis.indwes.edu:8080/chapel')
                     .then(function(response){
                         var jsonObj = response.data;
@@ -201,8 +259,19 @@ angular.module('iwuApp.services', [])
                             }
                         }
 
+                        console.log('News Ajax End');
                         return chapelItems;
                     })
+            },
+            cacheData: function(){
+                if(chapelCache.info().size == 0){
+                    var data = chapelJson.getData();
+                    chapelCache.put('1', data);
+                    return chapelCache.get('1');
+                }
+                else{
+                    return chapelCache.get('1');
+                }
             }
         };
 
@@ -210,13 +279,18 @@ angular.module('iwuApp.services', [])
         return dataToBeReturned;
     })
 
-    .factory('votdData', function($http){
+    .factory('votdData', function($http, DSCacheFactory){
         var dataToBeReturned = {};
+        var votdCache = DSCacheFactory('votdCache', {
+            maxAge: 900000,
+            cacheFlushInterval: 6000000,
+            deleteOnExpire: 'aggressive'
+        });
 
         /* TODO: Add View in Context option */
         var votdJson = {
             getData: function(){
-
+                console.log('VOTD Ajax Start');
                 return $http.get('http://levi.cis.indwes.edu:8080/votd')
                     .then(function(response){
                         var jsonObj = response.data;
@@ -225,16 +299,67 @@ angular.module('iwuApp.services', [])
                         var reference = jsonObj.votd.reference;
                         var version = jsonObj.votd.version_id;
 
+                        console.log('News Ajax End');
                         return returnVotd = {
                             'verse':verse,
                             'reference':reference,
                             'version':version
                         };
                     })
+            },
+            cacheData: function(){
+                if(votdCache.info().size == 0){
+                    var data = votdJson.getData();
+                    votdCache.put('1', data);
+                    return votdCache.get('1');
+                }
+                else{
+                    return votdCache.get('1');
+                }
             }
         };
 
         dataToBeReturned.votdInfo = votdJson;
         return dataToBeReturned;
+    })
+
+    .factory('shareData', function(votdData, newsData, chapelData, weatherData){
+        var dataToBeReturned = {};
+        var weather = weatherData;
+        var votd = votdData;
+        var news = newsData;
+        var chapel = chapelData;
+
+        // VOTD
+        votdData.votdInfo.cacheData().then(function(asyncSendData){
+            votd.votdInfo.data = asyncSendData;
+        });
+
+        // Chapel
+        chapelData.chapelInfo.cacheData().then(function(asyncSendData){
+            chapel.chapelInfo.data = asyncSendData;
+        });
+
+        // News
+        newsData.newsInfo.cacheData().then(function(asyncSendData){
+            news.newsInfo.data = asyncSendData;
+        });
+
+        // Weather
+        weather.weatherInfo.data = {};
+        weatherData.weatherInfo.cacheData().todaysWeather.then(function(asyncSendData){
+            weather.weatherInfo.data.todaysWeather = asyncSendData;
+        });
+        weatherData.weatherInfo.cacheData().currentWeather.then(function(asyncSendData){
+            weather.weatherInfo.data.currentWeather = asyncSendData;
+        });
+        weather.weatherInfo.data.dateWeather = weatherData.weatherInfo.cacheData().dateWeather;
+
+        dataToBeReturned.weather = weather.weatherInfo.data;
+        dataToBeReturned.votd = votd.votdInfo;
+        dataToBeReturned.news = news.newsInfo;
+        dataToBeReturned.chapel = chapel.chapelInfo;
+        return dataToBeReturned;
+
     });
 

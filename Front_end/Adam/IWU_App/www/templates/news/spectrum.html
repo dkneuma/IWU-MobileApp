@@ -4,7 +4,7 @@
             <div class="sga-header">
                 <img src="img/spectrum-header-temp.jpg" class="spectrum-image">
             </div>
-            <div class="card" ng-repeat="newsArticle in news.newsInfo.data.article | filter: filterFunction | limitTo:quantity">
+            <div class="card" ng-repeat="newsArticle in news.article | filter: filterFunction | limitTo:quantity">
                 <div class="row">
                     <div class="col col-33">
                         <img src="img/head_two.png">

@@ -2,104 +2,74 @@ angular.module('iwuApp.controllers', [])
     .controller('AppCtrl', function ($scope) {
 
     })
-
     .controller('LoginCtrl', function ($scope){
 
     })
 
     /* Root Level Pages */
-    .controller('MainCtrl', function ($scope, weatherData, votdData) {
+    .controller('MainCtrl', function ($scope, shareData) {
         // Title
         $scope.navTitle = 'IWU';
 
-        // Weather Data
-            /* Overall Weather Data */
-        $scope.weather = weatherData;
-
-            /* Todays Weather */
-        weatherData.todaysWeather.getData().then(function(asyncSendData){
-            $scope.weather.todaysWeather.data = asyncSendData;
-        });
-        $scope.$watch('weather.todaysWeather.data', function(data){
-
-            if(angular.isDefined(data)){
-                console.log('$scope.weather.todaysWeather.data has data');
-            }
-        });
-
-            /* Current Weather */
-        weatherData.currentWeather.getData().then(function(asyncSendData){
-            $scope.weather.currentWeather.data = asyncSendData;
-        });
-        $scope.$watch('weather.currentWeather.data', function(data){
-
-            if(angular.isDefined(data)){
-                console.log('$scope.weather.currentWeather.data has data');
-            }
-        });
-
-            /* Date Weather */
-        $scope.weather.dateWeather.data = weatherData.dateWeather.getData();
-        $scope.$watch('weather.dateWeather.data', function(data){
-
-            if(angular.isDefined(data)){
-                console.log('$scope.weather.dateWeather.data has data');
-            }
-        });
-
         // VOTD
-        $scope.votd = votdData;
-
-        votdData.votdInfo.getData().then(function(asyncSendData){
-            $scope.votd.votdInfo.data = asyncSendData;
-        });
-        $scope.$watch('votd.votdInfo.data', function(data){
-
+        $scope.data = shareData;
+        $scope.$watch('data.votd.data', function(data){
             if(angular.isDefined(data)){
-                console.log('$scope.votd.votdInfo.data has data');
+                $scope.votd = shareData.votd.data;
+                console.log('$scope.data.votd.data has data');
+            }
+        });
+
+        // Weather
+        $scope.$watch('data.weather.todaysWeather', function(data){
+            if(angular.isDefined(data)){
+                $scope.todaysWeather = shareData.weather.todaysWeather;
+                console.log('$scope.data.weather.todaysWeather has data');
+            }
+        });
+        $scope.$watch('data.weather.currentWeather', function(data){
+            if(angular.isDefined(data)){
+                $scope.currentWeather = shareData.weather.currentWeather;
+                console.log('$scope.data.weather.currentWeather has data');
+            }
+        });
+        $scope.$watch('data.weather.dateWeather', function(data){
+            if(angular.isDefined(data)){
+                $scope.dateWeather = shareData.weather.dateWeather;
+                console.log('$scope.data.weather.dateWeather has data');
             }
         });
     })
-
     .controller('NewsCtrl', function ($scope){
         // Title
         $scope.navTitle = 'News';
 
     })
-
-    .controller('ChapelCtrl', function ($scope, chapelData){
+    .controller('ChapelCtrl', function ($scope, shareData){
         // Title
         $scope.navTitle = 'Chapel';
 
         // Chapel Data
-        $scope.chapel = chapelData;
-
-        chapelData.chapelInfo.getData().then(function(asyncSendData){
-            $scope.chapel.chapelInfo.data = asyncSendData;
-        });
-
-        $scope.$watch('chapel.chapelInfo.data', function(data){
-
+        $scope.data = shareData;
+        $scope.$watch('data.chapel.data', function(data){
             if(angular.isDefined(data)){
-                console.log('$scope.chapel.chapelInfo.data has data');
+                $scope.chapel = shareData.chapel.data;
+                console.log('$scope.data.chapel.data has data');
             }
         });
     })
-
     .controller('ScheduleCtrl', function ($scope){
         $scope.navTitle = 'Schedule';
     })
-
     .controller('FoodCtrl', function ($scope){
-        $scope.navTitle = 'Food Service';
+        $scope.navTitle = 'Food Services';
     })
-
     .controller('SettingsCtrl', function ($scope){
         $scope.navTitle = 'Settings';
     })
 
     /* News Sub-Pages */
-    .controller('NewsAthleticsCtrl', function ($scope, newsData){
+    .controller('NewsAthleticsCtrl', function ($scope, shareData){
         // Title
         $scope.navTitle = 'Athletics';
 
@@ -121,21 +91,16 @@ angular.module('iwuApp.controllers', [])
         };
 
         // News Data
-        $scope.news = newsData;
-
-        newsData.newsInfo.getData().then(function(asyncSendData){
-            $scope.news.newsInfo.data = asyncSendData;
-        });
-
-        $scope.$watch('news.newsInfo.data', function(data){
-
+        $scope.data = shareData;
+        $scope.$watch('data.news.data', function(data){
             if(angular.isDefined(data)){
+                $scope.news = shareData.news.data;
+                console.log($scope.news = shareData.news.data);
                 console.log('$scope.news.newsInfo.data has data');
             }
         });
     })
-
-    .controller('NewsLatestCtrl', function ($scope, newsData){
+    .controller('NewsLatestCtrl', function ($scope, shareData){
         // Title
         $scope.navTitle = 'Latest';
 
@@ -147,21 +112,16 @@ angular.module('iwuApp.controllers', [])
         };
 
         // News Data
-        $scope.news = newsData;
-
-        newsData.newsInfo.getData().then(function(asyncSendData){
-            $scope.news.newsInfo.data = asyncSendData;
-        });
-
-        $scope.$watch('news.newsInfo.data', function(data){
-
+        $scope.data = shareData;
+        $scope.$watch('data.news.data', function(data){
             if(angular.isDefined(data)){
+                $scope.news = shareData.news.data;
+                console.log($scope.news = shareData.news.data);
                 console.log('$scope.news.newsInfo.data has data');
             }
         });
     })
-
-    .controller('NewsPresidentCtrl', function ($scope, newsData){
+    .controller('NewsPresidentCtrl', function ($scope, shareData){
         // Title
         $scope.navTitle = 'The President&#39;s Blog';
 
@@ -183,21 +143,16 @@ angular.module('iwuApp.controllers', [])
         };
 
         // News Data
-        $scope.news = newsData;
-
-        newsData.newsInfo.getData().then(function(asyncSendData){
-            $scope.news.newsInfo.data = asyncSendData;
-        });
-
-        $scope.$watch('news.newsInfo.data', function(data){
-
+        $scope.data = shareData;
+        $scope.$watch('data.news.data', function(data){
             if(angular.isDefined(data)){
+                $scope.news = shareData.news.data;
+                console.log($scope.news = shareData.news.data);
                 console.log('$scope.news.newsInfo.data has data');
             }
         });
     })
-
-    .controller('NewsSGACtrl', function ($scope, newsData){
+    .controller('NewsSGACtrl', function ($scope, shareData){
         // Title
         $scope.navTitle = 'The SGA Blog';
 
@@ -219,21 +174,16 @@ angular.module('iwuApp.controllers', [])
         };
 
         // News Data
-        $scope.news = newsData;
-
-        newsData.newsInfo.getData().then(function(asyncSendData){
-            $scope.news.newsInfo.data = asyncSendData;
-        });
-
-        $scope.$watch('news.newsInfo.data', function(data){
-
+        $scope.data = shareData;
+        $scope.$watch('data.news.data', function(data){
             if(angular.isDefined(data)){
+                $scope.news = shareData.news.data;
+                console.log($scope.news = shareData.news.data);
                 console.log('$scope.news.newsInfo.data has data');
             }
         });
     })
-
-    .controller('NewsSojournCtrl', function ($scope, newsData){
+    .controller('NewsSojournCtrl', function ($scope, shareData){
         // Title
         $scope.navTitle = 'The Sojourn';
 
@@ -255,21 +205,16 @@ angular.module('iwuApp.controllers', [])
         };
 
         // News Data
-        $scope.news = newsData;
-
-        newsData.newsInfo.getData().then(function(asyncSendData){
-            $scope.news.newsInfo.data = asyncSendData;
-        });
-
-        $scope.$watch('news.newsInfo.data', function(data){
-
+        $scope.data = shareData;
+        $scope.$watch('data.news.data', function(data){
             if(angular.isDefined(data)){
+                $scope.news = shareData.news.data;
+                console.log($scope.news = shareData.news.data);
                 console.log('$scope.news.newsInfo.data has data');
             }
         });
     })
-
-    .controller('NewsSpectrumCtrl', function ($scope, newsData){
+    .controller('NewsSpectrumCtrl', function ($scope, shareData){
         // Title
         $scope.navTitle = 'IWU Spectrum';
 
@@ -291,16 +236,26 @@ angular.module('iwuApp.controllers', [])
         };
 
         // News Data
-        $scope.news = newsData;
-
-        newsData.newsInfo.getData().then(function(asyncSendData){
-            $scope.news.newsInfo.data = asyncSendData;
-        });
-
-        $scope.$watch('news.newsInfo.data', function(data){
-
+        $scope.data = shareData;
+        $scope.$watch('data.news.data', function(data){
             if(angular.isDefined(data)){
+                $scope.news = shareData.news.data;
+                console.log($scope.news = shareData.news.data);
                 console.log('$scope.news.newsInfo.data has data');
             }
         });
+    })
+
+    /* Food Sub-Pages */
+    .controller('FoodBaldwinCtrl', function ($scope){
+        $scope.navTitle = 'Baldwin';
+    })
+    .controller('FoodMariosCtrl', function ($scope){
+        $scope.navTitle = 'Mario&#39;s';
+    })
+    .controller('FoodWildcatCtrl', function ($scope){
+        $scope.navTitle = 'Wildcat Express & Chick-fil-A';
+    })
+    .controller('FoodCollegeStoreCtrl', function ($scope){
+        $scope.navTitle = 'C-Store';
     });

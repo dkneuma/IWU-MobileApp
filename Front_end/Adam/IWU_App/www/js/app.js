@@ -7,7 +7,8 @@
 angular.module('iwuApp',
     ['ionic',
     'iwuApp.services',
-    'iwuApp.controllers'])
+    'iwuApp.controllers',
+    'angular-data.DSCacheFactory'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -153,6 +154,44 @@ angular.module('iwuApp',
                     'menuContent': {
                         templateUrl: "templates/news/spectrum.html",
                         controller: 'NewsSpectrumCtrl'
+                    }
+                }
+            })
+
+            /* Food Sub-Pages */
+            .state('app.food-baldwin', {
+                url: "/food/baldwin",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/food/baldwin.html",
+                        controller: 'FoodBaldwinCtrl'
+                    }
+                }
+            })
+            .state('app.food-marios', {
+                url: "/food/marios",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/food/marios.html",
+                        controller: 'FoodMariosCtrl'
+                    }
+                }
+            })
+            .state('app.food-wildcat', {
+                url: "/food/wildcat",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/food/wildcat.html",
+                        controller: 'FoodWildcatCtrl'
+                    }
+                }
+            })
+            .state('app.food-collegeStore', {
+                url: "/food/collegeStore",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/food/collegeStore.html",
+                        controller: 'FoodCollegeStoreCtrl'
                     }
                 }
             });
