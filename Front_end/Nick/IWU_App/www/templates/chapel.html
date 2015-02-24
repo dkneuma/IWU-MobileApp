@@ -2,17 +2,9 @@
     <ion-content>
         <div class="chapel-wrapper">
             <div class="chapel-header">
-                <img src="img/library.jpg" class="latest-image">
+                <img src="img/chapel_2-small.jpg" class="latest-image">
             </div>
-            <!--<div class="card card-1">
-                <div class="item item-text-wrap chapel-color">
-                    <p class="speaker">Dr. Jim Lo</p>
-                    <p class="chapel-date">Fri, Feb 13</p>
-                    <p class="chapel-topic">Come join us while we talk about...</p>
-                </div>
-            </div>-->
-
-            <div class="card" ng-repeat="chapelItem in chapel.chapelInfo.data.chapelSermons">
+            <div class="card" ng-repeat="chapelItem in chapel.chapelSermons">
                 <div class="item item-text-wrap chapel-color">
                     <p class="speaker">{{chapelItem.speaker}}</p>
                     <p class="chapel-date">{{chapelItem.date}}</p>
