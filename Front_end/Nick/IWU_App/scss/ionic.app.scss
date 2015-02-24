@@ -506,33 +506,56 @@ $base_size: 16px;
   min-height: ($base_size * 7.5);
   position: relative;
 }
-.news-wrapper .news-header img, .athletics-wrapper .athletics-header img, .president-wrapper .president-header img, .sga-wrapper .sga-header img, .spectrum-wrapper .spectrum-header img, .sojourn-wrapper .sojourn-header img, .latest-wrapper .latest-header img{
+.athletics-wrapper .athletics-header img, .president-wrapper .president-header img, .sga-wrapper .sga-header img, .spectrum-wrapper .spectrum-header img, .sojourn-wrapper .sojourn-header img, .latest-wrapper .latest-header img{
   width: 100%;
   height: 30%;
   position: relative;
-  opacity: 0.7;
 }
-.news-wrapper .card-1, .athletics-wrapper .card-1, .president-wrapper .card-1, .sga-wrapper .card-1, .spectrum-wrapper .card-1, .sojourn-wrapper .card-1, .latest-wrapper .card:nth-child(2){
+.athletics-wrapper .card:nth-child(2), .president-wrapper .card:nth-child(2), .sga-wrapper .card:nth-child(2), .spectrum-wrapper .card:nth-child(2), .sojourn-wrapper .card:nth-child(2), .latest-wrapper .card:nth-child(2){
   z-index: 1;
   margin-top: -($base_size * 1.5);
   position: relative;
 }
-.athletics-wrapper .card .col img, .news-wrapper .card .col img, .president-wrapper .card .col img, .sga-wrapper .card .col img, .spectrum-wrapper .card .col img, .sojourn-wrapper .card .col img, .latest-wrapper .card .col img{
-  height: 80px;
-  margin: ($base_size * 0.625);
-}
-
-.athletics-wrapper .card .article-date, .news-wrapper .card .article-date, .president-wrapper .card .article-date, .sga-wrapper .card .article-date, .spectrum-wrapper .card .article-date, .sojourn-wrapper .card .article-date, .latest-wrapper .card .article-date{
-  font-size: ($base_size * 0.75);
+.athletics-wrapper .card .article-date, .news-wrapper .card .article-date, .president-wrapper .card .article-date, .sga-wrapper .card .article-date, .spectrum-wrapper .card .article-date, .sojourn-wrapper .card .article-date{
+  font-size: ($base_size * 0.625);
   font-weight: 300;
+  float: right;
+  margin: 0;
+  line-height: ($base_size * 0.625);
 }
 .athletics-wrapper .card p, .president-wrapper .card p, .sga-wrapper .card p, .spectrum-wrapper .card p, .sojourn-wrapper .card p, .latest-wrapper .card p{
   color: $IWU_white;
+}
+.athletics-wrapper .card .source, .president-wrapper .card .source, .sga-wrapper .card .source, .spectrum-wrapper .card .source, .sojourn-wrapper .card .source{
+  font-size: ($base_size * 0.625);
+  font-weight: 300;
+  margin: 0;
+  line-height: ($base_size * 0.625);
+}
+.athletics-wrapper .card .article-title, .president-wrapper .card .article-title, .sga-wrapper .card .article-title, .spectrum-wrapper .card .article-title, .sojourn-wrapper .card .article-title{
+  border-bottom: 1px solid;
+  text-align: center;
+  padding-bottom: ($base_size * 0.5);
+  margin-bottom: ($base_size * 0.25);
+}
+.athletics-wrapper .card .article-description, .president-wrapper .card .article-description, .sga-wrapper .card .article-description, .spectrum-wrapper .card .article-description, .sojourn-wrapper .card .article-description{
+  font-size: ($base_size * 0.75);
+  line-height: ($base_size * 0.75);
+  font-weight: 300;
+}
+.athletics-wrapper .card .article-description span, .president-wrapper .card .article-description span, .sga-wrapper .card .article-description span, .spectrum-wrapper .card .article-description span, .sojourn-wrapper .card .article-description span{
+  font-weight: 600;
 }
 
 
 /* News Page only styles */
 
+.news-wrapper .news-header img{
+  width: 100%;
+  height: 30%;
+  position: relative;
+  opacity: 0.7;
+}
 .news-wrapper .card .source{
   color: $IWU_white;
   text-align: center;
@@ -544,6 +567,11 @@ $base_size: 16px;
 }
 .news-wrapper .card{
   padding-top: 0;
+}
+.news-wrapper .card-1{
+  z-index: 1;
+  margin-top: -($base_size * 1.5);
+  position: relative;
 }
 .news-wrapper .card .latest-image{
   background: url("../img/latest-header-temp.jpg");
@@ -577,10 +605,19 @@ $base_size: 16px;
 }
 
 /* Latest News only styles */
+.latest-wrapper .card .col img{
+  height: 80px;
+  margin: ($base_size * 0.625);
+}
+.latest-wrapper .card .article-date{
+  font-size: ($base_size * 0.75);
+  font-weight: 300;
+}
 .latest-wrapper .card .article-date span{
   font-weight: 700;
   color: $news;
 }
+
 
 /* *********************************** */
 /* ---------- Chapel Styles ---------- */
@@ -617,6 +654,7 @@ $base_size: 16px;
 .chapel-wrapper .chapel-header img{
   width: 100%;
   height: 30%;
+  opacity: 0.7;
 }
 .chapel-wrapper{
   position: relative;

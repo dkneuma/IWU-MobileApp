@@ -4,15 +4,29 @@
             <div class="president-header">
                 <img src="img/presidents-header-temp.jpeg" class="president-image">
             </div>
-            <div class="card" ng-repeat="newsArticle in news.article | filter: filterFunction | limitTo: quantity">
+            <div class="card" ng-repeat="newsArticle in news.article | filter: filterFunction | limitTo:quantity">
                 <div class="row">
-                    <div class="col col-33">
-                        <img src="img/head_two-small.png">
-                    </div>
                     <div class="col">
                         <p class="article-title">
                             {{newsArticle.title}}
                         </p>
+                    </div>
+                </div>
+                <!--TODO: parse JSON for location-->
+                <div class="row">
+                    <div class="col">
+                        <p class="article-description">
+                            <!--<span>Marion, Ind.</span> -->{{newsArticle.description}}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <!--<p class="source">
+                            Women's Basketball
+                        </p>-->
+                    </div>
+                    <div class="col">
                         <p class="article-date">
                             {{newsArticle.date}}
                         </p>
